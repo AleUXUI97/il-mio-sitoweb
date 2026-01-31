@@ -1,0 +1,57 @@
+.about {
+  background-color: #222;
+  padding-top: 0;
+  padding-bottom: 120px;
+
+  // Wrapper full-width per il titolo
+  .about-title-wrapper {
+    width: 100%;       // prende tutto il viewport
+    padding: 0;        // nessun padding laterale
+    margin: 0;
+  }
+
+  // Titolo About hero-like
+  .about-title {
+    color: #fff;
+    font-size: 4rem;     // regola come vuoi
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+        letter-spacing: 0.047em;     // opzionale
+  }
+
+  // Righe contenuto
+  .row {
+    margin-top: 2rem;  // distanza dal titolo
+  }
+
+  p {
+    color: #fff;
+    
+  }
+
+  .about-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+  }
+  .about-cta {
+  background-color: white;   // colore principale del pulsante
+  color: #781D1D;                  // colore del testo
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color:#781D1D;  // hover leggermente più scuro
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+}
