@@ -1,0 +1,60 @@
+.portfolio-projects {
+  background-color: white;
+  color: black;
+
+  .portfolio-projects-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+
+  .project-item {
+    .project-img {
+      border-radius: 12px;
+      width: 100%;
+      object-fit: cover;
+      height: 300px; // regola in base al design
+    }
+
+    .project-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-description {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .project-cta {
+      background-color: #781D1D;   // colore principale del pulsante
+      color: white;                // colore del testo
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #5c1515; // leggermente più scuro
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Pulsante CTA grande per "Vedi tutti i progetti"
+  .btn-cta.btn-lg {
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+  }
+
+  // Alterna immagine a sinistra/destra su desktop
+  @media (min-width: 768px) {
+    .project-item.flex-md-row-reverse {
+      flex-direction: row-reverse;
+    }
+  }
+}

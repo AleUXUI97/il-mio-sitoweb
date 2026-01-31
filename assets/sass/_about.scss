@@ -6,22 +6,26 @@
   // Wrapper full-width per il titolo
   .about-title-wrapper {
     width: 100%;       // prende tutto il viewport
-    padding: 0;        // nessun padding laterale
-    margin: 0;
+    overflow: hidden;
   }
 
   // Titolo About hero-like
   .about-title {
-    color: #fff;
-    font-size: 4rem;     // regola come vuoi
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: block;
-        letter-spacing: 0.047em;     // opzionale
-  }
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  max-width: 100%;
+
+  white-space: nowrap;     // 🔴 NON va a capo
+  overflow: hidden;        // 🔴 nasconde il testo in eccesso
+  text-overflow: clip;     // taglio secco (senza puntini)
+}
+
 
   // Righe contenuto
   .row {

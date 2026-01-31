@@ -78,19 +78,20 @@
 }
 .about .about-title-wrapper {
   width: 100%;
-  padding: 0;
-  margin: 0;
+  overflow: hidden;
 }
 .about .about-title {
   color: #fff;
   font-size: 4rem;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1;
   margin: 0;
   padding: 0;
   width: 100%;
-  display: block;
-  letter-spacing: 0.047em;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 .about .row {
   margin-top: 2rem;
@@ -116,6 +117,56 @@
   background-color: #781D1D;
   color: #fff;
   text-decoration: none;
+}
+
+.portfolio-projects {
+  background-color: white;
+  color: black;
+}
+.portfolio-projects .portfolio-projects-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.portfolio-projects .project-item .project-img {
+  border-radius: 12px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 300px;
+}
+.portfolio-projects .project-item .project-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.portfolio-projects .project-item .project-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.portfolio-projects .project-item .project-cta {
+  background-color: #781D1D;
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.portfolio-projects .project-item .project-cta:hover {
+  background-color: #5c1515;
+  color: #fff;
+  text-decoration: none;
+}
+.portfolio-projects .btn-cta.btn-lg {
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+}
+@media (min-width: 768px) {
+  .portfolio-projects .project-item.flex-md-row-reverse {
+    flex-direction: row-reverse;
+  }
 }
 
 body {
