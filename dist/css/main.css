@@ -182,6 +182,58 @@
   flex-direction: row-reverse;
 }
 
+/* SEZIONE TOOLS */
+.tools {
+  background-color: #DCD6CA; /* colore del container */
+  padding-top: 0; /* spazio interno sopra il titolo */
+  padding-bottom: 1rem; /* spazio interno sotto le icone */
+}
+
+/* Titolo */
+.tools .tools-title {
+  font-weight: 700;
+  margin-top: 0; /* elimina spazio sopra il titolo */
+  margin-bottom: 1rem; /* riduce spazio sotto il titolo */
+  text-align: right; /* titolo a destra */
+}
+
+/* Righe icone */
+.tools .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* distanza tra colonne */
+}
+
+/* Colonna icona */
+.tools .col-4.col-md-2 {
+  transition: transform 0.3s ease;
+}
+
+/* Icone con cornice bianca */
+.tools .col-4.col-md-2 img {
+  background-color: #ffffff;
+  padding: 10px; /* dimensione cornice */
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  height: 60px;
+}
+
+/* Testo sotto icona */
+.tools .col-4.col-md-2 h6 {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* Hover effetto ingrandimento */
+.tools .col-4.col-md-2:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   color: #222;
