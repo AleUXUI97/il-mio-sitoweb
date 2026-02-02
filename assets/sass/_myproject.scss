@@ -8,53 +8,64 @@
     margin-bottom: 3rem;
   }
 
-  .project-item {
-    .project-img {
-      border-radius: 12px;
-      width: 100%;
-      object-fit: cover;
-      height: 300px; // regola in base al design
-    }
+  /* Singola fascia progetto */
+  .project-row {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid #e5e5e5;
 
-    .project-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-description {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
-
-    .project-cta {
-      background-color: #781D1D;   // colore principale del pulsante
-      color: white;                // colore del testo
-      font-weight: 700;
-      padding: 0.75rem 2rem;
-      border-radius: 8px;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: #5c1515; // leggermente più scuro
-        color: #fff;
-        text-decoration: none;
-      }
+    &:last-of-type {
+      border-bottom: none;
     }
   }
 
-  // Pulsante CTA grande per "Vedi tutti i progetti"
+  .project-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .project-meta {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 0.25rem;
+  }
+
+  /* CTA progetto + CTA finale condividono lo stile */
+  .project-cta,
+  .btn-cta {
+    background-color: #781D1D;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #5c1515;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  /* CTA finale più grande */
   .btn-cta.btn-lg {
     padding: 1rem 3rem;
     font-size: 1.25rem;
   }
-
-  // Alterna immagine a sinistra/destra su desktop
-  @media (min-width: 768px) {
-    .project-item.flex-md-row-reverse {
-      flex-direction: row-reverse;
-    }
-  }
 }
+
+.portfolio-scroll-wrapper {
+  gap: 1rem; // spazio tra le immagini
+}
+
+.portfolio-scroll-wrapper.reverse-scroll {
+  flex-direction: row-reverse; // fa partire la seconda riga da destra
+}
+

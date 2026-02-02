@@ -122,39 +122,49 @@
 .portfolio-projects {
   background-color: white;
   color: black;
+  /* Singola fascia progetto */
+  /* CTA progetto + CTA finale condividono lo stile */
+  /* CTA finale più grande */
 }
 .portfolio-projects .portfolio-projects-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 3rem;
 }
-.portfolio-projects .project-item .project-img {
-  border-radius: 12px;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 300px;
+.portfolio-projects .project-row {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid #e5e5e5;
 }
-.portfolio-projects .project-item .project-title {
+.portfolio-projects .project-row:last-of-type {
+  border-bottom: none;
+}
+.portfolio-projects .project-info {
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-projects .project-title {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin: 0;
 }
-.portfolio-projects .project-item .project-description {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  line-height: 1.5;
+.portfolio-projects .project-meta {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 0.25rem;
 }
-.portfolio-projects .project-item .project-cta {
+.portfolio-projects .project-cta,
+.portfolio-projects .btn-cta {
   background-color: #781D1D;
-  color: white;
+  color: #fff;
   font-weight: 700;
   padding: 0.75rem 2rem;
   border-radius: 8px;
   text-transform: uppercase;
+  white-space: nowrap;
   transition: all 0.3s ease;
 }
-.portfolio-projects .project-item .project-cta:hover {
+.portfolio-projects .project-cta:hover,
+.portfolio-projects .btn-cta:hover {
   background-color: #5c1515;
   color: #fff;
   text-decoration: none;
@@ -163,10 +173,13 @@
   padding: 1rem 3rem;
   font-size: 1.25rem;
 }
-@media (min-width: 768px) {
-  .portfolio-projects .project-item.flex-md-row-reverse {
-    flex-direction: row-reverse;
-  }
+
+.portfolio-scroll-wrapper {
+  gap: 1rem;
+}
+
+.portfolio-scroll-wrapper.reverse-scroll {
+  flex-direction: row-reverse;
 }
 
 body {
