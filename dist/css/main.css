@@ -161,13 +161,14 @@
   border-radius: 8px;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .portfolio-projects .project-cta:hover,
 .portfolio-projects .btn-cta:hover {
   background-color: #5c1515;
   color: #fff;
   text-decoration: none;
+  transform: none;
 }
 .portfolio-projects .btn-cta.btn-lg {
   padding: 1rem 3rem;
@@ -182,58 +183,296 @@
   flex-direction: row-reverse;
 }
 
-/* SEZIONE TOOLS */
+/* ==========================
+   SEZIONE TOOLS - CAROSELLO
+========================== */
 .tools {
-  background-color: #DCD6CA; /* colore del container */
-  padding-top: 0; /* spazio interno sopra il titolo */
-  padding-bottom: 1rem; /* spazio interno sotto le icone */
+  background-color: #DCD6CA;
+  padding: 2rem 0;
+  /* Titolo */
+  /* Wrapper icone */
+  /* Colonna icona */
 }
-
-/* Titolo */
 .tools .tools-title {
   font-weight: 700;
-  margin-top: 0; /* elimina spazio sopra il titolo */
-  margin-bottom: 1rem; /* riduce spazio sotto il titolo */
-  text-align: right; /* titolo a destra */
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  text-align: right; /* titolo a destra desktop */
 }
-
-/* Righe icone */
-.tools .row {
+.tools .tools-row {
   display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* su desktop va a capo se necessario */
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem; /* distanza tra colonne */
 }
-
-/* Colonna icona */
-.tools .col-4.col-md-2 {
-  transition: transform 0.3s ease;
+.tools .tools-col {
+  flex: 0 0 auto;
+  text-align: center;
 }
-
-/* Icone con cornice bianca */
-.tools .col-4.col-md-2 img {
-  background-color: #ffffff;
-  padding: 10px; /* dimensione cornice */
+.tools .tools-col img {
+  background-color: #fff;
+  padding: 10px;
   border-radius: 16px;
+  height: 60px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
-  height: 60px;
 }
-
-/* Testo sotto icona */
-.tools .col-4.col-md-2 h6 {
+.tools .tools-col h6 {
   margin-top: 0.25rem;
   margin-bottom: 0;
   font-weight: 500;
+  transition: transform 0.3s ease; /* transizione per hover testo */
 }
-
-/* Hover effetto ingrandimento */
-.tools .col-4.col-md-2:hover img {
+.tools .tools-col:hover img {
   transform: scale(1.1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+.tools .tools-col:hover h6 {
+  transform: scale(1.05); /* ingrandimento testo */
+}
 
+/* ==========================
+   RESPONSIVE / MOBILE
+========================== */
+@media (max-width: 768px) {
+  .tools .tools-title {
+    text-align: center; /* titolo centrato su mobile */
+  }
+  .tools .tools-row {
+    flex-wrap: nowrap; /* impedisce ritorno a capo */
+    overflow-x: auto; /* scroll orizzontale */
+    -webkit-overflow-scrolling: touch; /* scorrimento fluido iOS */
+    gap: 1rem;
+    /* padding laterale invisibile */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-bottom: 0.5rem;
+    /* nascondo scrollbar */
+    scrollbar-width: none;
+  }
+  .tools .tools-row::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* ==========================
+   Base
+========================== */
+body {
+  font-family: "DM Sans", sans-serif;
+  color: #000;
+}
+
+/* ==========================
+   Sfondo grigio per la pagina contatti
+========================== */
+body.contacts-page {
+  background-color: #DCD6CA; /* grigio chiaro visibile anche sotto navbar trasparente */
+  margin: 0;
+  padding: 0;
+}
+
+.contacts-wrapper {
+  background-color: transparent; /* il body gestisce lo sfondo */
+}
+
+/* ==========================
+   CTA (shared)
+========================== */
+.btn-cta {
+  background-color: #781D1D;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+
+.btn-cta:hover {
+  background-color: #5c1515;
+}
+
+.btn-cta.btn-lg {
+  padding: 1rem 2rem;
+}
+
+/* ==========================
+   Homepage Contact Section
+========================== */
+.contact-section {
+  background-color: #fff;
+  padding: 6rem 2rem;
+}
+
+.contact-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+/* Left column */
+.contact-left {
+  max-width: 600px;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Right column */
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Email */
+.contact-email {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #781D1D;
+  text-decoration: none;
+}
+
+.contact-email:hover {
+  color: #5c1515;
+  text-decoration: underline;
+}
+
+/* Social */
+.contact-social {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.social-icon {
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+}
+
+.social-icon img {
+  display: block;
+}
+
+/* ==========================
+   Contact Form Section
+========================== */
+.contact-form-section {
+  background-color: #DCD6CA;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Form heading */
+.contact-form-section .contact-title {
+  color: #781D1D;
+}
+
+.contact-form-section .contact-description {
+  margin-bottom: 2rem;
+}
+
+/* ==========================
+   Form Elements
+========================== */
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "DM Sans", sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #781D1D;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Submit CTA */
+.contact-form .btn-cta {
+  align-self: flex-start;
+}
+
+/* ==========================
+   Responsive
+========================== */
+@media (max-width: 768px) {
+  .contact-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact-right {
+    width: 100%;
+    margin-top: 2rem;
+    text-align: right;
+  }
+  .contact-form-section {
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+  }
+  .contact-form {
+    max-width: 100%;
+  }
+  .contact-form .btn-cta {
+    width: 100%;
+    text-align: center;
+  }
+  .contact-title {
+    font-size: 2rem;
+  }
+}
 body {
   font-family: "DM Sans", sans-serif;
   color: #222;

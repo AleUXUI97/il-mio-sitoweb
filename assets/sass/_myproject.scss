@@ -45,12 +45,13 @@
     border-radius: 8px;
     text-transform: uppercase;
     white-space: nowrap;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
       background-color: #5c1515;
       color: #fff;
       text-decoration: none;
+      transform: none;
     }
   }
 
