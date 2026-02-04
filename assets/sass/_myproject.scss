@@ -46,6 +46,7 @@
     text-transform: uppercase;
     white-space: nowrap;
     transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
 
     &:hover {
       background-color: #5c1515;
@@ -68,4 +69,34 @@
 
 .portfolio-scroll-wrapper.reverse-scroll {
   flex-direction: row-reverse; // fa partire la seconda riga da destra
+}
+@media (max-width: 768px) {
+  /* Titolo sezione */
+  .portfolio-projects .portfolio-projects-title {
+    font-size: 3rem;      // riduce il font da 3rem a 2rem
+    margin-bottom: 2rem;  // riduce lo spazio sotto il titolo
+    text-align: left;
+    margin: 1rem;     // allineamento coerente con le righe progetto
+  }
+
+  /* Righe progetto */
+  .portfolio-projects .project-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    text-align: left; 
+    flex-wrap: wrap; 
+    padding: 1rem 0;
+    margin: 1.2rem;
+  }
+
+  .portfolio-projects .project-info {
+    flex: 1; 
+    margin-bottom: 0;
+  }
+
+  .portfolio-projects .project-cta {
+    flex-shrink: 0; 
+    margin-top: 0;
+  }
 }

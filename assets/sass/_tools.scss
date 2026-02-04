@@ -62,6 +62,7 @@
   .tools {
     .tools-title {
       text-align: center; /* titolo centrato su mobile */
+      padding-right: 16px;
     }
 
     .tools-row {
@@ -74,7 +75,7 @@
       padding-left: 1rem;
       padding-right: 1rem;
       margin-left: -1rem;
-      margin-right: -1rem;
+      margin-right:-1rem;
       padding-bottom: 0.5rem;
 
       /* nascondo scrollbar */
@@ -86,3 +87,53 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .tools {
+    /* Titolo */
+    .tools-title {
+      text-align: left;      // allineamento coerente con altre sezioni
+      font-size: 3rem;       // leggermente più piccolo per mobile
+      margin-bottom: 1.5rem; // distanza dal carousello
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    /* Wrapper icone */
+    .tools-row {
+      flex-wrap: nowrap;                 
+      overflow-x: auto;                  
+      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
+
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-left: -1rem;
+      margin-right:-1rem;
+      padding-bottom: 0.5rem;
+
+      scrollbar-width: none;
+
+      display: flex;
+      align-items: center;   // centrati verticalmente
+    }
+
+    .tools-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Colonna icona */
+    .tools-col {
+      text-align: left;      // testo h6 allineato a sinistra
+      flex: 0 0 auto;        // mantiene la larghezza delle icone
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; // icona sopra, testo sotto, tutto allineato a sinistra
+
+      img {
+        margin-bottom: 0.25rem; // distanza icona-testo
+        display: block;
+      }
+    }
+  }
+}
+

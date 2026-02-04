@@ -1,125 +1,6 @@
-/* ==========================
-   Base
-========================== */
-body {
-  font-family: 'DM Sans', sans-serif;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
-/* ==========================
-   CTA (shared)
-========================== */
-.btn-cta {
-  background-color: #781D1D;
-  color: #fff;
-  font-weight: 700;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-transform: uppercase;
-  font-size: 1rem;
-  display: inline-block;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-.btn-cta:hover {
-  background-color: #5c1515;
-}
-
-.btn-cta.btn-lg {
-  padding: 1rem 2rem;
-}
-
-/* ==========================
-   Portfolio Projects
-========================== */
-.portfolio-projects {
-  background-color: #fff;
-  color: #000;
-  padding: 5rem 2rem;
-}
-
-.portfolio-projects-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-}
-
-/* Singola riga progetto */
-.portfolio-projects .project-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 4rem; /* coerente con contact-section */
-  padding: 2rem 0;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.portfolio-projects .project-row:last-of-type {
-  border-bottom: none;
-}
-
-.project-info {
-  max-width: 600px; /* coerente con contact-left */
-  display: flex;
-  flex-direction: column;
-}
-
-.project-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-.project-meta {
-  font-size: 1.1rem;
-  color: #666;
-  margin-top: 0.25rem;
-}
-
-.project-cta {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* CTA finale più grande */
-.btn-cta.btn-lg {
-  padding: 1rem 3rem;
-  font-size: 1.25rem;
-}
-
-/* ==========================
-   Portfolio Scroll
-========================== */
-.portfolio-scroll-wrapper {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  scroll-behavior: smooth;
-  margin-bottom: 3rem;
-}
-
-.portfolio-scroll-wrapper.reverse-scroll {
-  flex-direction: row-reverse;
-}
-
-.portfolio-item {
-  flex-shrink: 0;
-  width: auto;
-}
-
-/* ==========================
-   Contact Section
-========================== */
+/* =========================
+   CONTACT SECTION
+========================= */
 .contact-section {
   background-color: #fff;
   padding: 3rem 2rem;
@@ -129,8 +10,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center; /* centra verticalmente la CTA */
-  gap: 4rem; /* uguale a project-row */
-  flex-wrap: wrap; /* per responsive */
+  gap: 4rem;
+  flex-wrap: wrap;
 }
 
 .contact-left {
@@ -156,15 +37,47 @@ body {
   justify-content: flex-end;
   flex-shrink: 0;
 }
+/* =========================
+   CONTACT CTA
+========================= */
+.contact-section .btn-cta {
+  background-color: #781D1D;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
 
-/* ==========================
-   Contact Form Section
-========================== */
+  &:hover {
+    background-color: #5c1515;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.contact-section .btn-cta.btn-lg {
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+}
+
+
+/* =========================
+   CONTACT FORM SECTION (MODIFICATA)
+========================= */
 .contact-form-section {
   background-color: #DCD6CA;
   padding: 3rem 2rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center; /* centra la card */
+  /* Estendi sotto la navbar */
+  margin-top: -80px; /* altezza navbar approssimativa, da adattare */
+  padding-top: 5rem; /* compensa il margine negativo */
+  min-height: 100vh; /* garantisce che lo sfondo copra tutta la sezione */
 }
 
 .contact-form {
@@ -173,8 +86,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-color: #fff; /* card bianca */
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Titolo e descrizione rimangono uguali */
 .contact-form-section .contact-title {
   color: #781D1D;
 }
@@ -211,62 +129,90 @@ body {
   min-height: 150px;
 }
 
+/* CTA BUTTON */
 .contact-form .btn-cta {
-  align-self: flex-start;
-  width: auto;
+  background-color: #781D1D;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
   text-align: center;
 }
 
-/* ==========================
-   Responsive
-========================== */
-@media (max-width: 992px) {
-  .portfolio-projects .project-row,
-  .contact-section .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .project-info,
-  .contact-left {
-    max-width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  .project-cta,
-  .contact-right {
-    align-self: stretch;
-    text-align: center;
-  }
+.contact-form .btn-cta:hover {
+  background-color: #5c1515;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
-  .contact-right {
-    width: 100%;
-    margin-top: 2rem;
-    justify-content: right;
-  }
-
+  /* FORM SECTION */
   .contact-form-section {
+    padding: 3rem 1.5rem;
+    margin-top: 0;
     justify-content: center;
-    padding: 2.5rem 1.5rem;
   }
 
   .contact-form {
     max-width: 100%;
+    padding: 2rem 1.5rem;
   }
 
   .contact-form .btn-cta {
+    width: 100%; /* solo per il form */
+  }
+
+  /* CONTACT CTA HOME */
+  .contact-section .contact-right {
     width: 100%;
-    text-align: center;
+    justify-content: flex-end; /* mantiene il bottone a destra */
+    margin-top: 2rem;
+    text-align: right;
   }
 
-  .contact-title,
-  .portfolio-projects-title {
-    font-size: 2rem;
+  .contact-section .contact-right .btn-cta {
+    width: auto; /* non full width, resta a destra */
+  }
+}
+@media (max-width: 768px) {
+  .contact-section .container {
+    display: flex;
+    flex-direction: row;           // testo a sinistra, CTA a destra
+    justify-content: space-between; // spazio tra testo e pulsante
+    align-items: center;            // centrati verticalmente
+    flex-wrap: wrap;                // evita overflow se testo lungo
+    gap: 1rem;
   }
 
-  .project-title {
-    font-size: 1.75rem;
+  .contact-left {
+    flex: 1;                        // occupa tutto lo spazio a sinistra
+    max-width: none;                 // rimuove max-width desktop
+    text-align: left;                // testo allineato a sinistra
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-title {
+    font-size: 3rem;                 // riduce dimensione titolo su mobile
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    margin:-0.5rem;
+  }
+
+  .contact-description {
+    font-size: 1rem;                 // leggermente più piccolo
+    margin-bottom: 0;
+    line-height: 1.4;
+    margin:-0.5rem;
+  }
+
+  .contact-right {
+    flex-shrink: 0;                  // CTA non si riduce
+    margin-top: 0;                   // niente margine superiore
+    margin: 0.5rem;
   }
 }

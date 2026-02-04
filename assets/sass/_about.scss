@@ -59,3 +59,19 @@
 }
 
 }
+@media (max-width: 768px) {
+  .about .row {
+    display: flex;
+    flex-direction: column;   // immagine sopra, testo sotto
+    align-items: center;      // centra orizzontalmente
+    margin:0.5rem;
+  }
+
+  .about .row p {
+    text-align: center;       // centra il testo sotto l'immagine
+  }
+
+  .about .row .about-img {
+    margin-bottom: 1.5rem;   // distanza tra immagine e testo
+  }
+}
