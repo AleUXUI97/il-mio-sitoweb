@@ -95,6 +95,9 @@
 /* Titolo e descrizione rimangono uguali */
 .contact-form-section .contact-title {
   color: #781D1D;
+  font-size: 5rem;
+  font-weight: 700;
+  padding-top: 3rem;
 }
 
 .contact-form-section .contact-description {
@@ -180,14 +183,13 @@
   }
 }
 @media (max-width: 768px) {
-  .contact-section .container {
-    display: flex;
-    flex-direction: row;           // testo a sinistra, CTA a destra
-    justify-content: space-between; // spazio tra testo e pulsante
-    align-items: center;            // centrati verticalmente
-    flex-wrap: wrap;                // evita overflow se testo lungo
-    gap: 1rem;
+  /* Prima sezione sotto la navbar */
+  .menu-nav-container + main .contact-form-section {
+    margin-top: -100px;      // fa salire il background sotto la navbar
+    padding-top: 100px;      // mantiene il contenuto leggibile
   }
+}
+
 
   .contact-left {
     flex: 1;                        // occupa tutto lo spazio a sinistra
@@ -215,4 +217,3 @@
     margin-top: 0;                   // niente margine superiore
     margin: 0.5rem;
   }
-}
