@@ -815,17 +815,33 @@ p {
   padding: 0 32px;
 }
 
-.find-more {
+#backToTop {
   position: fixed;
-  bottom: 16px;
-  right: 32px;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #781D1D;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  color: #781D1D;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
