@@ -1,0 +1,150 @@
+.about-hero {
+  background-color: #DCD6CA;
+  color: #222;
+  padding-bottom: 3rem;
+
+  h1 {
+    color:#781D1D;
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .about-intro {
+    color: #222;
+    line-height: 1.6;
+  }
+
+  .about-photo {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 12px;
+  }
+
+  // Padding-top per il container interno
+  .container {
+    padding-top: 1rem; // aumenta questo valore finché l'immagine non si vede più sotto la navbar
+  }
+
+  // RIGA come flexbox per centrare verticalmente
+  .row.align-items-center {
+    display: flex;
+    align-items: center; // centra verticalmente il contenuto delle colonne
+  }
+}
+
+.about-hero .container {
+  padding-top: 4rem; // mobile
+}
+
+@media (min-width: 768px) {
+  .about-hero .container {
+    padding-top: 6rem; // desktop
+  }
+}
+.about-experience {
+  h2 {
+    font-size: 3rem;   // dimensione titolo
+    color: #222;       // colore titolo
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    background-color: #DCD6CA; // grigio chiaro per le card
+    border: none;               // rimuove il bordo standard di bootstrap
+    border-radius: 12px;        // arrotonda gli angoli
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); // leggero shadow
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px); // effetto hover
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+      padding: 2rem; // aumenta padding interno
+    }
+
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555; // colore leggermente scuro per le date
+      font-size: 0.9rem;
+    }
+
+    .card-text {
+      color: #333;
+      line-height: 1.5;
+    }
+  }
+}
+.about-education {
+     background-color: #DCD6CA;
+
+  h2 {
+    font-size: 3rem;   // dimensione titolo
+    color: #222;       // colore titolo
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    background-color: #fff; // grigio chiaro
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .card-text {
+      color: #333;
+      line-height: 1.5;
+    }
+  }
+}
+
+  // CTA centrale
+  .btn-cta {
+    background-color: #781D1D;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken(#781D1D, 10%);
+      color: #fff;
+    }
+  }
+
+  .d-flex.justify-content-center {
+    margin-top: 2rem;
+  }
+

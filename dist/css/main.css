@@ -717,6 +717,133 @@
   margin: 0.5rem;
 }
 
+.about-hero {
+  background-color: #DCD6CA;
+  color: #222;
+  padding-bottom: 3rem;
+}
+.about-hero h1 {
+  color: #781D1D;
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.about-hero .about-intro {
+  color: #222;
+  line-height: 1.6;
+}
+.about-hero .about-photo {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+}
+.about-hero .container {
+  padding-top: 1rem;
+}
+.about-hero .row.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+.about-hero .container {
+  padding-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  .about-hero .container {
+    padding-top: 6rem;
+  }
+}
+.about-experience h2 {
+  font-size: 3rem;
+  color: #222;
+  margin-bottom: 2rem;
+}
+.about-experience .card {
+  background-color: #DCD6CA;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-experience .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.about-experience .card .card-body {
+  padding: 2rem;
+}
+.about-experience .card .card-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.about-experience .card span {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+.about-experience .card .card-text {
+  color: #333;
+  line-height: 1.5;
+}
+
+.about-education {
+  background-color: #DCD6CA;
+}
+.about-education h2 {
+  font-size: 3rem;
+  color: #222;
+  margin-bottom: 2rem;
+}
+.about-education .card {
+  background-color: #fff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-education .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.about-education .card .card-body {
+  padding: 2rem;
+}
+.about-education .card .card-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.about-education .card span {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+.about-education .card .card-text {
+  color: #333;
+  line-height: 1.5;
+}
+
+.btn-cta {
+  background-color: #781D1D;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-cta:hover {
+  background-color: rgb(78.9261744966, 19.0738255034, 19.0738255034);
+  color: #fff;
+}
+
+.d-flex.justify-content-center {
+  margin-top: 2rem;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   color: #222;
