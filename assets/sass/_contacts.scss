@@ -2,7 +2,7 @@
    CONTACT SECTION
 ========================= */
 .contact-section {
-  background-color: #fff;
+  background-color: #EADAA2;
   padding: 3rem 2rem;
 }
 
@@ -69,28 +69,31 @@
 /* =========================
    CONTACT FORM SECTION (MODIFICATA)
 ========================= */
+
 .contact-form-section {
-  background-color: #DCD6CA;
-  padding: 3rem 2rem;
+  background-color: #EADAA2;
   display: flex;
-  justify-content: center; /* centra la card */
-  /* Estendi sotto la navbar */
-  margin-top: -80px; /* altezza navbar approssimativa, da adattare */
-  padding-top: 5rem; /* compensa il margine negativo */
-  min-height: 100vh; /* garantisce che lo sfondo copra tutta la sezione */
+  justify-content: center; /* centra orizzontalmente */
+  align-items: center;     /* centra verticalmente */
+  min-height: 100vh;       /* altezza completa viewport */
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+  text-align: left;      /* centra testo titolo/descrizione */
 }
 
 .contact-form {
   width: 100%;
-  max-width: 500px;
+  max-width: 500px;        /* dimensione massima */
+  margin: 0 auto;          /* garantisce centraggio orizzontale */
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: #fff; /* card bianca */
+  background-color: #fff;
   padding: 2.5rem 2rem;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Titolo e descrizione rimangono uguali */
 .contact-form-section .contact-title {
@@ -98,16 +101,19 @@
   font-size: 5rem;
   font-weight: 700;
   padding-top: 3rem;
+  text-align: center;
 }
 
 .contact-form-section .contact-description {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .contact-form label {
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #222;
+  
 }
 
 .contact-form input,
