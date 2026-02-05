@@ -148,3 +148,128 @@
     margin-top: 2rem;
   }
 
+/* =========================
+   ABOUT PAGE RESPONSIVE
+========================= */
+
+/* Mobile first: max-width 768px */
+@media (max-width: 768px) {
+
+  /* HERO */
+  .about-hero {
+    padding-bottom: 2rem;
+
+    h1 {
+      font-size: 5rem; /* riduce titolo per mobile */
+    }
+
+    .about-intro {
+      font-size: 1rem; /* testo più leggibile su schermi piccoli */
+      line-height: 1.5;
+    }
+
+    .about-photo {
+      max-width: 100%; /* immagine full width */
+      margin-top: 1.5rem; /* spazio sotto il testo */
+     padding: 1.5rem;
+    }
+
+    .container {
+      padding-top: 3rem; /* spazio interno ridotto */
+    }
+
+    .row.align-items-center {
+      flex-direction: column; /* colonne impilate su mobile */
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  /* EXPERIENCE CARDS */
+  .about-experience {
+    h2 {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .card {
+      margin-bottom: 1.5rem; /* spazio tra le card */
+      margin: 1.5rem;
+    }
+  }
+
+  /* EDUCATION CARDS */
+  .about-education {
+    h2 {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .card {
+      margin-bottom: 1.5rem;
+      margin:1.5rem;
+    }
+  }
+
+  /* CTA centrale */
+  .btn-cta {
+    width: 100%; /* full width su mobile */
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    display: block;
+    text-align: center;
+    margin: 1.5rem;
+  }
+
+  .d-flex.justify-content-center {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Tablet / medium screens: max-width 992px */
+@media (min-width: 769px) and (max-width: 992px) {
+
+  /* HERO */
+  .about-hero {
+    padding-bottom: 2.5rem;
+
+    h1 {
+      font-size: 3.5rem;
+     }
+
+    .container {
+      padding-top: 4.5rem;
+    }
+
+    .row.align-items-center {
+      flex-direction: row; /* colonne affiancate */
+      align-items: center;
+      text-align: left;
+    }
+
+    .about-photo {
+      max-width: 300px;
+    }
+  }
+
+  /* EXPERIENCE */
+  .about-experience h2,
+  .about-education h2 {
+    font-size: 2.5rem;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
+  /* CTA */
+  .btn-cta {
+    width: auto;
+    padding: 0.75rem 2rem;
+    font-size: 1.05rem;
+  }
+
+  .d-flex.justify-content-center {
+    margin-top: 2rem;
+  }
+}
