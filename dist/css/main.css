@@ -579,7 +579,8 @@
   display: flex;
   justify-content: center; /* centra orizzontalmente */
   align-items: center; /* centra verticalmente */
-  min-height: 100vh; /* altezza completa viewport */
+  min-height: 100vh;
+  margin-top: -64px; /* altezza completa viewport */
   padding: 3rem 2rem;
   box-sizing: border-box;
   text-align: left; /* centra testo titolo/descrizione */
@@ -948,7 +949,7 @@
   }
 }
 .portfolio-main {
-  background-color: #EADAA2;
+  background-color: #fff;
   min-height: 100vh;
 }
 .portfolio-main .container {
@@ -965,7 +966,7 @@
   border: none;
   border-radius: 12px;
   overflow: hidden;
-  background-color: #f5f5f5;
+  background-color: #EADAA2;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .portfolio-main .card:hover {
@@ -982,7 +983,6 @@
   padding: 1.5rem;
 }
 .portfolio-main .card .card-title {
-  font-size: 1.25rem;
   font-weight: 600;
   color: #222;
   margin-bottom: 0.5rem;
