@@ -70,6 +70,16 @@ h4 {
   display: flex;
   align-items: center;
   padding-left: 0;
+}
+
+
+.hero-content h4 {
+  font-size: 31px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
 
   &::before {
     content: "";
