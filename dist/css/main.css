@@ -1034,14 +1034,17 @@
   align-items: center;
   padding: 14px 0;
   border-bottom: 1px solid #222;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
-  /* transizione per il movimento */
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   transition: transform 0.3s ease;
 }
 
 .project-row:hover {
   transform: translateX(15px); /* regola la distanza a piacere */
+}
+
+.project-info {
+  display: contents;
 }
 
 .project-row:first-child {
@@ -1052,9 +1055,11 @@
    TEXT
    ========================== */
 .project-header {
-  display: flex;
-  align-items: baseline;
-  gap: 60px;
+  display: grid;
+  grid-template-columns: 1fr auto; /* titolo | meta */
+  align-items: center; /* centraggio verticale */
+  -moz-column-gap: 20px;
+       column-gap: 20px; /* spazio tra titolo e meta */
 }
 
 .project-info h2 {
@@ -1065,8 +1070,11 @@
 
 .project-meta {
   font-size: 16px;
-  color: #444;
-  margin-left: 0;
+  margin: 0;
+  color: #000;
+  background-color: #EADAA2;
+  padding: 1px 6px;
+  border-radius: 2px;
 }
 
 /* ==========================
