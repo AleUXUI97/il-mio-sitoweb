@@ -327,6 +327,7 @@
   font-size: 0.95rem;
   color: #666;
   margin-top: 0.25rem;
+  margin: 0;
 }
 .portfolio-projects .project-cta,
 .portfolio-projects .btn-cta {
@@ -824,7 +825,7 @@
 }
 
 .hero-buttons .btn {
-  background-color: #7B1E1E;
+  background-color: #781D1D;
   color: white;
   padding: 10px 22px;
   border-radius: 6px;
@@ -943,76 +944,193 @@
     margin-bottom: 1rem; /* opzionale per spazio sotto */
   }
 }
-.portfolio-main {
+/* ==========================
+   PROJECTS PAGE
+   ========================== */
+.projects-hero {
   background-color: #fff;
-  min-height: 100vh;
+  padding: 60px 0 30px 0;
 }
-.portfolio-main .container {
-  padding-top: 6rem;
-  padding-bottom: 4rem;
-}
-.portfolio-main h1 {
+
+.page-title {
   font-size: 5rem;
   font-weight: 700;
   color: #781D1D;
-  margin-bottom: 3rem;
+  margin-left: 60px;
+  padding-top: 60px;
 }
-.portfolio-main .card {
-  border: none;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: #EADAA2;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+/* ==========================
+   LAYOUT
+   ========================== */
+.projects {
+  background-color: #fff;
+  padding: 40px 0 80px 0;
 }
-.portfolio-main .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+.projects-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 80px;
+  align-items: start;
 }
-.portfolio-main .card .card-img-top {
+
+/* ==========================
+   LEFT IMAGE
+   ========================== */
+.projects-image {
+  display: flex;
+  align-items: center; /* allinea al bottom */
+  justify-content: center; /* centrata orizzontalmente */
+  height: 100%;
+}
+
+.projects-image img {
   width: 100%;
-  height: 220px;
+  max-width: 280px;
+  height: 320px;
   -o-object-fit: cover;
      object-fit: cover;
+  background-color: #D9D9D9;
+  transition: opacity 0.4s ease-in-out;
 }
-.portfolio-main .card .card-body {
-  padding: 1.5rem;
+
+/* ==========================
+   RIGHT SCROLL AREA
+   ========================== */
+.projects-scroll {
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 30px;
 }
-.portfolio-main .card .card-title {
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 0.5rem;
+
+/* ==========================
+   SCROLLBAR
+   ========================== */
+.projects-scroll::-webkit-scrollbar {
+  width: 8px;
 }
-.portfolio-main .card .card-text {
-  font-size: 0.95rem;
-  color: #444;
-  margin-bottom: 1rem;
+
+.projects-scroll::-webkit-scrollbar-track {
+  background: #fff;
 }
-.portfolio-main .card .btn {
-  background-color: #781D1D;
-  border: none;
-  color: #fff;
+
+.projects-scroll::-webkit-scrollbar-thumb {
+  background: #D9D9D9;
+  border-radius: 4px;
+}
+
+.projects-scroll::-webkit-scrollbar-thumb:hover {
+  background: #781D1D;
+}
+
+/* ==========================
+   PROJECT ROW
+   ========================== */
+/* GRIGLIA A 3 COLONNE REALI */
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 220px auto;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #222;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  /* transizione per il movimento */
+  transition: transform 0.3s ease;
+}
+
+.project-row:hover {
+  transform: translateX(15px); /* regola la distanza a piacere */
+}
+
+.project-row:first-child {
+  border-top: 1px solid #222;
+}
+
+/* ==========================
+   TEXT
+   ========================== */
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 60px;
+}
+
+.project-info h2 {
+  font-size: 1.5rem;
   font-weight: 500;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin: 0;
 }
-.portfolio-main .card .btn:hover {
+
+.project-meta {
+  font-size: 16px;
+  color: #444;
+  margin-left: 0;
+}
+
+/* ==========================
+   CTA
+   ========================== */
+.project-cta {
+  grid-column: 3;
+  justify-self: end;
+}
+
+.project-cta .btn {
+  background-color: #781D1D;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.project-cta .btn:hover {
   background-color: #5a1414;
   transform: translateY(-1px);
 }
 
-@media (max-width: 991px) {
-  .portfolio-main .card .card-img-top {
-    height: 200px;
-  }
+/* ==========================
+   HOVER ROW (effetto portfolio professionale)
+   ========================== */
+.project-row:hover {
+  background-color: rgba(0, 0, 0, 0.02);
 }
-@media (max-width: 767px) {
-  .portfolio-main .container {
-    padding-top: 5rem;
-    padding: 2rem;
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
+@media (max-width: 992px) {
+  /* Nascondi colonna immagine */
+  .projects-image {
+    display: none;
   }
-  .portfolio-main .card .card-img-top {
-    height: 180px;
+  /* Layout lista progetti full-width */
+  .projects-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  /* Scroll verticale normale (senza altezza fissa) */
+  .projects-scroll {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+  /* Progetti a tutta larghezza */
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .project-cta {
+    justify-self: start;
+    margin-top: 6px;
+    margin-right: 1.5rem;
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-left: 20px;
   }
 }
 body {
