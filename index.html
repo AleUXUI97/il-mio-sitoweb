@@ -176,32 +176,32 @@
     <!-- RIGA 1: scorre normale -->
     <div class="portfolio-scroll-wrapper d-flex overflow-auto mb-3">
       <div class="portfolio-item flex-shrink-0 me-3">
-        <img src="assets/img/portfolio/work1.jpg" alt="Progetto 1" class="img-fluid">
+        <img src="assets/img/SVG/1.png" alt="Progetto 1" class="img-fluid">
       </div>
       <div class="portfolio-item flex-shrink-0 me-3">
-        <img src="assets/img/portfolio/work2.jpg" alt="Progetto 2" class="img-fluid">
+        <img src="assets/img/SVG/2.png" alt="Progetto 2" class="img-fluid">
       </div>
       <div class="portfolio-item flex-shrink-0 me-3">
-        <img src="assets/img/portfolio/work3.jpg" alt="Progetto 3" class="img-fluid">
+        <img src="assets/img/SVG/5.png" alt="Progetto 3" class="img-fluid">
       </div>
       <div class="portfolio-item flex-shrink-0 me-3">
-        <img src="assets/img/portfolio/work4.jpg" alt="Progetto 4" class="img-fluid">
+        <img src="assets/img/SVG/facebook.png" alt="Progetto 4" class="img-fluid">
       </div>
     </div>
 
     <!-- RIGA 2: scorre inverso -->
     <div class="portfolio-scroll-wrapper d-flex overflow-auto mb-3 reverse-scroll">
       <div class="portfolio-item flex-shrink-0 me-3">
-        <img src="assets/img/portfolio/work5.jpg" alt="Progetto 5" class="img-fluid">
+        <img src="assets/img/SVG/8.png" alt="Progetto 5" class="img-fluid">
       </div>
       <div class="portfolio-item flex-shrink-0 me-3">
-        <img src="assets/img/portfolio/work6.jpg" alt="Progetto 6" class="img-fluid">
+        <img src="assets/img/SVG/7.png" alt="Progetto 6" class="img-fluid">
       </div>
       <div class="portfolio-item flex-shrink-0 me-3">
-        <img src="assets/img/portfolio/work7.jpg" alt="Progetto 7" class="img-fluid">
+        <img src="assets/img/SVG/libro.png" alt="Progetto 7" class="img-fluid">
       </div>
       <div class="portfolio-item flex-shrink-0 me-3">
-        <img src="assets/img/portfolio/work8.jpg" alt="Progetto 8" class="img-fluid">
+        <img src="assets/img/SVG/6.png" alt="Progetto 8" class="img-fluid">
       </div>
     </div>
 
@@ -341,6 +341,45 @@
     });
   });
 </script>
+<script>
+function animateScroll() {
+
+  const section = document.querySelector(".portfolio-scroll");
+  const rows = document.querySelectorAll(".portfolio-scroll-wrapper");
+
+  if (!section) {
+    requestAnimationFrame(animateScroll);
+    return;
+  }
+
+  const rect = section.getBoundingClientRect();
+
+  const windowHeight = window.innerHeight;
+
+  /* calcola quanto la sezione è entrata nella viewport */
+  const progress = windowHeight - rect.top;
+
+  if (progress >= 0 && rect.top <= windowHeight) {
+
+    rows.forEach((row, index) => {
+
+      const speed = 0.25;
+      const direction = index === 0 ? 1 : -1;
+
+      const move = progress * speed * direction;
+
+      row.style.transform = `translateX(${move}px)`;
+
+    });
+
+  }
+
+  requestAnimationFrame(animateScroll);
+}
+
+animateScroll();
+</script>
+
 
 
 </body>

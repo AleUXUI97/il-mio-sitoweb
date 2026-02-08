@@ -72,7 +72,7 @@
 
         <!-- LEFT IMAGE PREVIEW -->
         <div class="projects-image">
-          <img src="../assets/img/digitale-de-2GEr4fLZt8A-unsplash.jpg" alt="Project preview">
+          <img src="immagine" alt="Project preview">
         </div>
 
 
@@ -80,7 +80,8 @@
         <div class="projects-scroll">
 
           <!-- PROJECT 1 -->
-<article class="project-row" data-img="project1.jpg">
+<article class="project-row"
+ data-images="../assets/img/SVG/seticone.png, ../assets/img/SVG/servizio.png, ../assets/img/SVG/evento.png, ../assets/img/SVG/facebook.png, ../assets/img/SVG/libro.png">
   <div class="project-info">
     <div class="project-header">
       <h2>Planty of Food</h2>
@@ -93,7 +94,8 @@
 </article>
 
 <!-- PROJECT 2 -->
-<article class="project-row" data-img="../assets/img/project2.jpg">
+<article class="project-row"
+ data-images="../assets/img/digitale-de-2GEr4fLZt8A-unsplash.jpg, ../assets/img/SVG/copy.jpg">
   <div class="project-info">
     <div class="project-header">
       <h2>Kréas</h2>
@@ -106,7 +108,10 @@
 </article>
 
 <!-- PROJECT 3 -->
-<article class="project-row" data-img="../assets/img/digitale-de-2GEr4fLZt8A-unsplash.jpg">
+<article
+class="project-row"
+ data-images="../assets/img/SVG/immaginediscovery.png, ../assets/img/SVG/grafico.png, ../assets/img/SVG/melissa.png, ../assets/img/SVG/luca.png, ../assets/img/SVG/access.png, ../assets/img/SVG/sitemap.png, ../assets/img/SVG/scheda.png"
+ >
   <div class="project-info">
     <div class="project-header">
       <h2>JojobRT</h2>
@@ -119,8 +124,11 @@
 </article>
 
 <!-- PROJECT 4 -->
-<article class="project-row" data-img="../assets/img/PNG/Aziende.png">
-  <div class="project-info">
+<article
+class="project-row"
+data-images="../assets/img/SVG/jojobhomepage.png, ../assets/img/SVG/FAQ.png, ../assets/img/SVG/cosadiconodinoi.png, ../assets/img/SVG/Pubblica-un-passaggio.png, ../assets/img/SVG/Riepilogo-e-Filtri.png"
+  >
+<div class="project-info">
     <div class="project-header">
       <h2>JojobRT</h2>
       <span class="project-meta">UX/UI Design</span>
@@ -132,7 +140,9 @@
 </article>
 
 <!-- PROJECT 5 -->
-<article class="project-row"   data-img="project1.jpg">
+<article class="project-row"
+data-images="../assets/img/SVG/passaggio-pubblicato.png, ../assets/img/SVG/test.png"
+>
   <div class="project-info">
     <div class="project-header">
       <h2>JojobRT</h2>
@@ -221,52 +231,99 @@
     });
   });
 
-  const projectRows = document.querySelectorAll('.project-row');
-const projectImage = document.querySelector('.projects-image img');
+const projectRows = document.querySelectorAll('.project-row');
+const projectContainer = document.querySelector('.projects-image');
+const desktopBreakpoint = 992;
+let currentIntervalDesktop = null;
 
-// Lista immagini
-const defaultImage = projectImage.src;
-const images = Array.from(projectRows)
-  .map(row => row.getAttribute('data-img'))
-  .filter(Boolean);
+// Funzione per ottenere immagini di un progetto
+function getImages(row) {
+  const imagesAttr = row.getAttribute('data-images');
+  if (!imagesAttr) return [];
+  return imagesAttr.split(',').map(img => img.trim()).filter(Boolean);
+}
 
+// Stop slideshow corrente
+function stopDesktopSlideshow() {
+  clearInterval(currentIntervalDesktop);
+}
+
+// Mostra immagine con effetto tendina
+function showProjectImageWithSlide(newImages) {
+  // Rimuove vecchie immagini
+  projectContainer.innerHTML = '';
+
+  if (newImages.length === 0) return;
+
+  // Mostra la prima immagine con effetto a tendina
+  const img = document.createElement('img');
+  img.src = newImages[0];
+  img.style.transform = 'translateY(100%)';
+  img.style.position = 'absolute';
+  img.style.top = '0';
+  img.style.left = '0';
+  img.style.width = '100%';
+  img.style.height = '100%';
+  img.style.objectFit = 'cover';
+  img.style.transition = 'transform 0.3s ease';
+  projectContainer.appendChild(img);
+
+  requestAnimationFrame(() => {
+    img.style.transform = 'translateY(0)';
+  });
+
+  // Nessuno slideshow interno qui, solo immagine iniziale
+}
+
+// Slideshow rapido interno (cambio immagini quando si resta in hover)
+function startFastSlideshow(images) {
+  stopDesktopSlideshow();
+  if (images.length <= 1) return;
+
+  let index = 0;
+
+  // Mostra la prima immagine subito senza animazione verticale
+  projectContainer.innerHTML = '';
+  let img = document.createElement('img');
+  img.src = images[0];
+  img.style.position = 'absolute';
+  img.style.top = '0';
+  img.style.left = '0';
+  img.style.width = '100%';
+  img.style.height = '100%';
+  img.style.objectFit = 'cover';
+  img.style.transition = 'opacity 0.05s ease'; // molto veloce
+  projectContainer.appendChild(img);
+
+  currentIntervalDesktop = setInterval(() => {
+    index = (index + 1) % images.length;
+    img.src = images[index]; // cambio quasi istantaneo
+  }, 500); // ogni 0.5s
+}
 
 // --------------------
-// HOVER DESKTOP
+// HOVER PROGETTI
 // --------------------
 projectRows.forEach(row => {
   row.addEventListener('mouseenter', () => {
-    if (window.innerWidth > 992) { // solo desktop
-      const imgSrc = row.getAttribute('data-img');
-      console.log("ciao "+imgSrc);
-      
-      if(imgSrc) projectImage.src = imgSrc;
-    }
+    if (window.innerWidth <= desktopBreakpoint) return;
+
+    stopDesktopSlideshow();
+    const images = getImages(row);
+    
+    // Prima immagine con effetto tendina
+    showProjectImageWithSlide(images);
+
+    // Avvia slideshow interno rapido se ci sono più immagini
+    startFastSlideshow(images);
   });
 
   row.addEventListener('mouseleave', () => {
-    if (window.innerWidth > 992) { // solo desktop
-      projectImage.src = images[0]; // immagine di default
-    }
+    if (window.innerWidth <= desktopBreakpoint) return;
+    stopDesktopSlideshow();
   });
 });
 
-// --------------------
-// SLIDESHOW MOBILE
-// --------------------
-function startMobileSlideshow() {
-  let currentIndex = 0;
-  const changeInterval = 3000; // ogni 3 secondi
-
-  return setInterval(() => {
-    if (window.innerWidth <= 992) { // solo mobile
-      projectImage.src = images[currentIndex];
-      currentIndex = (currentIndex + 1) % images.length;
-    }
-  }, changeInterval);
-}
-
-let mobileSlideshow = startMobileSlideshow();
 
 </script>
 </body>

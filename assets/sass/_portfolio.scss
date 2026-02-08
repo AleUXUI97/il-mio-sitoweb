@@ -41,15 +41,20 @@
   align-items: center; /* allinea al bottom */
   justify-content: center; /* centrata orizzontalmente */
   height: 100%;
+  position:relative;
+  overflow: hidden;
 }
 
 .projects-image img {
+  position: absolute;
+  top: 0;
+  left:0;
   width: 100%;
   max-width: 280px;
-  height: 320px;
+  height: 380px;
   object-fit: cover;
-  background-color: #D9D9D9;
-  transition: opacity 0.4s ease-in-out;
+  background-color: #fff;
+  transition: opacity 0.2s ease, opacity 0.15s ease;
 }
 
 

@@ -64,14 +64,45 @@
     font-size: 1.25rem;
   }
 }
+.portfolio-scroll {
+  overflow: hidden;
+}
 
 .portfolio-scroll-wrapper {
-  gap: 1rem; // spazio tra le immagini
+  display: flex;
+  gap: 1rem;
+  will-change: transform;
+  width: max-content;
 }
 
-.portfolio-scroll-wrapper.reverse-scroll {
-  flex-direction: row-reverse; // fa partire la seconda riga da destra
+.portfolio-item {
+  width: 320px;
+  aspect-ratio: 4 / 3;
+  flex-shrink: 0;
+  overflow: hidden;
 }
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .portfolio-item {
+    width: 240px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .portfolio-item {
+    width: 180px;
+  }
+}
+
 @media (max-width: 768px) {
   /* Titolo sezione */
   .portfolio-projects .portfolio-projects-title {
