@@ -368,7 +368,7 @@
 
 .portfolio-item {
   width: 320px;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/2;
   flex-shrink: 0;
   overflow: hidden;
 }
