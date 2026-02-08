@@ -31,10 +31,13 @@
 
   .project-meta {
     font-size: 0.95rem;
-    color: #666;
+    color: #000;
     margin-top: 0.25rem;
     margin: 0;
     background: #fff;
+    padding: 1px 6px;          
+    border-radius: 2px;
+    
   }
 
   /* CTA progetto + CTA finale condividono lo stile */
