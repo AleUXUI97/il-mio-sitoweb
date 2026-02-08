@@ -1134,6 +1134,7 @@
 
 .project-cta .btn:hover {
   background-color: #5a1414;
+  color: #fff;
   transform: translateY(-1px);
 }
 
