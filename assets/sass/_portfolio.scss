@@ -44,7 +44,74 @@
   position:relative;
   overflow: hidden;
 }
+/* PLACEHOLDER */
+.projects-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  width: 280px;
+  height: 380px;
+  background: linear-gradient(
+    120deg,
+    #781D1D,
+    #5c1515,
+    #781D1D
+  );
+  background-size: 200% 200%;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1;
+
+  animation: gradientMove 6s ease infinite;
+}
+
+.projects-placeholder p {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  max-width: 300px;
+}
+
+/* IMMAGINE */
+.preview-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: 280px;
+  height: 380px;
+  object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 0.5s ease;
+
+  z-index: 2;
+}
+
+/* quando attiva */
+.preview-image.active {
+  opacity: 1;
+}
+
+/* animazione gradient */
+@keyframes gradientMove {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
 .projects-image img {
   position: absolute;
   top: 0;
