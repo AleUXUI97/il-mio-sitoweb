@@ -12,7 +12,7 @@
 
   /* Container interno per logo e link */
   .container {
-    padding: 16px 32px;
+    padding: 8px 16px;
     margin: 0;
     display: flex;
     justify-content: flex-start; // logo a sinistra, menu a destra
@@ -31,7 +31,7 @@
 
 /* Logo */
 .navbar-brand img {
-  height: 32px;
+  height: 50px;
   width: auto;
   display: block;
 }
