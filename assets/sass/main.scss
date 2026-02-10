@@ -152,7 +152,7 @@ p {
   right: 2rem;
   z-index: 999;
 
-  width: 48px;
+  width: 48px;   /* dimensione cerchio */
   height: 48px;
   border-radius: 50%;
 
@@ -160,9 +160,10 @@ p {
   color: #fff;
   border: none;
 
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* freccia più proporzionata */
   font-weight: 700;
-
+  line-height: 1;    /* riduce l’asta verticale */
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,11 +176,13 @@ p {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+/* classe visibile */
 #backToTop.is-visible {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
+
 
 
 // ==========================
