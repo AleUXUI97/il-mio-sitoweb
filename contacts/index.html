@@ -140,5 +140,37 @@
     });
   </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+
+    // Inizializzazione EmailJS
+    emailjs.init('eQzyWfdk8JpP1GrHV'); // Public Key
+
+    const form = document.getElementById('contactForm');
+    const feedback = document.getElementById('form-feedback');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      console.log('Invio form iniziato...');
+
+      emailjs.sendForm('service_kwzpq9n', 'template_2jqd9b9', this)
+        .then(() => {
+          console.log('Email inviata con successo');
+          feedback.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert">Message sent successfully!</div>';
+          
+          // Reset del form leggermente ritardato per garantire che il feedback sia visibile
+          setTimeout(() => { form.reset(); }, 500);
+
+          // Rimuove il feedback dopo 5 secondi
+          setTimeout(() => { feedback.innerHTML = ''; }, 5000);
+        })
+        .catch((err) => {
+          console.error('Errore EmailJS:', err);
+          feedback.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert">Oops... something went wrong. Please try again later.</div>';
+          setTimeout(() => { feedback.innerHTML = ''; }, 5000);
+        });
+    });
+  </script>
 </body>
 </html>
