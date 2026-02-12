@@ -1,4 +1,6 @@
 @import "config";
+@import "variables";
+@import "responsive";
 @import "menu-nav";
 @import "footer";
 @import "about";
@@ -22,7 +24,7 @@ body {
 // TITOLI
 // ==========================
 h1 {
-  font-family: Qurova DEMO, sans-serif;
+  font-family: "Qurova DEMO", sans-serif;
   color: #222;
   margin: 0;
   padding: 16px 0;
@@ -177,12 +179,3 @@ p {
 
 
 
-// ==========================
-// RESPONSIVE
-// ==========================
-@media (max-width: 768px) {
-  .home {
-    padding-top: 120px;
-    background-position: top center;
-  }
-}

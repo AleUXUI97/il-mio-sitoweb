@@ -1,0 +1,9 @@
+// ==========================
+// BREAKPOINTS
+// ==========================
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 992px;
+
+// Larghezza minima consigliata per contenuto mobile
+$min-content-width: 320px; // evita layout troppo stretto su smartphone piccoli
