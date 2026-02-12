@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-family: "Qurova DEMO", sans-serif;
+  }
+}
 @media (max-width: 768px) and (min-width: 320px) {
   .home {
     padding-top: 120px;
@@ -225,6 +230,7 @@
   }
   .hero-text h1 {
     font-size: 2.3rem;
+    font-family: "Qurova DEMO, sans-serif";
   }
   .hero-text p {
     text-align: center;

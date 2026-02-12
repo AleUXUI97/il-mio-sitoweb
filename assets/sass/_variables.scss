@@ -7,3 +7,8 @@ $bp-desktop: 992px;
 
 // Larghezza minima consigliata per contenuto mobile
 $min-content-width: 320px; // evita layout troppo stretto su smartphone piccoli
+@media (max-width: $bp-tablet) {
+  h1 {
+    font-family: "Qurova DEMO", sans-serif;
+  }
+}
