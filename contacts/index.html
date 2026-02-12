@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Favicon -->
 <link rel="icon" href="../assets/img/SVG/SVG/logonuovo.svg" type="image/png">
-  <title>Alessandro Toscano - Contacts</title>
+  <title>Alessandro Toscano • Contacts</title>
+<meta property="og:title" content="Alessandro Toscano • Contacts">
+<meta property="og:description" content="Contacts">
+<meta property="og:image" content="https://tuodominio.com/og-image.jpg">
+<meta property="og:url" content="https://tuodominio.com">
+<meta property="og:type" content="website">
 
   <!-- Bootstrap CSS -->
   <link
@@ -157,12 +162,9 @@
       emailjs.sendForm('service_kwzpq9n', 'template_2jqd9b9', this)
         .then(() => {
           console.log('Email inviata con successo');
-          feedback.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert">Message sent successfully!</div>';
-          
-          // Reset del form leggermente ritardato per garantire che il feedback sia visibile
+          feedback.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert">Message sent successfully!</div>';                   
           setTimeout(() => { form.reset(); }, 500);
-
-          // Rimuove il feedback dopo 5 secondi
+         
           setTimeout(() => { feedback.innerHTML = ''; }, 5000);
         })
         .catch((err) => {
