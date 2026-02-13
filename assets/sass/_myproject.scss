@@ -114,7 +114,7 @@
     font-size: 3rem;      // riduce il font da 3rem a 2rem
     margin-bottom: 2rem;  // riduce lo spazio sotto il titolo
     text-align: left;
-    margin: 1rem;     // allineamento coerente con le righe progetto
+    margin: 16px;     // allineamento coerente con le righe progetto
   }
 
   /* Righe progetto */
@@ -127,7 +127,13 @@
     padding: 1rem 0;
     margin: 1.2rem;
   }
-
+  .portfolio-projects .project-title{
+   font-size: 1.7rem;
+   font-weight: 400;
+    margin: 0;
+  }
+    
+  }
   .portfolio-projects .project-info {
     flex: 1; 
     margin-bottom: 0;
@@ -136,5 +142,5 @@
   .portfolio-projects .project-cta {
     flex-shrink: 0; 
     margin-top: 0;
+    margin-right: 0;
   }
-}

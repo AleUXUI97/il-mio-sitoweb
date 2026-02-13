@@ -22,6 +22,7 @@
 }
 
 .hero-text h1 {
+  font-family: "Qurova Demo", sans-serif;
   font-size: 56px;
   font-weight: 400;
   margin-bottom: 20px;
@@ -29,11 +30,9 @@
   margin-top: 2rem;
   text-align: left;
   padding-left: 3.4rem;
-
+}
   #dynamic-text {
   transition: opacity 0.5s ease-in-out;
-}
-
 }
 
 .highlight {
@@ -170,13 +169,14 @@
   .hero-container {
     grid-template-columns: 1fr;
     padding: 1.8rem;
-    /* opzionale: aggiungere row-gap se vuoi spaziatura tra color-bar, immagine e testo */
     row-gap: 1.5rem;
   }
 
-.hero-text h1 {
- font-size: 2.3rem;
-}
+  .hero-text h1 { 
+    font-family: "Qurova DEMO", SAN;   
+    font-size: 2rem;
+    padding-left: 0;
+  }
 
   .hero-text p {
     text-align: center;
@@ -185,8 +185,8 @@
   .hero-image {
     grid-column: 1;
     grid-row: auto;
-    margin: 0 auto 30px auto; /* centrata orizzontalmente con margin-bottom */
-    order: 2; /* assicura che stia subito dopo la color-bar, se usi flex o grid con order */
+    margin: 0 auto 30px auto;
+    order: 2;
     display: block;
   }
 
@@ -196,30 +196,8 @@
 
   .hero-buttons {
     grid-column: 1;
-    padding:0.3rem;
+    padding: 0.3rem;
     justify-content: center;
   }
 
-  
-
-  .cards {
-    grid-template-columns: 1fr;
-    margin: 1.5rem;
-  }
-
-  .tools-title {
-    text-align: center;
-  }
-
-  .tools-row {
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-  }
-/* ✅ Aggiunta per bilanciare padding/margin degli H2 */
-  section h2 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    margin-bottom: 1rem; /* opzionale per spazio sotto */
-  }
 }

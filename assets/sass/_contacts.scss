@@ -22,6 +22,7 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 3rem;
+  padding-left: 0;
   line-height: 1.2;
 }
 
@@ -98,7 +99,7 @@
 /* Titolo e descrizione rimangono uguali */
 .contact-form-section .contact-title {
   color: #781D1D;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 700;
   padding-top: 3rem;
   text-align: center;
@@ -158,70 +159,3 @@
   background-color: #4B7F52;
   color: #fff;
 }
-
-@media (max-width: 768px) {
-  /* FORM SECTION */
-  .contact-form-section {
-    padding: 3rem 1.5rem;
-    margin-top: 0;
-    justify-content: center;
-  }
-
-  .contact-form {
-    max-width: 100%;
-    padding: 2rem 1.5rem;
-  }
-
-  .contact-form .btn-cta {
-    width: 100%; /* solo per il form */
-    text-align: center;
-    align-self: center;
-  }
-
-  /* CONTACT CTA HOME */
-  .contact-section .contact-right {
-    width: 100%;
-    justify-content: flex-end; /* mantiene il bottone a destra */
-    margin-top: 2rem;
-    text-align: right;
-  }
-
-  .contact-section .contact-right .btn-cta {
-    width: auto; /* non full width, resta a destra */
-  }
-}
-@media (max-width: 768px) {
-  /* Prima sezione sotto la navbar */
-  .menu-nav-container + main .contact-form-section {
-    margin-top: -100px;      // fa salire il background sotto la navbar
-    padding-top: 100px;      // mantiene il contenuto leggibile
-  }
-}
-
-
-  .contact-left {
-    flex: 1;                        // occupa tutto lo spazio a sinistra
-    max-width: none;                 // rimuove max-width desktop
-    text-align: left;                // testo allineato a sinistra
-    margin-bottom: 0.5rem;
-  }
-
-  .contact-title {
-    font-size: 3rem;                 // riduce dimensione titolo su mobile
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    margin:-0.5rem;
-  }
-
-  .contact-description {
-    font-size: 1rem;                 // leggermente più piccolo
-    margin-bottom: 0;
-    line-height: 1.4;
-    margin:-0.5rem;
-  }
-
-  .contact-right {
-    flex-shrink: 0;                  // CTA non si riduce
-    margin-top: 0;                   // niente margine superiore
-    margin: 0.5rem;
-  }
