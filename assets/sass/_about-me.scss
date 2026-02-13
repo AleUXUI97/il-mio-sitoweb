@@ -117,19 +117,21 @@
 .education h2 {
   font-size: 3rem;
     font-weight: 700;
+    margin-left: 16px;
   margin-bottom: 40px;
   color: #111;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
 .card {
   background-color: #EADAA2;
   padding: 24px;
+  margin: 16px;
   border-radius: 10px;
   border: none;
   border-left: 6px solid #781D1D;
@@ -177,7 +179,7 @@
     font-size: 2rem;
     padding-left: 0;
   }
-
+ 
   .hero-text p {
     text-align: center;
   }
