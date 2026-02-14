@@ -9,6 +9,7 @@
 @import "contacts";
 @import "about-me";
 @import "portfolio";
+@import "plantyoffood";
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
@@ -90,11 +91,6 @@ h4 {
     margin: 0 12px 0 0;
   }
 
-  &::after {
-    content: "✦";
-    font-size: 16px;
-    margin-left: 12px;
-  }
 }
 
 p {

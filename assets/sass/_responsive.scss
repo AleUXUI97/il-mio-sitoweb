@@ -6,6 +6,14 @@
     padding-top: 120px;
     background-position: top center;
   }
+  .container.hero-content h4 {
+    color: #fff;
+  }
+//   .container.hero-content .stellina {
+//     color: #222;
+// }
+body > main > section.home > div > h4 > span {
+  color: #222;
 }
 
 // ==========================
@@ -299,4 +307,5 @@
     justify-content: center;
   }
 
+}
 }
