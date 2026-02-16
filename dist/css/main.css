@@ -1380,6 +1380,9 @@
   text-align: center;
   margin-bottom: 0;
 }
+.project-page .project-section-title {
+  margin-bottom: 0;
+}
 .project-page .project-text-blocks {
   display: flex;
   justify-content: space-between;
