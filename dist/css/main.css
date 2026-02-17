@@ -688,7 +688,7 @@
     align-items: flex-start !important;
   }
   .project-cta {
-    align-self: flex-end;
+    align-self: flex-start;
     margin-top: 0.5rem;
   }
 }
