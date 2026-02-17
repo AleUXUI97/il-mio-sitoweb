@@ -1288,7 +1288,7 @@
 
 .project-meta {
   font-size: 16px;
-  margin: 0;
+  margin-right: 16px;
   color: #000;
   background-color: #EADAA2;
   padding: 1px 6px;
@@ -1301,6 +1301,7 @@
 .project-cta {
   grid-column: 3;
   justify-self: end;
+  padding-left: 16px;
 }
 
 .project-cta .btn {
@@ -1358,6 +1359,39 @@
   .page-title {
     font-size: 4rem;
     margin-left: 20px;
+  }
+}
+/* ==========================
+   MOBILE PROJECT PREVIEW
+   ========================== */
+.project-preview-mobile {
+  display: none;
+}
+
+.project-preview-mobile img {
+  margin-top: 16px;
+  margin-left: 16px;
+  padding-left: 0;
+  width: 70px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+}
+
+/* SOLO MOBILE */
+@media (max-width: 992px) {
+  .project-preview-mobile {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .project-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .project-header {
+    width: 100%;
   }
 }
 .project-page {

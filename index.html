@@ -385,6 +385,31 @@ function animateScroll() {
 }
 
 animateScroll();
+// MOBILE PREVIEW STATIC
+function initMobilePreviews() {
+
+  if (window.innerWidth > desktopBreakpoint) return;
+
+  projectRows.forEach(row => {
+
+    const images = getImages(row);
+    if (!images.length) return;
+
+    const preview = row.querySelector('.project-preview-mobile img');
+    if (!preview) return;
+
+    preview.src = images[0];
+
+  });
+
+}
+
+// init al load
+initMobilePreviews();
+
+// init al resize
+window.addEventListener('resize', initMobilePreviews);
+
 </script>
 
 

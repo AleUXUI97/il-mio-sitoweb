@@ -94,6 +94,9 @@
           <!-- PROJECT 1 -->
 <article class="project-row" 
  data-images="../assets/img/SVG/seticone.png, ../assets/img/SVG/servizio.png, ../assets/img/SVG/evento.png, ../assets/img/SVG/facebook.png, ../assets/img/SVG/libro.png">
+ <div class="project-preview-mobile">
+    <img src="" alt="Project preview">
+  </div>
   <div class="project-info">
     <div class="project-header">
       <h2>Planty of Food</h2>
@@ -108,6 +111,9 @@
 <!-- PROJECT 2 -->
 <article class="project-row"
  data-images="../assets/img/digitale-de-2GEr4fLZt8A-unsplash.jpg, ../assets/img/SVG/copy.jpg">
+ <div class="project-preview-mobile">
+    <img src="" alt="Project preview">
+  </div>
   <div class="project-info">
     <div class="project-header">
       <h2>Kréas</h2>
@@ -124,6 +130,9 @@
 class="project-row"
  data-images=" ../assets/img/SVG/melissa.png, ../assets/img/SVG/jojobhomepage.png, ../assets/img/SVG/FAQ.png, ../assets/img/SVG/cosadiconodinoi.png, ../assets/img/SVG/Pubblica-un-passaggio.png"
  >
+ <div class="project-preview-mobile">
+    <img src="" alt="Project preview">
+  </div>
   <div class="project-info">
     <div class="project-header">
       <h2>JojobRT</h2>
@@ -335,7 +344,48 @@ projectRows.forEach(row => {
     stopDesktopSlideshow();
   });
 });
+let mobileIntervals = [];
 
+function stopMobileSlideshows() {
+  mobileIntervals.forEach(interval => clearInterval(interval));
+  mobileIntervals = [];
+}
+
+function initMobileSlideshows() {
+
+  stopMobileSlideshows();
+
+  if (window.innerWidth > desktopBreakpoint) return;
+
+  projectRows.forEach(row => {
+
+    const images = getImages(row);
+    if (images.length <= 1) return;
+
+    const img = row.querySelector('.project-preview-mobile img');
+    if (!img) return;
+
+    let index = 0;
+    img.src = images[0];
+
+    const interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      img.src = images[index];
+    }, 1200); // velocità slideshow mobile
+
+    mobileIntervals.push(interval);
+
+  });
+
+}
+
+// Init
+initMobileSlideshows();
+
+// Re-init al resize
+window.addEventListener('resize', () => {
+  initMobileSlideshows();
+});
 
 </script>
 </body>
