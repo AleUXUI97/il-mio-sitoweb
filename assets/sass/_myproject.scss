@@ -119,13 +119,13 @@
 
   /* Righe progetto */
   .portfolio-projects .project-row {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    text-align: left; 
-    flex-wrap: wrap; 
-    padding: 1rem 0;
-    margin: 1.2rem;
+   display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+      margin: 1.2rem;
   }
   .portfolio-projects .project-title{
    font-size: 1.7rem;
@@ -136,7 +136,7 @@
   }
   .portfolio-projects .project-info {
     flex: 1; 
-    margin-bottom: 0;
+    margin-bottom: 1;
   }
 
   .portfolio-projects .project-cta {
@@ -144,3 +144,14 @@
     margin-top: 0;
     margin-right: 0;
   }
+@media (max-width: 768px) {
+  .project-row {
+    flex-direction: column; 
+    align-items: flex-start !important;  
+  }
+
+  .project-cta {
+    align-self: flex-end; 
+    margin-top: 0.5rem;
+  }
+}

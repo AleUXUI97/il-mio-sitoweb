@@ -673,7 +673,7 @@
 }
 .portfolio-projects .project-info {
   flex: 1;
-  margin-bottom: 0;
+  margin-bottom: 1;
 }
 
 .portfolio-projects .project-cta {
@@ -682,6 +682,16 @@
   margin-right: 0;
 }
 
+@media (max-width: 768px) {
+  .project-row {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .project-cta {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+  }
+}
 /* ==========================
    SEZIONE TOOLS - CAROSELLO
 ========================== */
