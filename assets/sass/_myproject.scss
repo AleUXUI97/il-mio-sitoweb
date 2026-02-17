@@ -111,10 +111,10 @@
 @media (max-width: 768px) {
   /* Titolo sezione */
   .portfolio-projects .portfolio-projects-title {
-    font-size: 3rem;      // riduce il font da 3rem a 2rem
-    margin-bottom: 2rem;  // riduce lo spazio sotto il titolo
+    font-size: 3rem;      
+        
     text-align: left;
-    margin: 16px;     // allineamento coerente con le righe progetto
+    margin: 16px;     
   }
 
   /* Righe progetto */
@@ -141,7 +141,7 @@
 
   .portfolio-projects .project-cta {
     flex-shrink: 0; 
-    margin-top: 0;
+    margin-top: 1rem;
     margin-right: 0;
   }
 @media (max-width: 768px) {

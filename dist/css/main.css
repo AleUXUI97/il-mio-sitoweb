@@ -651,7 +651,6 @@
   /* Titolo sezione */
   .portfolio-projects .portfolio-projects-title {
     font-size: 3rem;
-    margin-bottom: 2rem;
     text-align: left;
     margin: 16px;
   }
@@ -678,7 +677,7 @@
 
 .portfolio-projects .project-cta {
   flex-shrink: 0;
-  margin-top: 0;
+  margin-top: 1rem;
   margin-right: 0;
 }
 
@@ -1404,6 +1403,15 @@
     width: 100%;
   }
 }
+body > main > section.projects-hero > div > h1 {
+  padding-bottom: 0;
+}
+
+body > main > section.projects {
+  padding-top: 0;
+  padding-bottom: 32px;
+}
+
 .project-page {
   max-width: 1200px;
   margin: 0 auto;
