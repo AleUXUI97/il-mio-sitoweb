@@ -75,7 +75,8 @@ h4 {
 }
 
 
-.hero-content h4 {
+body > main > section.home > div > p.h3 {
+  
   font-size: 31px;
   font-weight: 600;
   line-height: 1.4;
@@ -92,6 +93,9 @@ h4 {
   }
 
 }
+
+
+
 
 p {
   font-size: 16px;
