@@ -8,7 +8,8 @@ The site presents selected projects, design approach, professional background, a
 
 The goal of this project is to demonstrate front-end development skills combined with user-centered design principles.
 
-## Tech Stack
+
+# Tech Stack
 
 - HTML5
 - CSS3
@@ -16,8 +17,9 @@ The goal of this project is to demonstrate front-end development skills combined
 - Sass (SCSS)
 - JavaScript
 - GitHub Pages (deployment)
-- 
-  ### Project structure
+  
+  
+# Project structure
 
 - IL-MIO-SITOWEB/
 │
@@ -48,10 +50,20 @@ The goal of this project is to demonstrate front-end development skills combined
 │   └── css/
 │
 └── README.md
-#### Run locally
+
+
+# Run locally
+
 git clone [https://github.com/your-username/il-mio-sitoweb.git
 cd il-mio-sitoweb](https://github.com/AleUXUI97/il-mio-sitoweb)
 open index.html
+
+
+# Preview
+
+![Homepage Preview](assets/img/home-preview.png)
+![Portfolio Preview](assets/img/portfolio-preview.png)
+
 
 
 
