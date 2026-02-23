@@ -20,7 +20,12 @@ body > main > section.home > div > h4 > span {
 }
 body > main > section.home > div > p {
   font-weight: bold;
-  padding-top: 3rem;   
+  font-size: 1.8rem;
+  
+   color: #fff; 
+  -webkit-text-stroke: 1px #222; 
+  -moz-text-stroke: 1px #222; 
+ 
 }
 // ==========================
 // TOOLS
