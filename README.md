@@ -61,8 +61,8 @@ open index.html
 
 # Preview
 
-![Homepage Preview](assets/img/home-preview.png)
-![Portfolio Preview](assets/img/portfolio-preview.png)
+![Homepage Preview](assets/img/previewhomepage.png)
+![Portfolio Preview](assets/img/previewportfolio.png)
 
 
 
