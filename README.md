@@ -49,8 +49,8 @@ The goal of this project is to demonstrate front-end development skills combined
 │
 └── README.md
 #### Run locally
-git clone https://github.com/your-username/il-mio-sitoweb.git
-cd il-mio-sitoweb
+git clone [https://github.com/your-username/il-mio-sitoweb.git
+cd il-mio-sitoweb](https://github.com/AleUXUI97/il-mio-sitoweb)
 open index.html
 
 
