@@ -9,7 +9,7 @@ The site presents selected projects, design approach, professional background, a
 The goal of this project is to demonstrate front-end development skills combined with user-centered design principles.
 
 
-# Tech Stack
+## Tech Stack
 
 - HTML5
 - CSS3
@@ -19,7 +19,7 @@ The goal of this project is to demonstrate front-end development skills combined
 - GitHub Pages (deployment)
   
   
-# Project structure
+## Project structure
 
 - IL-MIO-SITOWEB/
 │
@@ -51,20 +51,47 @@ The goal of this project is to demonstrate front-end development skills combined
 │
 └── README.md
 
+If editing SCSS files:
+sass assets/sass:dist/css --watch
 
-# Run locally
+
+## Run locally
 
 git clone [https://github.com/your-username/il-mio-sitoweb.git
 cd il-mio-sitoweb](https://github.com/AleUXUI97/il-mio-sitoweb)
 open index.html
 
 
-# Preview
+## Preview
 
 ![Homepage Preview](assets/img/previewhomepage.png)
 ![Portfolio Preview](assets/img/previewportfolio.png)
 
+## Features
 
+Responsive layout
+
+Modular page structure
+
+Project-based portfolio navigation
+
+SEO meta tags & Open Graph integration
+
+Custom favicon setup
+
+Structured SCSS architecture
+
+## To do 
+ 
+Optimize performance (image compression & lazy loading)
+
+Improve semantic HTML structure and ARIA accessibility
+
+Refine Apple Touch Icon safe padding
+
+ ## License
+
+This project is for educational and portfolio purposes.
 
 
 
