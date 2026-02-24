@@ -19,47 +19,54 @@ The goal of this project is to demonstrate front-end development skills combined
 - GitHub Pages (deployment)
   
   
-## Project structure
+## Project Structure
+
+```
 IL-MIO-SITOWEB/
 │
 ├── index.html
 ├── about-me/
-│ └── index.html
+│   └── index.html
 │
 ├── contacts/
-│ └── index.html
+│   └── index.html
 │
 ├── portfolio/
-│ ├── index.html
-│ ├── Copywriting/
-│ │ └── index.html
-│ ├── JojobRT/
-│ │ └── index.html
-│ └── Planty-of-food/
-│ └── index.html
+│   ├── index.html
+│   ├── Copywriting/
+│   │   └── index.html
+│   ├── JojobRT/
+│   │   └── index.html
+│   └── Planty-of-food/
+│       └── index.html
 │
 ├── assets/
-│ ├── bootstrap/
-│ ├── font/
-│ ├── img/
-│ ├── pdf/
-│ └── sass/
+│   ├── bootstrap/
+│   ├── font/
+│   ├── img/
+│   ├── pdf/
+│   └── sass/
 │
 ├── dist/
-│ └── css/
+│   └── css/
 │
 └── README.md
+```
 
 If editing SCSS files:
+
+```bash
 sass assets/sass:dist/css --watch
+```
 
 
-## Run locally
+## Run Locally
 
+```bash
 git clone https://github.com/AleUXUI97/il-mio-sitoweb.git
 cd il-mio-sitoweb
 open index.html
-
+```
 
 ## Preview
 
@@ -68,32 +75,19 @@ open index.html
 
 ## Features
 
-Responsive layout
+- Responsive layout  
+- Modular page structure  
+- Project-based portfolio navigation  
+- SEO meta tags & Open Graph integration  
+- Custom favicon setup  
+- Structured SCSS architecture  
 
-Modular page structure
+## To Do
 
-Project-based portfolio navigation
+- Optimize performance (image compression & lazy loading)  
+- Improve semantic HTML structure and ARIA accessibility  
+- Refine Apple Touch Icon safe padding  
 
-SEO meta tags & Open Graph integration
-
-Custom favicon setup
-
-Structured SCSS architecture
-
-## To do 
- 
-Optimize performance (image compression & lazy loading)
-
-Improve semantic HTML structure and ARIA accessibility
-
-Refine Apple Touch Icon safe padding
-
- ## License
+## License
 
 This project is for educational and portfolio purposes.
-
-
-
-
-
-
