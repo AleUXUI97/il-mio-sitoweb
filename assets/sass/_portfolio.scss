@@ -338,3 +338,20 @@ body > main > section.projects {
   padding-top: 0;
   padding-bottom: 32px;
 }
+@media (min-width: 1200px) {
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body > main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* tutta l’altezza del viewport */
+}
+
+body > main > section.projects {
+  flex: 1; /* occupa tutto lo spazio rimanente tra hero e footer */
+}
+
+}

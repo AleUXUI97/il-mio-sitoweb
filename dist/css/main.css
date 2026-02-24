@@ -642,6 +642,27 @@
   display: block;
 }
 
+@media (min-width: 1200px) {
+  .portfolio-scroll-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+  }
+  .portfolio-item {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+  }
+  .reverse-scroll {
+    direction: rtl;
+  }
+  .reverse-scroll .portfolio-item {
+    direction: ltr;
+  }
+}
 /* Tablet */
 @media (max-width: 768px) {
   .portfolio-item {
@@ -1424,6 +1445,20 @@ body > main > section.projects {
   padding-bottom: 32px;
 }
 
+@media (min-width: 1200px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body > main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* tutta l’altezza del viewport */
+  }
+  body > main > section.projects {
+    flex: 1; /* occupa tutto lo spazio rimanente tra hero e footer */
+  }
+}
 .project-page {
   max-width: 1200px;
   margin: 0 auto;
