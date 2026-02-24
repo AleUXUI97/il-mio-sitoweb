@@ -95,11 +95,20 @@
 }
 
 @media (min-width: 1200px) {
-.portfolio-scroll-wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 1rem;
+  .portfolio-scroll-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+
+    /* Nasconde la scrollbar in tutti i browser */
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+  }
+
+  .portfolio-scroll-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
 }
 
 .portfolio-item {
@@ -117,7 +126,7 @@
 .reverse-scroll .portfolio-item {
   direction: ltr;
  }
-}
+
 
 /* Tablet */
 @media (max-width: 768px) {
