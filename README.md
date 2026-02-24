@@ -20,34 +20,33 @@ The goal of this project is to demonstrate front-end development skills combined
   
   
 ## Project structure
-
-- IL-MIO-SITOWEB/
+IL-MIO-SITOWEB/
 │
 ├── index.html
 ├── about-me/
-│   └── index.html
+│ └── index.html
 │
 ├── contacts/
-│   └── index.html
+│ └── index.html
 │
 ├── portfolio/
-│   ├── index.html
-│   ├── Copywriting/
-│   │   └── index.html
-│   ├── JojobRT/
-│   │   └── index.html
-│   └── Planty-of-food/
-│       └── index.html
+│ ├── index.html
+│ ├── Copywriting/
+│ │ └── index.html
+│ ├── JojobRT/
+│ │ └── index.html
+│ └── Planty-of-food/
+│ └── index.html
 │
 ├── assets/
-│   ├── bootstrap/
-│   ├── font/
-│   ├── img/
-│   ├── pdf/
-│   └── sass/
+│ ├── bootstrap/
+│ ├── font/
+│ ├── img/
+│ ├── pdf/
+│ └── sass/
 │
 ├── dist/
-│   └── css/
+│ └── css/
 │
 └── README.md
 
