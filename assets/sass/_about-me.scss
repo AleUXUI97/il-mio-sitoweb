@@ -1,3 +1,18 @@
+/* =========================
+   CONTAINER GLOBALE ABOUT-ME
+========================= */
+.about-me .container,
+.hero-container,
+.experiences .container,
+.education .container,
+.tools .container {
+  max-width: 2500px; /* limite massimo */
+  width: 100%;       /* occupa tutta la larghezza disponibile */
+  margin: 0 auto;    /* centra orizzontalmente */
+  padding: 0 32px;   /* padding laterale coerente */
+  box-sizing: border-box; /* evita che il padding espanda il container */
+}
+
 .hero {
   background-color: #fff;
   padding: 80px 0 60px 0;
