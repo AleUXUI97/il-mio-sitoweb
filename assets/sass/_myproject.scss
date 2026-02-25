@@ -177,7 +177,19 @@
     margin-top: 1rem;
     margin-right: 0;
   }
-  
+ @media (max-width: 768px) {
+
+  .portfolio-projects .text-center {
+    text-align: left !important;
+    padding: 0 16px;   
+  }
+
+  .portfolio-projects .btn-cta {
+    display: inline-block;
+  }
+
+}
+
 @media (max-width: 768px) {
   .project-row {
     flex-direction: column; 
