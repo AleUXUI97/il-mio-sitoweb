@@ -21,18 +21,24 @@
    ========================== */
 
 .projects {
-  width: 100%;
-  max-width: none;
+  width: 100%; 
   margin: 0;
   padding: 40px 32px;
   background-color: #fff;
   
 }
+/* Sovrascrive il container solo dentro .projects */
+.projects > .container {
+  max-width: none;  /* rimuove il limite di 1320px */
+  width: 100%;      /* occupa tutta la larghezza disponibile */
+  padding: 0 32px;  /* mantiene il padding interno */
+}
+
 .projects-layout {
   display: grid;
   grid-template-columns: 320px 1fr; 
   gap: clamp(40px, 5vw, 120px);
-  max-width: 100%;
+  
 }
 
 
