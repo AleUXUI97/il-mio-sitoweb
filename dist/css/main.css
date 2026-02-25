@@ -33,36 +33,43 @@
     -moz-text-stroke: 1px #222;
   }
 }
-@media (max-width: 768px) and (min-width: 320px) and (max-width: 768px) and (min-width: 320px) {
+@media (max-width: 768px) and (min-width: 320px) and (max-width: 768px) {
+  .tools {
+    padding: 3rem 0;
+  }
   .tools .tools-title {
     text-align: left;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 0 32px;
+    padding-bottom: 48px;
   }
   .tools .tools-row {
-    padding-left: 0;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 1rem;
     display: flex;
-    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 32px;
+    scroll-behavior: smooth;
     scrollbar-width: none;
   }
   .tools .tools-row::-webkit-scrollbar {
     display: none;
   }
   .tools .tools-col {
-    text-align: left;
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    text-align: left;
   }
   .tools .tools-col img {
-    margin-bottom: 0.25rem;
-    display: block;
+    height: 55px;
+    margin-bottom: 0.4rem;
+  }
+  .tools .tools-col h6 {
+    font-size: 0.9rem;
   }
 }
 @media (max-width: 768px) and (min-width: 320px) and (max-width: 768px) and (min-width: 320px) {
