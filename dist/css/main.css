@@ -1487,9 +1487,15 @@ body > main > section.projects-hero > div > h1 {
   padding-bottom: 0;
 }
 
+body > main > section.projects > div > div.projects-scroll {
+  padding-left: 0;
+}
+
 body > main > section.projects {
   padding-top: 0;
   padding-bottom: 32px;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 @media (min-width: 1200px) {
