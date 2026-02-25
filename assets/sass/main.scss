@@ -103,6 +103,21 @@ p {
   margin: 0;
   padding: 16px 0;
 }
+/* =========================
+   CONTAINER GLOBALE HOMEPAGE
+========================= */
+.home .container,
+.about .container,
+.portfolio-projects .container,
+.portfolio-scroll .container,
+.tools .container,
+.contact-section .container {
+  max-width: 2500px; /* massimo container */
+  width: 100%;       /* occupa tutta la larghezza disponibile */
+  margin: 0 auto;    /* centra orizzontalmente */
+  padding: 0 32px;   /* padding laterale coerente */
+  box-sizing: border-box; /* assicura che padding non espanda il container */
+}
 
 // ==========================
 // HOME / HERO
