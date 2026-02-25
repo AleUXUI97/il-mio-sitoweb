@@ -732,6 +732,12 @@
 /* ==========================
    SEZIONE TOOLS - CAROSELLO
 ========================== */
+.tools ul.tools-row {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .tools {
   background-color: #EADAA2;
   padding: 2rem 0;
