@@ -853,11 +853,15 @@
 @media (max-width: 480px) {
   #contact-me > div > div.contact-left > p {
     margin-bottom: 0;
+    padding-left: 16px;
+  }
+  #contact-me > div > div.contact-left > h2 {
+    padding-left: 16px;
   }
 }
 #contact-me > div {
   padding-left: 0;
-  padding-right: 0;
+  padding-right: 16px;
 }
 
 /* =========================
