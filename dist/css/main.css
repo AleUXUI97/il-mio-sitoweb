@@ -1176,8 +1176,7 @@
 ========================= */
 .projects-hero .container,
 .projects > .container,
-.projects-layout,
-.projects-scroll {
+.projects-layout {
   max-width: 2500px; /* limite massimo uniforme */
   width: 100%; /* occupa tutta la larghezza disponibile */
   margin: 0 auto; /* centra orizzontalmente */
@@ -1187,10 +1186,18 @@
 }
 .projects-hero .container .projects-hero .page-title,
 .projects > .container .projects-hero .page-title,
-.projects-layout .projects-hero .page-title,
-.projects-scroll .projects-hero .page-title {
+.projects-layout .projects-hero .page-title {
   text-align: left;
   margin-left: 0; /* elimina eventuali margini laterali */
+}
+.projects-hero .container .project.scroll,
+.projects > .container .project.scroll,
+.projects-layout .project.scroll {
+  padding-right: 0;
+}
+
+body > main > section.projects {
+  padding-right: 0;
 }
 
 .projects-hero {
