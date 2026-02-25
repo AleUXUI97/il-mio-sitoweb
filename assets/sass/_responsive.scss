@@ -223,7 +223,9 @@ body > main > section.home > div > p {
       width: auto;
     }
   }
-
+#contact-me > div{
+  padding-right: 0;
+}
   .menu-nav-container + main .contact-form-section {
     margin-top: -100px;
     padding-top: 100px;
