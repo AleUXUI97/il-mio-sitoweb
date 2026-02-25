@@ -328,8 +328,8 @@
 .footer {
   background-color: #781D1D;
   color: #fff;
-  padding: 60px 12px;
-  font-family: "DM Sans", sans-serif;
+  padding: 60px 0;
+  font-family: "Inter", sans-serif;
 }
 
 .footer-container {
@@ -337,7 +337,9 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 1320px;
+  width: 100%;
+  padding: 0 32px;
   margin: 0 auto;
   gap: 2rem;
 }
