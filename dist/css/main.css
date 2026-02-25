@@ -1178,9 +1178,8 @@
 
 .projects-layout {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 80px;
-  align-items: start;
+  grid-template-columns: 320px 1fr;
+  gap: clamp(40px, 5vw, 120px);
 }
 
 /* ==========================
@@ -1188,26 +1187,25 @@
    ========================== */
 .projects-image {
   display: flex;
-  align-items: center; /* allinea al bottom */
-  justify-content: center; /* centrata orizzontalmente */
-  height: 100%;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  overflow: hidden;
 }
 
-/* PLACEHOLDER */
-.projects-placeholder {
-  position: absolute;
-  inset: 0;
-  width: 100%;
+/* Placeholder e immagine stessa dimensione */
+.projects-placeholder,
+.preview-image {
   width: 280px;
   height: 380px;
+}
+
+/* Placeholder */
+.projects-placeholder {
   background: linear-gradient(120deg, #781D1D, #501212, #781D1D);
   background-size: 200% 200%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   animation: gradientMove 6s ease infinite;
 }
 
@@ -1219,21 +1217,15 @@
   max-width: 300px;
 }
 
-/* IMMAGINE */
+/* Immagine */
 .preview-image {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  max-width: 280px;
-  height: 380px;
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0;
   transition: opacity 0.5s ease;
-  z-index: 2;
 }
 
-/* quando attiva */
 .preview-image.active {
   opacity: 1;
 }
@@ -1266,12 +1258,11 @@
 /* ==========================
    RIGHT SCROLL AREA
    ========================== */
-.projects-scroll {
-  max-height: 420px;
-  overflow-y: auto;
-  padding-right: 30px;
+@media (min-width: 1200px) {
+  .projects-scroll {
+    max-height: 60vh;
+  }
 }
-
 /* ==========================
    SCROLLBAR
    ========================== */
