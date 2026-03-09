@@ -66,9 +66,9 @@
 
     <!-- FORM CONTATTI -->
     <main style="padding-top: 100px;">
-      <section id="contact-form" class="contact-form-section">
+      <section id="contact-form" class="contact-form-section reveal">
         <div class="container">
-          <h1 class="contact-title">Shall we talk?</h1>
+          <h1 class="contact-title reveal">Shall we talk?</h1>
           <p class="contact-description">
             Fill out the form below<br>to get in touch about work, projects, or collaborations.
           </p>
@@ -180,5 +180,76 @@
         });
     });
   </script>
+  <script>
+window.addEventListener("load", () => {
+  document.body.classList.add("page-loaded");
+});
+window.addEventListener("load", () => {
+
+  const elements = document.querySelectorAll(".hero-content > *");
+
+  elements.forEach((el, index) => {
+
+    setTimeout(() => {
+      el.classList.add("visible");
+    }, index * 200);
+
+  });
+
+});
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach(el => {
+
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+document.addEventListener("DOMContentLoaded", () => {
+
+  const links = document.querySelectorAll("a[href]");
+
+  links.forEach(link => {
+
+    link.addEventListener("click", function(e) {
+
+      const url = this.getAttribute("href");
+
+      if (
+        url.startsWith("#") ||
+        this.target === "_blank" ||
+        url.startsWith("mailto")
+      ) {
+        return;
+      }
+
+      e.preventDefault();
+
+      document.body.classList.remove("page-loaded");
+      document.body.classList.add("page-leave");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 400);
+
+    });
+
+  });
+
+});
+</script>
+
 </body>
 </html>

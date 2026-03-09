@@ -85,9 +85,8 @@ open index.html
 ## To Do
 
 - Optimize performance (image compression & lazy loading)  
-- Improve semantic HTML structure and ARIA accessibility  
-- Refine Apple Touch Icon safe padding  
-
+- improve about me page 
+- add opening animations
 ## License
 
 This project is for educational and portfolio purposes.

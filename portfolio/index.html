@@ -65,7 +65,7 @@
   <main>
 
     <!-- TITLE -->
-    <section class="projects-hero">
+    <section class="projects-hero reveal">
       <div class="container">
         <h1 class="page-title">My projects</h1>
       </div>
@@ -73,7 +73,7 @@
 
 
     <!-- PROJECTS SECTION -->
-    <section class="projects">
+    <section class="projects reveal">
       <div class="container projects-layout">
 
         <!-- LEFT IMAGE PREVIEW -->
@@ -383,5 +383,76 @@ window.addEventListener('resize', () => {
 });
 
 </script>
+<script>
+window.addEventListener("load", () => {
+  document.body.classList.add("page-loaded");
+});
+window.addEventListener("load", () => {
+
+  const elements = document.querySelectorAll(".hero-content > *");
+
+  elements.forEach((el, index) => {
+
+    setTimeout(() => {
+      el.classList.add("visible");
+    }, index * 200);
+
+  });
+
+});
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach(el => {
+
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+document.addEventListener("DOMContentLoaded", () => {
+
+  const links = document.querySelectorAll("a[href]");
+
+  links.forEach(link => {
+
+    link.addEventListener("click", function(e) {
+
+      const url = this.getAttribute("href");
+
+      if (
+        url.startsWith("#") ||
+        this.target === "_blank" ||
+        url.startsWith("mailto")
+      ) {
+        return;
+      }
+
+      e.preventDefault();
+
+      document.body.classList.remove("page-loaded");
+      document.body.classList.add("page-leave");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 400);
+
+    });
+
+  });
+
+});
+</script>
+
 </body>
 </html>

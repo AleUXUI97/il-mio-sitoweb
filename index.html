@@ -112,7 +112,7 @@
         </h2>
       </div>
 
-      <div class="container">
+      <div class="container reveal">
         <div class="row align-items-center">
 
           <div class="col-md-6 text-center text-md-start">
@@ -132,7 +132,7 @@
               Over time, I decided to apply my skills in a new direction, studying UX/UI Design at Start2Impact University.
             </p>
 
-            <a href="about-me/" class="btn btn-primary about-cta mt-3">
+            <a href="about-me/" class="btn btn-primary about-cta mt-3"> 
               Learn more about me
             </a>
           </div>
@@ -141,7 +141,7 @@
       </div>
     </section>
 
-<section class="portfolio-projects py-5">
+<section class="portfolio-projects py-5 reveal"> 
   <div class="container">
 
     <h2 class="portfolio-projects-title mb-5 text-left">
@@ -234,7 +234,7 @@
   </div>
 </section>
     <!-- TOOLS -->
-    <section class="tools">
+    <section class="tools reveal"> 
       <div class="container">
 
         <h2 class="tools-title text-end">Tools</h2>
@@ -278,7 +278,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact-me" class="contact-section">
+    <section id="contact-me" class="contact-section reveal">
       <!-- <div class="contact-layout"> -->
         <div class="container">
         <div class="contact-left">
@@ -420,6 +420,76 @@ window.addEventListener('resize', initMobilePreviews);
 
 </script>
 
+<script>
+window.addEventListener("load", () => {
+  document.body.classList.add("page-loaded");
+});
+window.addEventListener("load", () => {
+
+  const elements = document.querySelectorAll(".hero-content > *");
+
+  elements.forEach((el, index) => {
+
+    setTimeout(() => {
+      el.classList.add("visible");
+    }, index * 200);
+
+  });
+
+});
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach(el => {
+
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+document.addEventListener("DOMContentLoaded", () => {
+
+  const links = document.querySelectorAll("a[href]");
+
+  links.forEach(link => {
+
+    link.addEventListener("click", function(e) {
+
+      const url = this.getAttribute("href");
+
+      if (
+        url.startsWith("#") ||
+        this.target === "_blank" ||
+        url.startsWith("mailto")
+      ) {
+        return;
+      }
+
+      e.preventDefault();
+
+      document.body.classList.remove("page-loaded");
+      document.body.classList.add("page-leave");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 400);
+
+    });
+
+  });
+
+});
+</script>
 
 
 </body>
