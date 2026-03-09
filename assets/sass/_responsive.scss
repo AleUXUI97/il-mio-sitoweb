@@ -332,3 +332,19 @@ body > main > section.home > div > p {
 
 }
 }
+@media (max-width:768px){
+
+  .interests-wrapper{
+    flex-direction:row;
+    align-items:flex-start;
+  }
+
+  .interests-image img{
+    width:140px;
+  }
+
+  .interest{
+    font-size:22px;
+  }
+
+}

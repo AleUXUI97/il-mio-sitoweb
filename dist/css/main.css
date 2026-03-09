@@ -265,6 +265,18 @@
     justify-content: center;
   }
 }
+@media (max-width: 768px) {
+  .interests-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .interests-image img {
+    width: 140px;
+  }
+  .interest {
+    font-size: 22px;
+  }
+}
 /* Container navbar fissa */
 .menu-nav-container {
   position: fixed;
@@ -982,7 +994,7 @@
 ========================= */
 .about-me .container,
 .hero-container,
-.experiences .container,
+.interests .container,
 .education .container,
 .tools .container {
   max-width: 2500px; /* limite massimo */
@@ -1110,22 +1122,100 @@
   transform: translateY(-1px);
 }
 
-.experiences,
+.interests,
 .education {
   background: #fff;
   padding: 60px 0;
   border-top: 1px solid #bdbdbd;
 }
 
-.experiences h2,
+.interests h2,
 .education h2 {
   font-size: 3rem;
-  font-weight: 700;
-  margin-left: 16px;
-  margin-bottom: 40px;
   color: #111;
 }
 
+.interests-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.interests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.interest {
+  font-size: 32px;
+  font-weight: 600;
+  padding: 40px;
+  margin: 24px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  margin: 0;
+}
+
+.interest:hover {
+  color: #781D1D;
+}
+
+/* Contenitore desktop immagine */
+.interests-image {
+  width: 400px; /* puoi adattare la larghezza */
+  height: 500px; /* altezza fissa */
+  overflow: hidden;
+}
+
+.interests-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 8px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+@media (max-width: 992px) {
+  .interests-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .interests-list {
+    width: 100%;
+    gap: 12px;
+  }
+  .interest {
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row; /* layout orizzontale testo + immagine */
+    align-items: flex-start;
+    justify-content: space-between; /* immagine a destra */
+  }
+  /* Nascondi immagine grande desktop */
+  .interests-image {
+    display: none;
+  }
+  /* Piccola immagine a destra dello span */
+  .interest img {
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin-left: 16px;
+    border-radius: 6px;
+    -o-object-fit: fill;
+       object-fit: fill;
+    transition: opacity 0.3s ease;
+  }
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1133,18 +1223,9 @@
 }
 
 .card {
-  background-color: #EADAA2;
-  padding: 24px;
-  margin: 16px;
+  background-color: #fff;
   border-radius: 10px;
   border: none;
-  border-left: 6px solid #781D1D;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* aggiunge fluidità */
-}
-
-.card:hover {
-  transform: translateY(-10px); /* si sposta verso l'alto di 10px */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* opzionale, effetto ombra per più profondità */
 }
 
 .card h4 {

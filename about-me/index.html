@@ -90,39 +90,33 @@
     </div>
   </section>
 
+<section class="interests">
+  <div class="container interests-wrapper">
 
-  <!-- EXPERIENCES SECTION -->
-  <section class="experiences">
-    <div class="container">
+    <div class="interests-list">
+      <h2>Interests</h2>
 
-      <h2>Experiences</h2>
+      <h3 class="interest" data-img="../assets/img/arts1.png, ../assets/img/arts2.png, ../assets/img/arts3.png">
+        Arts
+      </h3>
 
-      <div class="cards">
+      <h3 class="interest" data-img="../assets/img/fitness1.png, ../assets/img/fitness2.png, ../assets/img/fitness3.png">
+        Fitness
+      </h3>
 
-        <div class="card">
-          <h4>Dishwasher</h4>
-          <span class="year">2023</span>
-          <p>
-            Before diving into design, I gained hands-on experience working in a
-            fast-paced restaurant environment, which strengthened my teamwork and
-            problem-solving skills.
-          </p>
-        </div>
-
-        <div class="card">
-          <h4>Akademia Sztuk Pięknych w Gdańsku</h4>
-          <span class="year">2020</span>
-          <p>
-            Studied for one year abroad through the Erasmus program, gaining
-            cross-cultural experience, adaptability, and enhanced problem-solving skills.
-          </p>
-        </div>
-
-      </div>
+      <h3 class="interest" data-img="../assets/img/hiking1.png, ../assets/img/hiking2.png, ../assets/img/hiking3.png">
+        Hiking
+      </h3>
 
     </div>
-  </section>
 
+    <!-- Desktop grande immagine -->
+    <div class="interests-image">
+      <img id="interestImg"  alt="">
+    </div>
+
+  </div>
+</section>
 
   <!-- EDUCATION SECTION -->
   <section class="education">
@@ -133,7 +127,7 @@
       <div class="cards">
 
         <div class="card">
-          <h4>Master in UX/UI Design</h4>
+          <h4><strong>Master in UX/UI Design</strong></h4>
           <span class="year">2024-Today</span>
 
           <ul>
@@ -151,7 +145,7 @@
         </div>
 
         <div class="card">
-          <h4>Bachelor’s degree in Sculpture</h4>
+          <h4><strong>Bachelor’s degree in Sculpture</strong></h4>
           <span class="year">2017-2022</span>
 
           <p>
@@ -301,6 +295,65 @@ Prototyping, Attention to Detail and Multidisciplinary Thinking</p>
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
+<script>
+const interestsMobile = document.querySelectorAll(".interest");
 
+function initInterestsMobile() {
+  if (window.innerWidth > 992) return;
+
+  interestsMobile.forEach(item => {
+    const imgSrc = item.getAttribute("data-img");
+    if (!imgSrc) return;
+
+    let img = item.querySelector("img");
+    if (!img) {
+      img = document.createElement("img");
+      item.appendChild(img);
+    }
+
+    const images = imgSrc.split(",").map(i => i.trim()).filter(Boolean);
+    img.src = images[0];
+
+    if (images.length > 1) {
+      let index = 0;
+      setInterval(() => {
+        index = (index + 1) % images.length;
+        img.src = images[index];
+      }, 1200);
+    }
+  });
+}
+
+initInterestsMobile();
+window.addEventListener("resize", initInterestsMobile);
+
+const interestsDesktop = document.querySelectorAll(".interest");
+const desktopImg = document.getElementById("interestImg");
+let desktopInterval;
+
+interestsDesktop.forEach(item => {
+  const images = item.getAttribute("data-img").split(",").map(i => i.trim());
+
+  item.addEventListener("mouseenter", () => {
+    if (window.innerWidth <= 992) return;
+
+    let index = 0;
+    desktopImg.src = images[index];
+    desktopImg.style.opacity = "1";
+
+    if (desktopInterval) clearInterval(desktopInterval);
+
+    desktopInterval = setInterval(() => {
+      index = (index + 1) % images.length;
+      desktopImg.src = images[index];
+    }, 1200);
+  });
+
+  item.addEventListener("mouseleave", () => {
+    if (desktopInterval) clearInterval(desktopInterval);
+    desktopImg.style.opacity = "0";
+  });
+});
+</script>
 </body>
 </html>
