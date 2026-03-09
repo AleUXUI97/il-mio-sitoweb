@@ -297,8 +297,17 @@ Prototyping, Attention to Detail and Multidisciplinary Thinking</p>
   </script>
 <script>
 const interestsMobile = document.querySelectorAll(".interest");
+let mobileIntervals = [];
+
+function stopMobileSlideshows(){
+  mobileIntervals.forEach(interval => clearInterval(interval));
+  mobileIntervals = [];
+}
 
 function initInterestsMobile() {
+
+  stopMobileSlideshows();
+
   if (window.innerWidth > 992) return;
 
   interestsMobile.forEach(item => {
@@ -316,10 +325,13 @@ function initInterestsMobile() {
 
     if (images.length > 1) {
       let index = 0;
-      setInterval(() => {
+
+      const interval = setInterval(() => {
         index = (index + 1) % images.length;
         img.src = images[index];
       }, 1200);
+
+      mobileIntervals.push(interval);
     }
   });
 }
