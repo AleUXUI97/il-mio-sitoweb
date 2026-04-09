@@ -74,9 +74,13 @@
 
 .portfolio-scroll-wrapper {
   display: flex;
-  gap: 1rem;
+  gap: 0;
   will-change: transform;
   width: max-content;  
+}
+
+.mb-3{
+  margin-bottom: 2rem !important;
 }
 
 .portfolio-item {
