@@ -201,7 +201,7 @@
   
 
     <!-- RIGA 1: scorre normale -->
-    <div class="portfolio-scroll-wrapper d-flex overflow-auto mb-3">
+    <div class="portfolio-scroll-wrapper d-flex  mb-3">
       <div class="portfolio-item flex-shrink-0 me-3">
         <img src="assets/img/laptopwebsite.png" alt="Progetto 1" class="img-fluid">
       </div>
@@ -217,7 +217,7 @@
     </div>
 
     <!-- RIGA 2: scorre inverso -->
-    <div class="portfolio-scroll-wrapper d-flex overflow-auto mb-3 reverse-scroll">
+    <div class="portfolio-scroll-wrapper d-flex  mb-3 reverse-scroll">
       <div class="portfolio-item flex-shrink-0 me-3">
         <img src="assets/img/mockup2.png" alt="Progetto 5" class="img-fluid">
       </div>
@@ -232,8 +232,7 @@
       </div>
     </div>
 
-  </div>
-</section>
+  </section>
     <!-- TOOLS -->
     <section class="tools reveal"> 
       <div class="container">
@@ -369,9 +368,6 @@ function animateScroll() {
 
   const rect = section.getBoundingClientRect();
   const windowHeight = window.innerHeight;
-
-  // Punto zero = sezione centrata in viewport
-  // progress è negativo sopra il centro, positivo sotto
   const sectionCenter = rect.top + rect.height / 2;
   const progress = windowHeight / 2 - sectionCenter;
 
