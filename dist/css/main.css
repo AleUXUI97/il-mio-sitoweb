@@ -61,7 +61,7 @@
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
   }
   .tools .tools-col img {
