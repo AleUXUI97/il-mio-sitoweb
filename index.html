@@ -198,7 +198,7 @@
 </section>
 <!-- Sezione Portfolio Scroll -->
 <section class="portfolio-scroll py-5">
-  <div class="container">
+  
 
     <!-- RIGA 1: scorre normale -->
     <div class="portfolio-scroll-wrapper d-flex overflow-auto mb-3">
@@ -359,7 +359,6 @@
 </script>
 <script>
 function animateScroll() {
-
   const section = document.querySelector(".portfolio-scroll");
   const rows = document.querySelectorAll(".portfolio-scroll-wrapper");
 
@@ -369,26 +368,19 @@ function animateScroll() {
   }
 
   const rect = section.getBoundingClientRect();
-
   const windowHeight = window.innerHeight;
 
-  /* calcola quanto la sezione è entrata nella viewport */
-  const progress = windowHeight - rect.top;
+  // Punto zero = sezione centrata in viewport
+  // progress è negativo sopra il centro, positivo sotto
+  const sectionCenter = rect.top + rect.height / 2;
+  const progress = windowHeight / 2 - sectionCenter;
 
-  if (progress >= 0 && rect.top <= windowHeight) {
-
-    rows.forEach((row, index) => {
-
-      const speed = 0.25;
-      const direction = index === 0 ? 1 : -1;
-
-      const move = progress * speed * direction;
-
-      row.style.transform = `translateX(${move}px)`;
-
-    });
-
-  }
+  rows.forEach((row, index) => {
+    const speed = 0.25;
+    const direction = index === 0 ? 1 : -1;
+    const move = progress * speed * direction;
+    row.style.transform = `translateX(${move}px)`;
+  });
 
   requestAnimationFrame(animateScroll);
 }
