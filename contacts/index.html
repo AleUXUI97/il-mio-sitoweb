@@ -64,33 +64,40 @@
       </nav>
     </header>
 
-    <!-- FORM CONTATTI -->
-    <main style="padding-top: 100px;">
-      <section id="contact-form" class="contact-form-section reveal">
-        <div class="container">
-          <h1 class="contact-title reveal">Shall we talk?</h1>
-          <p class="contact-description">
-            Fill out the form below<br>to get in touch about work, projects, or collaborations.
-          </p>
+   <section id="contact-form" class="contact-form-section reveal">
+  <div class="container">
+    
+    <div class="contact-form-inner">
+      
+      <!-- COLONNA SINISTRA: testo -->
+      <div class="contact-form-text">
+        <h1 class="contact-title reveal">Shall we talk?</h1>
+        <p class="contact-description">
+          Fill out the form below<br>to get in touch about work, projects, or collaborations.
+        </p>
+      </div>
 
-          <form id="contactForm" class="contact-form">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="from_name" placeholder="Your Name" required />
+      <!-- COLONNA DESTRA: form -->
+      <div class="contact-form-wrapper">
+        <form id="contactForm" class="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="from_name" placeholder="Your Name" required />
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="from_email" placeholder="Your Email" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="from_email" placeholder="Your Email" required />
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
 
-            <button type="submit" class="btn-cta btn-lg mt-3">Send Message</button>
+          <button type="submit" class="btn-cta btn-lg mt-3">Send Message</button>
 
-            <div id="form-feedback"></div>
-          </form>
-        </div>
-      </section>
-    </main>
+          <div id="form-feedback"></div>
+        </form>
+      </div>
 
+    </div>
+  </div>
+</section>
   </div> <!-- /contacts-wrapper -->
 <footer class="footer">
   <div class="footer-container">

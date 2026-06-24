@@ -84,27 +84,31 @@
 
 .contact-form-section {
   background-color: #fff;
-  display: flex;
-  justify-content: center; /* centra orizzontalmente */
-  align-items: center;     /* centra verticalmente */
+ 
   min-height: 100vh;
-  margin-top: -30px;       /* altezza completa viewport */
-  padding: 3rem 2rem;
+ 
+  padding: 6rem 2rem 3rem;
   box-sizing: border-box;
-  text-align: left;      /* centra testo titolo/descrizione */
+       
 }
 
-.contact-form {
-  width: 100%;
-  max-width: 500px;        /* dimensione massima */
-  margin: 0 auto;          /* garantisce centraggio orizzontale */
+
+.contact-form-inner {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color: #222;
-  padding: 2.5rem 2rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;  /* allinea in alto, o center se preferisci centrato */
+  gap: 4rem;
+  flex-wrap: wrap;          /* su mobile si impila */
+}
+
+.contact-form-text {
+  flex: 1;                  /* occupa lo spazio rimanente */
+  min-width: 280px;
+  
+}
+
+.contact-form-wrapper {
+  flex: 0 0 500px;          /* larghezza fissa del form */
+  max-width: 100%;          /* non esce dal viewport su schermi stretti */
 }
 
 
@@ -113,13 +117,13 @@
   color: #781D1D;
   font-size: 4rem;
   font-weight: 700;
-  padding-top: 3rem;
-  text-align: center;
+  padding-top: 3rem;  
+  text-align: left;
 }
 
 .contact-form-section .contact-description {
   margin-bottom: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 .contact-form label {
@@ -153,12 +157,12 @@
 
 /* CTA BUTTON */
 .contact-form .btn-cta {
-  background-color: #fff;
-  color: #781D1D;
+  background-color: #781D1D;
+  color: #fff;
   font-weight: 700;
   padding: 0.75rem 2rem;
-  border-radius: 8px;
-  text-transform: uppercase;
+  border-radius: 0;
+  
   white-space: nowrap;
   border: none;
   cursor: pointer;
@@ -170,4 +174,37 @@
 .contact-form .btn-cta:hover {
   background-color: #4B7F52;
   color: #fff;
+}
+@media (max-width: 768px) {
+
+  .contact-form {
+    padding: 0;
+    
+  }
+
+
+  .contact-form-inner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-form-text {
+    width: 100%;
+    text-align: left; /* ← forza allineamento sinistra */
+    
+  }
+
+  .contact-form-section .contact-title {
+    text-align: left;
+    padding-top: 0;
+  }
+
+  .contact-form-section .contact-description {
+    text-align: left;
+  }
+
+  .contact-form-wrapper {
+    width: 100%;
+    flex: none; /* ← rimuove il flex: 0 0 500px che potrebbe creare problemi */
+  }
 }

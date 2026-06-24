@@ -95,11 +95,11 @@
     .project-cta-primary {
       background-color: #781D1D;
       color: #fff;
-      font-weight: 700;
+      font-weight: 500;
       padding: 0.75rem 2rem;
-      border-radius: 8px;
+      border-radius: 0;
       text-decoration: none;
-      text-transform: uppercase;
+      
       transition: background-color 0.3s ease;
 
       &:hover {
@@ -113,9 +113,9 @@
       border: 2px solid #781D1D;
       font-weight: 700;
       padding: 0.75rem 2rem;
-      border-radius: 8px;
+      border-radius: 0;
       text-decoration: none;
-      text-transform: uppercase;
+      
       transition: background-color 0.3s ease;
 
       &:hover {

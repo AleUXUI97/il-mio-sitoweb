@@ -46,10 +46,10 @@
   .btn-cta {
     background-color: #781D1D;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     padding: 0.75rem 2rem;
-    border-radius: 8px;
-    text-transform: uppercase;
+    
+    
     white-space: nowrap;
     transition: background-color 0.3s ease, color 0.3s ease;
     text-decoration: none;
@@ -66,6 +66,8 @@
   .btn-cta.btn-lg {
     padding: 1rem 3rem;
     font-size: 1.25rem;
+    border-radius: 0;
+    font-weight: 500;
   }
 }
 .portfolio-scroll {
