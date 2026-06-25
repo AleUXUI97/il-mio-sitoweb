@@ -969,8 +969,17 @@
 }
 
 @media (max-width: 768px) {
-  .contact-form-section {
-    padding: 3rem 0;
+  .contact-form {
+    padding: 0;
+  }
+  #contact-form > div > div > div.contact-form-text > h1 {
+    padding: 0.5rem;
+  }
+  #contact-form > div {
+    padding: 0;
+  }
+  #contact-form > div > div > div.contact-form-text > p {
+    padding: 0.5rem;
   }
   .contact-form-inner {
     flex-direction: column;
