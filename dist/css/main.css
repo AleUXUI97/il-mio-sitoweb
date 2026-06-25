@@ -969,7 +969,7 @@
 }
 
 @media (max-width: 768px) {
-  .contact-form {
+  .contact-form-section {
     padding: 3rem 0;
   }
   .contact-form-inner {
