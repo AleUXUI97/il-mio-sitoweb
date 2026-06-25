@@ -874,12 +874,11 @@
   #contact-me > div > div.contact-left > h2 {
     padding-left: 16px;
   }
+  #contact-me > div {
+    padding-left: 0;
+    padding-right: 16px;
+  }
 }
-#contact-me > div {
-  padding-left: 0;
-  padding-right: 16px;
-}
-
 /* =========================
    CONTACT FORM SECTION (MODIFICATA)
 ========================= */
@@ -971,7 +970,7 @@
 
 @media (max-width: 768px) {
   .contact-form {
-    padding: 0;
+    padding: 3rem 0;
   }
   .contact-form-inner {
     flex-direction: column;
