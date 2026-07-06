@@ -12,3 +12,8 @@ $min-content-width: 320px; // evita layout troppo stretto su smartphone piccoli
     font-family: "Qurova DEMO", sans-serif;
   }
 }
+ @media (max-width:$bp-mobile) {
+  h1 {
+    font-family: "Qurova Demo", sans-serif;
+  }
+ }
