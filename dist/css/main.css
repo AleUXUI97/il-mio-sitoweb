@@ -351,7 +351,7 @@
 ========================= */
 .footer {
   width: 100%;
-  background-color: #781D1D;
+  background-color: #222;
   color: #fff;
   padding: 60px 0;
   font-family: "Inter", sans-serif;
@@ -1012,7 +1012,8 @@
 .about-me .container,
 .hero-container,
 .interests .container,
-.education .container,
+.approach .container,
+.last-project .container,
 .tools .container {
   max-width: 2500px; /* limite massimo */
   width: 100%; /* occupa tutta la larghezza disponibile */
@@ -1105,14 +1106,10 @@
 }
 
 .color-2 {
-  background: #EADAA2;
-}
-
-.color-3 {
   background: #781D1D;
 }
 
-.color-4 {
+.color-3 {
   background: #222;
 }
 
@@ -1139,134 +1136,390 @@
   transform: translateY(-1px);
 }
 
-.interests,
-.education {
+/* =========================
+   MY INTERESTS — BLOB ORGANICHE
+========================= */
+.interests-title-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.interests-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #222;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.interests-blobs {
+  display: grid;
+  grid-template-columns: repeat(2, 270px);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  row-gap: 28px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background-color: #222;
+}
+
+.blob {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.blob-1 {
+  grid-column: 1/span 2;
+  justify-self: center;
+  border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  transform: rotate(-3deg);
+}
+
+.blob-2 {
+  grid-column: 1;
+  border-radius: 42% 58% 68% 32%/45% 55% 45% 55%;
+  transform: rotate(2deg);
+}
+
+.blob-3 {
+  grid-column: 2;
+  border-radius: 55% 45% 40% 60%/60% 40% 60% 40%;
+  transform: rotate(-2deg);
+}
+
+.blob img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.blob:hover,
+.blob:focus {
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
+}
+
+.blob-1:hover,
+.blob-1:focus {
+  transform: translateY(-8px) rotate(-3deg) scale(1.03);
+}
+
+.blob-2:hover,
+.blob-2:focus {
+  transform: translateY(-8px) rotate(2deg) scale(1.03);
+}
+
+.blob-3:hover,
+.blob-3:focus {
+  transform: translateY(-8px) rotate(-2deg) scale(1.03);
+}
+
+.blob:hover img,
+.blob:focus img {
+  transform: scale(1.08);
+  filter: brightness(0.55);
+}
+
+.blob-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.blob:hover .blob-label,
+.blob:focus .blob-label {
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .interests-blobs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .blob {
+    width: 260px;
+    height: 320px;
+  }
+  .interests-blobs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* =========================
+   HOW I WORK — TIMELINE
+========================= */
+.approach {
   background: #fff;
   padding: 60px 0;
   border-top: 1px solid #bdbdbd;
 }
 
-.interests h2,
-.education h2 {
+.approach h2 {
   font-size: 3rem;
+  color: #111;
+  margin-bottom: 60px;
+}
+
+.approach-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.approach-grid::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #bdbdbd;
+  z-index: 0;
+}
+
+.approach-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step-number {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #781D1D;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  transition: background-color 0.25s ease;
+}
+
+.approach-step:hover .step-number,
+.approach-step:focus-within .step-number {
+  background: #4B7F52;
+}
+
+.approach-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
   color: #111;
 }
 
-.interests-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.interests-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.interest {
-  font-size: 32px;
-  font-weight: 600;
-  padding: 40px;
-  margin: 24px;
-  cursor: pointer;
-  transition: opacity 0.3s;
-  margin: 0;
-}
-
-.interest:hover {
-  color: #781D1D;
-}
-
-/* Contenitore desktop immagine */
-.interests-image {
-  width: 400px; /* puoi adattare la larghezza */
-  height: 500px; /* altezza fissa */
-  overflow: hidden;
-}
-
-.interests-image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
-  border-radius: 8px;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
+.approach-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
 }
 
 @media (max-width: 992px) {
-  .interests-wrapper {
-    flex-direction: column;
+  .approach-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .approach-grid::before {
+    top: 0;
+    bottom: 0;
+    left: 28px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+  .approach-step {
+    flex-direction: row;
     align-items: flex-start;
-    gap: 16px;
+    text-align: left;
+    gap: 20px;
   }
-  .interests-list {
-    width: 100%;
-    gap: 12px;
+  .step-number {
+    margin-bottom: 0;
   }
-  .interest {
-    font-size: 22px;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row; /* layout orizzontale testo + immagine */
-    align-items: flex-start;
-    justify-content: space-between; /* immagine a destra */
-  }
-  /* Nascondi immagine grande desktop */
-  .interests-image {
-    display: none;
-  }
-  /* Piccola immagine a destra dello span */
-  .interest img {
-    display: block;
-    width: 70px;
-    height: 70px;
-    margin-left: 16px;
-    border-radius: 6px;
-    -o-object-fit: fill;
-       object-fit: fill;
-    transition: opacity 0.3s ease;
+  .approach-content h3,
+  .approach-content p {
+    text-align: left;
   }
 }
-.cards {
+/* =========================
+   MY LAST PROJECT
+========================= */
+.last-project {
+  background: #fff;
+  padding: 60px 0;
+  border-top: 1px solid #bdbdbd;
+}
+
+.last-project h2 {
+  font-size: 3rem;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.lastproj-showcase {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: stretch;
+  max-height: 300px;
 }
 
-.card {
-  background-color: #fff;
-  border-radius: 10px;
-  border: none;
+.lastproj-info {
+  position: relative;
+  overflow: hidden;
+  background: #f2f2f2;
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  height: 300px;
+  box-sizing: border-box;
 }
 
-.card h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 4px;
+.lastproj-info:hover,
+.lastproj-info:focus-within {
+  background: #ebebeb;
 }
 
-.card .year {
-  font-size: 14px;
-  margin-bottom: 12px;
+.lastproj-content {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.lastproj-eyebrow {
   display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #888;
+  margin-bottom: 16px;
 }
 
-.card p,
-.card li {
+.lastproj-info h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #111;
+  margin: 0;
+}
+
+.lastproj-description {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  right: 32px;
   font-size: 14px;
   line-height: 1.6;
+  color: #444;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.card ul {
-  padding-left: 18px;
+.lastproj-info:hover .lastproj-content,
+.lastproj-info:focus-within .lastproj-content {
+  opacity: 0;
+  transform: translateY(-15px);
 }
 
+.lastproj-info:hover .lastproj-description,
+.lastproj-info:focus-within .lastproj-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lastproj-link {
+  color: #781D1D;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.lastproj-link:hover {
+  text-decoration: underline;
+}
+
+.lastproj-image {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 300px;
+  background: linear-gradient(135deg, #222 0%, rgba(80, 80, 80, 0.262745098) 50%, #222 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lastproj-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.lastproj-cta {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.lastproj-cta .btn {
+  display: inline-block;
+  background: #781D1D;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lastproj-cta .btn:hover {
+  background: #4B7F52;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 992px) {
+  .lastproj-showcase {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 992px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -1295,6 +1548,21 @@
     grid-column: 1;
     padding: 0.3rem;
     justify-content: center;
+  }
+}
+@media (max-width: 992px) and (max-width: 992px) {
+  .lastproj-showcase {
+    grid-template-columns: 1fr;
+    max-height: none;
+    gap: 20px;
+  }
+  .lastproj-info {
+    height: auto;
+    min-height: 300px;
+  }
+  .lastproj-image {
+    height: auto;
+    min-height: 300px;
   }
 }
 /* ==========================
@@ -1935,7 +2203,7 @@ p {
   width: 48px; /* dimensione cerchio */
   height: 48px;
   border-radius: 50%;
-  background-color: #781D1D;
+  background-color: #222;
   color: #fff;
   border: none;
   font-size: 1.2rem; /* freccia più proporzionata */
