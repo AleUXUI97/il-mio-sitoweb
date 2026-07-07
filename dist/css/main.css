@@ -595,9 +595,10 @@
 .portfolio-projects .project-meta {
   font-size: 16px;
   margin: 0;
-  color: #fff;
+  color: #222;
   margin-top: 0.25rem;
-  background: #222;
+  background: #fff;
+  border: 1px solid #222;
   padding: 6px 12px;
   border-radius: 8px;
   width: -moz-fit-content;
@@ -1746,8 +1747,10 @@ body > main > section.projects {
 .project-meta {
   font-size: 16px;
   margin-right: 16px;
-  color: #fff;
-  background-color: #222;
+  color: #222;
+  background-color: #fff;
+  border-color: #222;
+  border: 1px solid #222;
   padding: 6px 12px;
   border-radius: 8px;
 }

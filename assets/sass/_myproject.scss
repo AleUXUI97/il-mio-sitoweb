@@ -29,17 +29,17 @@
     margin: 0;
   }
 
-  .project-meta {
+ .project-meta {
     font-size: 16px;
     margin: 0;
-    color: #fff;
-    margin-top: 0.25rem;    
-    background: #222;
-    padding: 6px 12px;          
+    color: #222;
+    margin-top: 0.25rem;
+    background: #fff;
+    border: 1px solid #222;
+    padding: 6px 12px;
     border-radius: 8px;
-   width: fit-content;
-    
-  }
+    width: fit-content;
+}
 
   /* CTA progetto + CTA finale condividono lo stile */
   .project-cta,
