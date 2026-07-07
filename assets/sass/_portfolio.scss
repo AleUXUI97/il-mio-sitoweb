@@ -344,16 +344,37 @@ body > main > section.projects {
   .project-preview-mobile {
     display: block;
     margin-bottom: 10px;
+    padding-right: 14px;
   }
 
   .project-row {
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: flex-start;
   }
 
   .project-header {
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  width: 100%;
+}
+.project-header h2 {
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  .project-meta {
+    
+    align-self: flex-start;
+    margin-left: 14px;
+  }
+
+  .project-cta {
+    margin-top: 8px;
+    align-self: flex-end;
   }
 
 }

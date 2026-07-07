@@ -132,7 +132,8 @@
     font-size: 3rem;      
         
     text-align: left;
-    margin: 16px;     
+    margin: 16px; 
+    
   }
   /* Righe progetto */
   .portfolio-projects .project-row {
@@ -144,6 +145,8 @@
       padding: 1rem 0;
       margin: 1.2rem;
   }
+
+
   .portfolio-projects .project-title{
    font-size: 1.7rem;
    font-weight: 400;
@@ -161,6 +164,7 @@
     margin-top: 1rem;
     margin-right: 0;
   }
+  
  @media (max-width: 768px) {
 
   .portfolio-projects .text-center {
@@ -184,4 +188,8 @@
     align-self: flex-start; 
     margin-top: 0.5rem;
   }
+  .portfolio-projects .text-center {
+    text-align: right !important;
+    padding: 0 16px;
+}
 }

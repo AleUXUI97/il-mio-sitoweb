@@ -232,6 +232,7 @@
   }
   .about .row .about-img {
     margin-bottom: 1.5rem;
+    margin-top: 4rem;
   }
 }
 @media (max-width: 768px) and (min-width: 320px) and (max-width: 992px) {
@@ -312,6 +313,7 @@
 
 /* Link menu */
 .nav-link {
+  font-family: "Hanken Grotesk:Regular", sans-serif;
   color: #222;
   transition: color 0.3s ease;
 }
@@ -736,6 +738,10 @@
   .project-cta {
     align-self: flex-start;
     margin-top: 0.5rem;
+  }
+  .portfolio-projects .text-center {
+    text-align: right !important;
+    padding: 0 16px;
   }
 }
 /* ==========================
@@ -1844,14 +1850,32 @@ body > main > section.projects {
   .project-preview-mobile {
     display: block;
     margin-bottom: 10px;
+    padding-right: 14px;
   }
   .project-row {
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: flex-start;
   }
   .project-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
     width: 100%;
+  }
+  .project-header h2 {
+    margin: 0;
+    align-self: flex-start;
+  }
+  .project-meta {
+    align-self: flex-start;
+    margin-left: 14px;
+  }
+  .project-cta {
+    margin-top: 8px;
+    align-self: flex-end;
   }
 }
 body > main > section.projects-hero > div > h1 {
@@ -2083,7 +2107,8 @@ body.page-leave {
   border: 0;
 }
 
-h1 h2 {
+h1,
+h2 {
   font-family: "Hanken Grotesk:Medium", sans-serif;
   color: #222;
   margin: 0;
@@ -2093,8 +2118,9 @@ h1 h2 {
 h3,
 h4,
 h5,
-h6 {
-  font-family: "Inter Variable", sans-serif;
+h6,
+p {
+  font-family: "Hanken Grotesk:Regular", sans-serif;
   color: #222;
   margin: 0;
   padding: 16px 0;
@@ -2149,13 +2175,6 @@ body > main > section.home > div > p.h3::before {
   height: 2px;
   background-color: #222;
   margin: 0 12px 0 0;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0;
-  padding: 16px 0;
 }
 
 /* =========================

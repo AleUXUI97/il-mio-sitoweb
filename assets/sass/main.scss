@@ -102,7 +102,7 @@ body.page-leave {
 // ==========================
 // TITOLI
 // ==========================
-h1 
+h1, 
 h2{
   font-family: "Hanken Grotesk:Medium", sans-serif;
   color: #222;
@@ -114,8 +114,9 @@ h2{
 h3,
 h4,
 h5,
-h6 {
-  font-family:"Inter Variable", sans-serif ;
+h6,
+p {
+  font-family:"Hanken Grotesk:Regular", sans-serif ;
   color: #222;
   margin: 0;
   padding: 16px 0;
@@ -176,14 +177,6 @@ body > main > section.home > div > p.h3 {
 }
 
 
-
-
-p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0;
-  padding: 16px 0;
-}
 /* =========================
    CONTAINER GLOBALE HOMEPAGE
 ========================= */
