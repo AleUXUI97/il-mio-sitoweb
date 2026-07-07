@@ -234,9 +234,9 @@ body > main > section.projects {
   margin-right: 16px;
   
   
-  color: #000;                 
-  background-color: #EADAA2;   
-  padding: 1px 6px;          
+  color: #fff;                 
+  background-color: #222;   
+  padding: 6px 12px;          
   border-radius: 8px;
   }         
  
@@ -263,7 +263,7 @@ body > main > section.projects {
 }
 
 .project-cta .btn:hover {
-  background-color: #4B7F52;
+  background-color: #222;
   color: #fff;
   transform: translateY(-1px);
 }

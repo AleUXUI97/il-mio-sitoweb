@@ -32,10 +32,10 @@
   .project-meta {
     font-size: 16px;
     margin: 0;
-    color: #000;
+    color: #fff;
     margin-top: 0.25rem;    
-    background: #EADAA2;
-    padding: 1px 6px;          
+    background: #222;
+    padding: 6px 12px;          
     border-radius: 8px;
    width: fit-content;
     
@@ -55,7 +55,7 @@
     text-decoration: none;
 
     &:hover {
-      background-color: #4B7F52;
+      background-color: #222;
       color: #fff;
       text-decoration: none;
       transform: none;

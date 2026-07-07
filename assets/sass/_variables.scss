@@ -9,11 +9,11 @@ $bp-desktop: 992px;
 $min-content-width: 320px; // evita layout troppo stretto su smartphone piccoli
 @media (max-width: $bp-tablet) {
   h1 {
-    font-family: "Qurova DEMO", sans-serif;
+    font-family: "Hanken Grotesk:Medium", sans-serif;
   }
 }
  @media (max-width:$bp-mobile) {
   h1 {
-    font-family: "Qurova Demo", sans-serif;
+    font-family: "Hanken Grotesk:Medium", sans-serif;
   }
  }

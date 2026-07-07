@@ -89,20 +89,20 @@
   <!-- MAIN -->
   <main>
 
-    <!-- HERO -->
-    <section class="home">
-      <div class="container hero-content">
-        <h1 class="mb-3">Welcome</h1>
-        <p class="h3">UX/UI Designer<span class="stellina">✦</span> </p>
-        
-        <p>
-          I’m Alessandro! I’m a graphic designer with a passion for visual arts.<br>
-          Check out my site to learn more about me.
-        </p>
-      </div>
+   <!-- HERO -->
+<section class="home">
+  <div class="container hero-content">
+    <h1 class="mb-3">
+      <span id="typed-h1" aria-hidden="true"></span><span class="typed-cursor" aria-hidden="true">|</span>
+      <span class="visually-hidden">Welcome</span>
+    </h1>   
 
-     
-    </section>
+    <p class="hero-intro">
+      <span id="typed-text" aria-hidden="true"></span><span class="typed-cursor" aria-hidden="true">|</span>
+      <span class="visually-hidden">UX & Product Designer. I am committed to bringing innovation and design awareness through the continuous experimentation with new tools.</span>
+    </p>
+  </div>
+</section>
 
     <!-- ABOUT -->
     <section class="about">
@@ -342,24 +342,24 @@
   </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
-  
 
 <button id="backToTop" aria-label="Back to top">↑</button>
 
-  <script>
-    const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 200) {
-        backToTopBtn.classList.add('is-visible');
-      } else {
-        backToTopBtn.classList.remove('is-visible');
-      }
-    });
+<script>
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTopBtn.classList.add('is-visible');
+    } else {
+      backToTopBtn.classList.remove('is-visible');
+    }
+  });
 
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 </script>
+
 <script>
 function animateScroll() {
   const section = document.querySelector(".portfolio-scroll");
@@ -386,6 +386,7 @@ function animateScroll() {
 }
 
 animateScroll();
+
 // MOBILE PREVIEW STATIC
 function initMobilePreviews() {
 
@@ -405,10 +406,7 @@ function initMobilePreviews() {
 
 }
 
-// init al load
 initMobilePreviews();
-
-// init al resize
 window.addEventListener('resize', initMobilePreviews);
 
 </script>
@@ -417,54 +415,91 @@ window.addEventListener('resize', initMobilePreviews);
 window.addEventListener("load", () => {
   document.body.classList.add("page-loaded");
 });
+
 window.addEventListener("load", () => {
 
   const elements = document.querySelectorAll(".hero-content > *");
 
   elements.forEach((el, index) => {
-
     setTimeout(() => {
       el.classList.add("visible");
     }, index * 200);
+  });
 
+  // --- TYPEWRITER SEQUENZIALE ---
+  function attivaTypewriter({ triggerEl, targetId, testo, velocita = 35, onComplete = null, aspettaTransizione = true }) {
+
+    const target = document.getElementById(targetId);
+    if (!target) {
+      if (onComplete) onComplete();
+      return;
+    }
+
+    let i = 0;
+
+    function digita() {
+      if (i < testo.length) {
+        target.textContent += testo.charAt(i);
+        i++;
+        setTimeout(digita, velocita);
+      } else if (onComplete) {
+        onComplete();
+      }
+    }
+
+    if (aspettaTransizione && triggerEl) {
+      function avviaTyping(e) {
+        if (e.propertyName !== "opacity") return;
+        triggerEl.removeEventListener("transitionend", avviaTyping);
+        digita();
+      }
+      triggerEl.addEventListener("transitionend", avviaTyping);
+    } else {
+      digita();
+    }
+  }
+
+  attivaTypewriter({
+    triggerEl: document.querySelector("h1.mb-3"),
+    targetId: "typed-h1",
+    testo: "Welcome",
+    velocita: 60,
+    onComplete: () => {
+      attivaTypewriter({
+        targetId: "typed-text",
+        testo: "UX & Product Designer. I am committed to bringing innovation and design awareness through the continuous experimentation with new tools.",
+        velocita: 35,
+        aspettaTransizione: false
+      });
+    }
   });
 
 });
+
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
-
   const windowHeight = window.innerHeight;
-
   reveals.forEach(el => {
-
     const elementTop = el.getBoundingClientRect().top;
-
     if (elementTop < windowHeight - 100) {
       el.classList.add("active");
     }
-
   });
-
 }
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
 document.addEventListener("DOMContentLoaded", () => {
 
   const links = document.querySelectorAll("a[href]");
 
   links.forEach(link => {
-
     link.addEventListener("click", function(e) {
-
       const url = this.getAttribute("href");
 
-      if (
-        url.startsWith("#") ||
-        this.target === "_blank" ||
-        url.startsWith("mailto")
-      ) {
+      if (url.startsWith("#") || this.target === "_blank" || url.startsWith("mailto")) {
         return;
       }
 
@@ -476,14 +511,11 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         window.location.href = url;
       }, 400);
-
     });
-
   });
 
 });
 </script>
-
 
 </body>
 </html>

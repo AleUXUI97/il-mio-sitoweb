@@ -38,7 +38,7 @@
 }
 
 .hero-text h1 {
-  font-family: "Qurova Demo", sans-serif;
+  font-family: "Hanken Grotesk:Medium", sans-serif;
   font-size: 56px;
   font-weight: 400;
   margin-bottom: 20px;
@@ -59,7 +59,7 @@
 .hero-text p {
   font-size: 16px;
   line-height: 1.7;
-  color: #333;
+  color: #222;
 }
 
 .hero-image {
@@ -76,25 +76,9 @@
   margin-top: 3rem;
 }
 
-.color-bar {
-  grid-column: 2;
-  display: flex;
-  height: 12px;
-  margin-top: 30px;
-  margin-bottom: 60px;
-  width: 100%;
-  max-width: 520px;
 
-  margin-left: auto;     /* allinea barra a destra */
-}
 
-.color {
-  flex: 1;
-}
 
-.color-1 { background: #4B7F52; }
-.color-2 { background: #781D1D; }
-.color-3 { background: #222; }
 
 .hero-buttons {
   grid-column: 2;
@@ -116,8 +100,8 @@
 }
 
 .hero-buttons .btn:hover {
-   background-color: #4B7F52;
-   transform: translateY(-1px);
+   background-color: #222;
+  
   
 }
 
@@ -318,7 +302,7 @@
 }
 .approach-step:hover .step-number,
 .approach-step:focus-within .step-number {
-  background: #4B7F52;
+  background: #222;
 }
 
 
@@ -326,13 +310,13 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #111;
+  color: #222;
 }
 
 .approach-content p {
   font-size: 14px;
   line-height: 1.6;
-  color: #333;
+  color: #222;
 }
 
 @media (max-width: 992px) {
@@ -510,8 +494,8 @@
 }
 
 .lastproj-cta .btn:hover {
-  background: #4B7F52;
-  transform: translateY(-1px);
+  background: #222;
+  
 }
 @media (max-width: 992px) {
   .lastproj-showcase { grid-template-columns: 1fr; }
