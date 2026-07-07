@@ -1616,6 +1616,13 @@ body > main > section.projects {
   height: 140px;
 }
 
+@media (min-width: 1200px) {
+  .projects-image {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+  }
+}
 /* Placeholder e immagine stessa dimensione */
 .projects-placeholder,
 .preview-image {
@@ -1677,17 +1684,6 @@ body > main > section.projects {
   transition: opacity 0.2s ease, opacity 0.15s ease;
 }
 
-/* ==========================
-   RIGHT SCROLL AREA
-   ========================== */
-@media (min-width: 1200px) {
-  .projects-scroll {
-    max-height: 60vh;
-  }
-}
-/* ==========================
-   SCROLLBAR
-   ========================== */
 .projects-scroll::-webkit-scrollbar {
   width: 8px;
 }
@@ -1736,7 +1732,7 @@ body > main > section.projects {
    TEXT
    ========================== */
 .project-header {
-  display: grid;
+  display: table-column;
   grid-template-columns: 1fr auto; /* titolo | meta */
   align-items: center; /* centraggio verticale */
   -moz-column-gap: 20px;
@@ -1752,7 +1748,7 @@ body > main > section.projects {
 
 .project-meta {
   font-size: 16px;
-  margin-right: 16px;
+  margin-left: 16px;
   color: #222;
   background-color: #fff;
   border-color: #222;
@@ -1901,10 +1897,21 @@ body > main > section.projects {
   body > main {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* tutta l’altezza del viewport */
+    min-height: 100vh; /* tutta l'altezza del viewport */
   }
   body > main > section.projects {
     flex: 1; /* occupa tutto lo spazio rimanente tra hero e footer */
+    display: flex;
+    min-height: 0;
+  }
+  .projects-layout {
+    flex: 1;
+    min-height: 0;
+  }
+  .projects-scroll {
+    max-height: none;
+    height: 100%;
+    min-height: 0;
   }
 }
 .project-page {
