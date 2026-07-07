@@ -566,6 +566,38 @@
     margin-bottom: 1.5rem;
   }
 }
+/* ============================================
+   CTA — scope globale, condivisa tra sezioni
+   ============================================ */
+.project-cta,
+.btn-cta {
+  background-color: #781D1D;
+  color: #fff;
+  font-weight: 500;
+  padding: 0.75rem 2rem;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.project-cta:hover,
+.btn-cta:hover {
+  background-color: #222;
+  color: #fff;
+  text-decoration: none;
+  transform: none;
+}
+
+/* CTA finale più grande */
+.btn-cta.btn-lg {
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+  border-radius: 0;
+  font-weight: 500;
+}
+
+/* ============================================
+   SEZIONE: Portfolio Projects
+   ============================================ */
 .portfolio-projects {
   background-color: white;
   color: black;
@@ -606,36 +638,10 @@
   width: -moz-fit-content;
   width: fit-content;
 }
-.portfolio-projects {
-  /* CTA progetto + CTA finale condividono lo stile */
-}
-.portfolio-projects .project-cta,
-.portfolio-projects .btn-cta {
-  background-color: #781D1D;
-  color: #fff;
-  font-weight: 500;
-  padding: 0.75rem 2rem;
-  white-space: nowrap;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-}
-.portfolio-projects .project-cta:hover,
-.portfolio-projects .btn-cta:hover {
-  background-color: #222;
-  color: #fff;
-  text-decoration: none;
-  transform: none;
-}
-.portfolio-projects {
-  /* CTA finale più grande */
-}
-.portfolio-projects .btn-cta.btn-lg {
-  padding: 1rem 3rem;
-  font-size: 1.25rem;
-  border-radius: 0;
-  font-weight: 500;
-}
 
+/* ============================================
+   SEZIONE: Portfolio Scroll
+   ============================================ */
 .portfolio-scroll {
   overflow: hidden;
 }
@@ -653,9 +659,10 @@
 }
 
 .portfolio-item {
-  width: 320px;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 420px;
   aspect-ratio: 3/2;
-  flex-shrink: 0;
   overflow: hidden;
 }
 
@@ -667,14 +674,9 @@
   display: block;
 }
 
-.portfolio-item {
-  flex: 0 0 auto;
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 3/2;
-  overflow: hidden;
-}
-
+/* ============================================
+   RESPONSIVE — Portfolio Item sizing
+   ============================================ */
 /* Tablet */
 @media (max-width: 768px) {
   .portfolio-item {
@@ -687,6 +689,9 @@
     width: 180px;
   }
 }
+/* ============================================
+   RESPONSIVE — Portfolio Projects (768px)
+   ============================================ */
 @media (max-width: 768px) {
   /* Titolo sezione */
   .portfolio-projects .portfolio-projects-title {
@@ -709,19 +714,15 @@
     font-weight: 400;
     margin: 0;
   }
-}
-.portfolio-projects .project-info {
-  flex: 1;
-  margin-bottom: 1;
-}
-
-.portfolio-projects .project-cta {
-  flex-shrink: 0;
-  margin-top: 1rem;
-  margin-right: 0;
-}
-
-@media (max-width: 768px) {
+  .portfolio-projects .project-info {
+    flex: 1;
+    margin-bottom: 0.5rem;
+  }
+  .portfolio-projects .project-cta {
+    flex-shrink: 0;
+    margin-top: 1rem;
+    margin-right: 0;
+  }
   .portfolio-projects .text-center {
     text-align: left !important;
     padding: 0 16px;
@@ -730,6 +731,9 @@
     display: inline-block;
   }
 }
+/* ============================================
+   RESPONSIVE — Project row layout override (768px)
+   ============================================ */
 @media (max-width: 768px) {
   .project-row {
     flex-direction: column;
@@ -742,6 +746,12 @@
   .portfolio-projects .text-center {
     text-align: right !important;
     padding: 0 16px;
+  }
+  .portfolio-scroll {
+    overflow: hidden;
+  }
+  .py-5 {
+    padding-top: 0 !important;
   }
 }
 /* ==========================
