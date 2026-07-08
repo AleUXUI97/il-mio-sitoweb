@@ -767,7 +767,7 @@
 }
 .tools .tools-row {
   display: flex;
-  gap: 1.5rem;
+  gap: 4rem;
   flex-wrap: wrap; /* su desktop va a capo se necessario */
   justify-content: center;
   align-items: center;
