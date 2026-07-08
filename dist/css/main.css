@@ -22,7 +22,7 @@
     background-position: top center;
   }
   body > main > section.home > div > p > #typed-text {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
 @media (max-width: 768px) and (min-width: 320px) and (max-width: 768px) {
