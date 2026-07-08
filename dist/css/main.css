@@ -318,7 +318,7 @@
   transition: color 0.3s ease;
 }
 .nav-link:hover {
-  color: #781D1D;
+  color: #3626a7;
 }
 
 /* Navbar-nav */
@@ -331,7 +331,7 @@
 /* Toggler */
 .navbar-toggler {
   margin-left: auto;
-  color: #781D1D;
+  color: #3626a7;
 }
 
 /* Mobile */
@@ -348,7 +348,7 @@
   background-color: #222;
   color: #fff;
   padding: 60px 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Hanken Grotesk:Regular", sans-serif;
 }
 
 .footer-container {
@@ -538,7 +538,7 @@
 }
 .about .about-cta {
   background-color: white;
-  color: #781D1D;
+  color: #3626a7;
   font-weight: 700;
   padding: 0.75rem 2rem;
   border-radius: 0;
@@ -571,7 +571,7 @@
    ============================================ */
 .project-cta,
 .btn-cta {
-  background-color: #781D1D;
+  background-color: #3626a7;
   color: #fff;
   font-weight: 500;
   padding: 0.75rem 2rem;
@@ -718,11 +718,6 @@
     flex: 1;
     margin-bottom: 0.5rem;
   }
-  .portfolio-projects .project-cta {
-    flex-shrink: 0;
-    margin-top: 1rem;
-    margin-right: 0;
-  }
   .portfolio-projects .text-center {
     text-align: left !important;
     padding: 0 16px;
@@ -858,7 +853,7 @@
    CONTACT CTA
 ========================= */
 .contact-section .btn-cta {
-  background-color: #781D1D;
+  background-color: #3626a7;
   color: #fff;
   font-weight: 500;
   padding: 0.75rem 2rem;
@@ -922,7 +917,7 @@
 
 /* Titolo e descrizione rimangono uguali */
 .contact-form-section .contact-title {
-  color: #781D1D;
+  color: #3626a7;
   font-size: 4rem;
   font-weight: 700;
   padding-top: 3rem;
@@ -954,7 +949,7 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #781D1D;
+  border-color: #3626a7;
 }
 
 .contact-form textarea {
@@ -964,7 +959,7 @@
 
 /* CTA BUTTON */
 .contact-form .btn-cta {
-  background-color: #781D1D;
+  background-color: #3626a7;
   color: #fff;
   font-weight: 700;
   padding: 0.75rem 2rem;
@@ -1071,7 +1066,7 @@
 }
 
 .highlight {
-  color: #7B1E1E;
+  color: #3626a7;
   font-weight: 500;
 }
 
@@ -1104,7 +1099,7 @@
 }
 
 .hero-buttons .btn {
-  background-color: #781D1D;
+  background-color: #3626a7;
   color: white;
   padding: 10px 22px;
   border-radius: 0;
@@ -1300,7 +1295,7 @@
   height: 56px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: #781D1D;
+  background: #3626a7;
   color: #fff;
   display: flex;
   align-items: center;
@@ -1447,7 +1442,7 @@
 }
 
 .lastproj-link {
-  color: #781D1D;
+  color: #3626a7;
   font-weight: 600;
   text-decoration: none;
   margin-top: auto;
@@ -1481,7 +1476,7 @@
 
 .lastproj-cta .btn {
   display: inline-block;
-  background: #781D1D;
+  background: #3626a7;
   color: #fff;
   padding: 14px 32px;
   border-radius: 0;
@@ -1586,7 +1581,7 @@ body > main > section.projects {
 .page-title {
   font-size: 4rem;
   font-weight: 700;
-  color: #781D1D;
+  color: #3626a7;
   margin-left: 0;
   padding-top: 60px;
 }
@@ -1642,7 +1637,7 @@ body > main > section.projects {
 
 /* Placeholder */
 .projects-placeholder {
-  background: linear-gradient(120deg, #781D1D, #501212, #781D1D);
+  background: linear-gradient(120deg, #3626a7, #140a60, #5b4dc1);
   background-size: 200% 200%;
   display: flex;
   align-items: center;
@@ -1708,7 +1703,7 @@ body > main > section.projects {
 }
 
 .projects-scroll::-webkit-scrollbar-thumb:hover {
-  background: #781D1D;
+  background: #3626a7;
 }
 
 /* ==========================
@@ -1771,16 +1766,14 @@ body > main > section.projects {
    CTA
    ========================== */
 .project-cta {
-  grid-column: 3;
   justify-self: end;
-  padding-left: 16px;
+  padding: 12px 32px;
 }
 
 .project-cta .btn {
-  background-color: #781D1D;
   color: #fff;
-  padding: 10px 20px;
   border-radius: 0;
+  padding: 0;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.2s ease;
@@ -1932,7 +1925,7 @@ body > main > section.projects {
 .project-page .project-title {
   font-family: "Hanken Grotesk:Medium", sans-serif;
   font-size: 2rem;
-  color: #781D1D;
+  color: #3626a7;
   padding-top: 0;
   text-align: left;
   margin-bottom: 0;
@@ -1970,7 +1963,7 @@ body > main > section.projects {
 .project-page .project-section-title {
   font-family: "Inter", sans-serif;
   font-size: 1.5rem;
-  color: #781D1D;
+  color: #3626a7;
   margin-bottom: 0;
 }
 .project-page .text-left-block,
@@ -2003,7 +1996,7 @@ body > main > section.projects {
   align-items: flex-start;
 }
 .project-page .project-cta-wrapper .project-cta-primary {
-  background-color: #781D1D;
+  background-color: #3626a7;
   color: #fff;
   font-weight: 500;
   padding: 0.75rem 2rem;
@@ -2016,8 +2009,8 @@ body > main > section.projects {
 }
 .project-page .project-cta-wrapper .project-cta-secondary {
   background-color: #fff;
-  color: #781D1D;
-  border: 2px solid #781D1D;
+  color: #3626a7;
+  border: 2px solid #3626a7;
   font-weight: 700;
   padding: 0.75rem 2rem;
   border-radius: 0;
@@ -2025,7 +2018,7 @@ body > main > section.projects {
   transition: background-color 0.3s ease;
 }
 .project-page .project-cta-wrapper .project-cta-secondary:hover {
-  background-color: #781D1D;
+  background-color: #3626a7;
   color: #fff;
 }
 
@@ -2143,7 +2136,7 @@ p {
 }
 
 h1.mb-3 {
-  color: #781d1d;
+  color: #3626a7;
 }
 
 h1 {

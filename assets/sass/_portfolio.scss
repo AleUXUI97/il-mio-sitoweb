@@ -34,7 +34,7 @@ body > main > section.projects {
 .page-title {
   font-size: 4rem;
   font-weight: 700;
-  color: #781D1D;
+  color: #3626a7;
   margin-left: 0;
   padding-top: 60px;
 }
@@ -98,9 +98,9 @@ body > main > section.projects {
 .projects-placeholder {
   background: linear-gradient(
     120deg,
-    #781D1D,
-    #501212,
-    #781D1D
+    #3626a7,
+    #140a60,
+    #5b4dc1
   );
   background-size: 200% 200%;
 
@@ -173,7 +173,7 @@ body > main > section.projects {
 }
 
 .projects-scroll::-webkit-scrollbar-thumb:hover {
-  background: #781D1D;
+  background: #3626a7;
 }
 
 
@@ -242,18 +242,20 @@ body > main > section.projects {
 /* ==========================
    CTA
    ========================== */
-
-.project-cta {
-  grid-column: 3;
+   .project-cta {
+  
   justify-self: end;
-  padding-left: 16px;
+  padding: 12px 32px;
+  
 }
 
+
+
 .project-cta .btn {
-  background-color: #781D1D;
-  color: #fff;
-  padding: 10px 20px;
+ 
+  color: #fff;  
   border-radius: 0;
+  padding: 0;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.2s ease;

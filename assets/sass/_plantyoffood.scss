@@ -8,7 +8,7 @@
   .project-title {
     font-family: 'Hanken Grotesk:Medium', sans-serif;
     font-size: 2rem;
-    color: #781D1D;
+    color: #3626a7;
     padding-top: 0;
     text-align: left;
     margin-bottom: 0;
@@ -51,7 +51,7 @@
   .project-section-title {
     font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
-    color: #781D1D;
+    color: #3626a7;
     margin-bottom: 0;
   }
 
@@ -93,7 +93,7 @@
     align-items: flex-start;
 
     .project-cta-primary {
-      background-color: #781D1D;
+      background-color: #3626a7;
       color: #fff;
       font-weight: 500;
       padding: 0.75rem 2rem;
@@ -109,8 +109,8 @@
 
     .project-cta-secondary {
       background-color: #fff;
-      color: #781D1D;
-      border: 2px solid #781D1D;
+      color: #3626a7;
+      border: 2px solid #3626a7;
       font-weight: 700;
       padding: 0.75rem 2rem;
       border-radius: 0;
@@ -119,7 +119,7 @@
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #781D1D;
+        background-color: #3626a7;
         color: #fff;
       }
     }
