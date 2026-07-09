@@ -1373,7 +1373,6 @@
   position: relative;
   overflow: hidden;
   background: #f2f2f2;
-  border-radius: 12px;
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -1448,7 +1447,6 @@
 }
 
 .lastproj-image {
-  border-radius: 12px;
   overflow: hidden;
   height: 300px;
   background: linear-gradient(135deg, #222 0%, rgba(80, 80, 80, 0.262745098) 50%, #222 100%);
