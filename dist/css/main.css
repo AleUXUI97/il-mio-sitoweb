@@ -647,6 +647,10 @@
   width: max-content;
 }
 
+.portfolio-scroll-wrapper.reverse-scroll {
+  margin-left: -250px;
+}
+
 .mb-3 {
   margin-bottom: 2rem !important;
 }
