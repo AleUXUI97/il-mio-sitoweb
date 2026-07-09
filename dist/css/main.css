@@ -923,16 +923,17 @@
 }
 
 .contact-form label {
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 0.5rem;
-  color: #fff;
+  color: #222;
+  padding-top: 12px;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
   font-family: "DM Sans", sans-serif;
@@ -1357,7 +1358,7 @@
 
 .last-project h2 {
   font-size: 3rem;
-  color: #111;
+  color: #222;
   margin-bottom: 40px;
 }
 
@@ -1394,11 +1395,12 @@
 
 .lastproj-eyebrow {
   display: block;
+  font-family: "Hanken Groteske:Regular", sans-serif;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: #888;
+  color: #222;
   margin-bottom: 16px;
 }
 
@@ -1406,7 +1408,7 @@
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.25;
-  color: #111;
+  color: #222;
   margin: 0;
 }
 
@@ -1417,7 +1419,8 @@
   right: 32px;
   font-size: 14px;
   line-height: 1.6;
-  color: #444;
+  color: #222;
+  font-weight: 500;
   opacity: 0;
   transform: translateY(15px);
   transition: opacity 0.35s ease, transform 0.35s ease;
@@ -1496,7 +1499,7 @@
     row-gap: 1.5rem;
   }
   .hero-text h1 {
-    font-family: "Qurova DEMO", sans-serif;
+    font-family: "Hanken Groteske:Medium", sans-serif;
     font-size: 2rem;
     padding-left: 0;
   }
