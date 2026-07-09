@@ -381,7 +381,7 @@ function animateScroll() {
   const progress = windowHeight / 2 - sectionCenter;
 
   rows.forEach((row, index) => {
-    const speed = 1;
+    const speed = 0.70;
     const direction = index === 0 ? 1 : -1;
     const move = progress * speed * direction;
     row.style.transform = `translateX(${move}px)`;
