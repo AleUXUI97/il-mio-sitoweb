@@ -762,11 +762,17 @@
 @media (max-width: 768px) {
   .project-row {
     flex-direction: column;
-    align-items: flex-start !important;
+    align-items: center !important;
+  }
+  .portfolio-projects .portfolio-projects-title {
+    text-align: center;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
   .project-cta {
-    align-self: flex-start;
+    align-self: center;
     margin-top: 0.5rem;
+    margin-right: 0 !important;
   }
   .portfolio-projects .text-center {
     text-align: right !important;
@@ -1828,6 +1834,10 @@ body > main > section.projects {
    RESPONSIVE
    ========================== */
 @media (max-width: 992px) {
+  .page-title {
+    text-align: center;
+    margin-left: 0 !important;
+  }
   /* Nascondi colonna immagine */
   .projects-image {
     display: none;
@@ -1867,7 +1877,7 @@ body > main > section.projects {
 
 .project-preview-mobile img {
   margin-top: 16px;
-  margin-left: 16px;
+  justify-content: center;
   padding-left: 0;
   width: 70px;
   height: 70px;
@@ -1878,34 +1888,39 @@ body > main > section.projects {
 /* SOLO MOBILE */
 @media (max-width: 992px) {
   .project-preview-mobile {
-    display: block;
+    display: flex;
+    justify-content: center;
     margin-bottom: 10px;
-    padding-right: 14px;
+    padding-right: 0;
   }
   .project-row {
     display: flex;
     flex-direction: column;
     text-align: center;
-    align-items: flex-start;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 24px;
   }
   .project-header {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     gap: 6px;
     width: 100%;
   }
   .project-header h2 {
     margin: 0;
-    align-self: flex-start;
+    align-self: center;
+    padding: 16px 16px 16px 16px;
   }
   .project-meta {
-    align-self: flex-start;
-    margin-left: 14px;
+    align-self: center;
+    margin-left: 0;
   }
   .project-cta {
     margin-top: 8px;
-    align-self: flex-end;
+    align-self: center;
+    margin-right: 0;
   }
 }
 body > main > section.projects-hero > div > h1 {
