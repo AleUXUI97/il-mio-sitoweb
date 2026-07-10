@@ -329,17 +329,20 @@
   color: #3626a7;
 }
 
-/* Mobile */
+/* Desktop: nasconde il toggler */
 @media (min-width: 992px) {
   .navbar-toggler {
     display: none;
   }
 }
-.navbar-nav {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+/* Mobile: bordo solo sotto i 992px */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #3626a7;
+  }
 }
-
 /* =========================
    FOOTER
 ========================= */
