@@ -81,7 +81,7 @@
     font-size: 3rem;
     margin: 1rem;
     margin-bottom: 2rem;
-    text-align: left;
+    text-align: center !important;
   }
   .portfolio-projects .project-row {
     display: flex;
@@ -726,7 +726,7 @@
   /* Titolo sezione */
   .portfolio-projects .portfolio-projects-title {
     font-size: 3rem;
-    text-align: left;
+    text-align: center;
     margin: 16px;
   }
   /* Righe progetto */
@@ -743,6 +743,7 @@
     font-size: 1.7rem;
     font-weight: 400;
     margin: 0;
+    text-align: center;
   }
   .portfolio-projects .project-info {
     flex: 1;
@@ -768,6 +769,9 @@
     text-align: center;
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
+  }
+  .portfolio-projects .project-meta {
+    text-align: center;
   }
   .project-cta {
     align-self: center;
