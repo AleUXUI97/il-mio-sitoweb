@@ -338,7 +338,6 @@
 .navbar-nav {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #3626a7;
 }
 
 /* =========================
@@ -1871,7 +1870,6 @@ body > main > section.projects {
   height: 70px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 6px;
 }
 
 /* SOLO MOBILE */
