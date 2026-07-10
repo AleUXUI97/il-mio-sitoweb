@@ -1648,6 +1648,7 @@ body > main > section.projects {
   max-width: none; /* rimuove il limite di 1320px */
   width: 100%; /* occupa tutta la larghezza disponibile */
   padding: 0 32px; /* mantiene il padding interno */
+  min-height: 100vh;
 }
 
 .projects-layout {
