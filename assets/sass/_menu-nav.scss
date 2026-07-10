@@ -64,5 +64,10 @@
 @media (min-width: 992px) {
   .navbar-toggler {
     display: none;
-  }
+  }  
 }
+.navbar-nav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #3626a7;
+  }

@@ -16,12 +16,14 @@
 // ==========================
 .tools {
 
-  @media (max-width: $bp-tablet) {
+  @media (max-width: $bp-tablet) and (min-width: $min-content-width) {
 
     padding: 3rem 0; // coerente con altre sezioni mobile
 
     .tools-title {
-      text-align: left;
+      display: flex;
+      justify-content: center;
+      text-align: center;
       font-size: 2.5rem;   // leggermente ridotto per mobile
       margin-bottom: 1.5rem;
       padding: 0 32px; 
@@ -211,9 +213,9 @@
 
   .contact-section .contact-right {
     width: 100%;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: 2rem;
-    text-align: right;
+    text-align: center;
 
     .btn-cta {
       width: auto;
@@ -228,7 +230,7 @@
   .contact-left {
     flex: 1;
     max-width: none;
-    text-align: left;
+    text-align: center;
     margin-bottom: 0.5rem;
   }
 
