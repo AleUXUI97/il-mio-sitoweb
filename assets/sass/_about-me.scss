@@ -1,17 +1,20 @@
 /* =========================
    CONTAINER GLOBALE ABOUT-ME
 ========================= */
+/* =========================
+   CONTAINER GLOBALE ABOUT-ME
+========================= */
 .about-me .container,
 .hero-container,
-.interests .container,
+.values .container,
 .approach .container,
 .last-project .container,
 .tools .container {
-  max-width: 2500px; /* limite massimo */
-  width: 100%;       /* occupa tutta la larghezza disponibile */
-  margin: 0 auto;    /* centra orizzontalmente */
-  padding: 0 32px;   /* padding laterale coerente */
-  box-sizing: border-box; /* evita che il padding espanda il container */
+  max-width: 2500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
 }
 
 .hero {
@@ -105,142 +108,75 @@
   
 }
 
-
 /* =========================
-   MY INTERESTS — BLOB ORGANICHE
+   MY VALUES
 ========================= */
-.interests-title-wrapper {
-  width: 100%;
-  overflow: hidden;
-}
-.interests-title {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #222;
+.values {
   background-color: #fff;
-  border-top: 2px solid #222;  
+  border-top: 1px solid $about-ink;
+  padding: 64px 0 80px; // niente padding laterale: lo gestisce .container
+}
+
+.values-title-wrapper {
+  width: 100%;
+  margin-bottom: 56px;
+}
+
+.values-title {
+  font-size: 3rem;
+  text-align: center;
+  color: $about-ink;
   line-height: 1;
   margin: 0;
-  padding: 0;
 
-  width: 100%;
-  max-width: 100%;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: clip;
+  .values-title-accent {
+    color: #222;
+  }
 }
 
-
-
-
-.interests-blobs {
+.values-grid {
   display: grid;
-  grid-template-columns: repeat(2, 270px);
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  column-gap: 40px;
-  row-gap: 28px;
-  padding-top: 48px;
-  padding-bottom: 48px;
-  background-color: #fff;
-  border-bottom: 2px solid #222;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
-
-.blob {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  cursor: pointer;
-  outline: none;
-  transition: transform .35s ease, box-shadow .35s ease;
-}
-
-.blob-1 {
-  grid-column: 1 / span 2;
-  justify-self: center;
-
-  border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
-  transform: rotate(-3deg);
-}
-
-.blob-2 {
-  grid-column: 1;
-
-  border-radius: 42% 58% 68% 32% / 45% 55% 45% 55%;
-  transform: rotate(2deg);
-}
-
-.blob-3 {
-  grid-column: 2;
-
-  border-radius: 55% 45% 40% 60% / 60% 40% 60% 40%;
-  transform: rotate(-2deg);
-}
-
-.blob img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .4s ease, filter .4s ease;
-}
-
-.blob:hover,
-.blob:focus {
-  box-shadow: 0 14px 32px rgba(0,0,0,.15);
-}
-
-.blob-1:hover,
-.blob-1:focus {
-  transform: translateY(-8px) rotate(-3deg) scale(1.03);
-}
-
-.blob-2:hover,
-.blob-2:focus {
-  transform: translateY(-8px) rotate(2deg) scale(1.03);
-}
-
-.blob-3:hover,
-.blob-3:focus {
-  transform: translateY(-8px) rotate(-2deg) scale(1.03);
-}
-
-.blob:hover img,
-.blob:focus img {
-  transform: scale(1.08);
-  filter: brightness(.55);
-}
-
-.blob-label {
-  position: absolute;
-  inset: 0;
+.value-card {
+  background-color: #f2f2f2;
+  
+  padding: 40px 32px;
+  min-height: 280px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity .3s ease;
-  pointer-events: none;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
 }
 
-.blob:hover .blob-label,
-.blob:focus .blob-label {
-  opacity: 1;
+.value-title {
+  font-size: 1.35rem;
+  text-align: center;
+  font-weight: 700;
+  color: $about-ink;
+  margin: 0;
+}
+
+.value-text {
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.6;
+  color: $about-ink;
+  margin: 0;
+  padding-bottom: 0; // sovrascrive il padding-bottom generico di p, se presente
 }
 
 @media (max-width: 992px) {
-  .interests-blobs { flex-direction: column; align-items: center; }
-  .blob { width: 260px; height: 320px; }
-  .interests-blobs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .values-grid {
+    grid-template-columns: 1fr;
+    
+  }
+
+  .value-card {
+    min-height: 220px;
+  }
 }
 
 
@@ -255,6 +191,7 @@
 
 .approach h2 {
   font-size: 3rem;
+  text-align: center;
   color: #111;
   margin-bottom: 60px;
 }
@@ -512,6 +449,9 @@
     grid-template-columns: 1fr;
     padding: 1.8rem;
     row-gap: 1.5rem;
+  }
+  .last-project h2 {
+    text-align: center;
   }
 
   .hero-text h1 { 
