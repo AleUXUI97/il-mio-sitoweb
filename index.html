@@ -40,6 +40,11 @@
     rel="stylesheet"
   />
 
+  <!-- Font: Hanken Grotesk variabile (100-900) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet">
+
   <!-- Main CSS compilato da Sass -->
   <link rel="stylesheet" href="dist/css/main.css" />
 </head>
@@ -104,42 +109,46 @@
   </div>
 </section>
 
-    <!-- ABOUT -->
-    <section class="about">
-      <div class="about-title-wrapper">
+  <!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-md-6 text-start">
+        <img
+          src="assets/img/fotoprofessionale.png"
+          alt="Alessandro portrait"
+          class="img-fluid about-img"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="col-md-6 d-flex flex-column align-items-start about-content">
         <h2 class="about-title">
-          .About.About.About.About.About.About.About.About.About..About.About.About.About.About.About.About.About.About.
+          About me
         </h2>
+        <h3 class="about-subtitle">
+          <span class="line">Sculptural Thinking in Design</span>
+          <span class="line about-subtitle-accent">
+            <span class="fx-weight">Weight</span> and <span class="fx-measure">Measure</span>
+          </span>
+        </h3>
+
+        <p>
+          Hello there!<br>
+          I’m Alessandro, a 29-year-old from Milan, Italy. I’ve always been passionate about art and I love working on creative projects that allow me to fully express myself.<br>
+          I studied at an Art School and later graduated with a Bachelor’s degree in Sculpture from the Brera Academy of Fine Arts in Milan.<br>
+          Over time, I decided to apply my skills in a new direction, studying UX/UI Design at Start2Impact University.
+        </p>
+
+        <a href="about-me/" class="btn btn-primary about-cta mt-3">
+          Learn more about me
+        </a>
       </div>
 
-      <div class="container">
-        <div class="row align-items-center">
-
-          <div class="col-md-6 text-center text-md-start">
-            <img
-              src="assets/img/fotoprofessionale.png"
-              alt="Alessandro portrait"
-              class="img-fluid about-img"
-              loading="lazy"
-            />
-          </div>
-
-          <div class="col-md-6 d-flex flex-column align-items-center align-items-md-start">
-            <p>
-              Hello there!<br>
-              I’m Alessandro, a 28-year-old from Milan, Italy. I’ve always been passionate about art and I love working on creative projects that allow me to fully express myself.<br>
-              I studied at an Art School and later graduated with a Bachelor’s degree in Sculpture from the Brera Academy of Fine Arts in Milan.<br>
-              Over time, I decided to apply my skills in a new direction, studying UX/UI Design at Start2Impact University.
-            </p>
-
-            <a href="about-me/" class="btn btn-primary about-cta mt-3"> 
-              Learn more about me
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
 <section class="portfolio-projects py-5"> 
   <div class="container">
@@ -391,29 +400,6 @@ function animateScroll() {
 }
 
 animateScroll();
-
-// MOBILE PREVIEW STATIC
-function initMobilePreviews() {
-
-  if (window.innerWidth > desktopBreakpoint) return;
-
-  projectRows.forEach(row => {
-
-    const images = getImages(row);
-    if (!images.length) return;
-
-    const preview = row.querySelector('.project-preview-mobile img');
-    if (!preview) return;
-
-    preview.src = images[0];
-
-  });
-
-}
-
-initMobilePreviews();
-window.addEventListener('resize', initMobilePreviews);
-
 </script>
 
 <script>
@@ -520,6 +506,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+</script>
+
+<script>
+  // Effetto "Weight and Measure": parte una sola volta quando il claim entra nel viewport
+  const aboutSubtitle = document.querySelector('.about-subtitle');
+
+  if (aboutSubtitle) {
+    const reveal = () => aboutSubtitle.classList.add('is-visible');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      reveal();
+    } else {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          reveal();
+          observer.disconnect();
+        }
+      }, { threshold: 0.6 });
+
+      observer.observe(aboutSubtitle);
+    }
+  }
 </script>
 
 </body>

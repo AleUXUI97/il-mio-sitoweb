@@ -1,80 +1,172 @@
+$about-ink: #222;
+$about-blue: #3626a7;
+
 .about {
   background-color: #fff;
-  border-top: 2px solid #222;
-  border-bottom: 2px solid #222;
-  padding-top: 0;
-  padding-bottom: 100px;
+  border-top: 2px solid $about-ink;
+  border-bottom: 2px solid $about-ink;
+  padding: 80px 0 100px;
+  text-align: start; // tutto a sinistra, a ogni breakpoint
 
-  // Wrapper full-width per il titolo
-  .about-title-wrapper {
-    width: 100%;       // prende tutto il viewport
-    overflow: hidden;
+  // Colonna sinistra: immagine
+  .about-img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 0 4px;
   }
 
-  // Titolo About hero-like
+  // Colonna destra: h2, claim, testo, bottone
+  .about-content {
+    container-type: inline-size; // le dimensioni del claim seguono la larghezza della colonna
+    text-align: start;
+  }
+
   .about-title {
-  color: #222;
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1;
-  margin: 0;
-  padding: 0;
+    color: $about-ink;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    margin: 0 0 1rem;
+    text-align: start;
+    text-transform: uppercase;
+  }
 
-  width: 100%;
-  max-width: 100%;
+  .about-subtitle {
+    color: $about-ink;
+    font-size: clamp(1.25rem, 5.6vw, 2.25rem); // fallback per browser senza container query
+    font-size: clamp(1.25rem, 6.2cqi, 2.25rem);
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0 0 1.25rem;
+    text-align: start;
 
-  white-space: nowrap;     // 🔴 NON va a capo
-  overflow: hidden;        // 🔴 nasconde il testo in eccesso
-  text-overflow: clip;     // taglio secco (senza puntini)
-}
+    .line {
+      display: block;
+    }
 
+    .about-subtitle-accent {
+      color: $about-blue;
+      font-size: clamp(1.625rem, 7.8vw, 3rem); // fallback
+      font-size: clamp(1.625rem, 8.6cqi, 3rem);
+    }
+  }
 
-  // Righe contenuto
-  .row {
-    margin-top: 2rem;  // distanza dal titolo
+  // Effetto 1: il peso cresce
+  .fx-weight {
+    font-weight: 300;
+    transition: font-weight 1.4s ease;
+  }
+
+  // Effetto 2: righello sotto "Measure"
+  .fx-measure {
+    --tick: 60px; // distanza tra le tacche maggiori
+    position: relative;
+    display: inline-block; // il righello è largo quanto la parola
+    padding-bottom: 0.4em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 10px;
+      background-image:
+        repeating-linear-gradient(to right, $about-blue 0 2px, transparent 2px var(--tick)),
+        repeating-linear-gradient(to right, $about-blue 0 1px, transparent 1px 12px),
+        linear-gradient($about-blue, $about-blue);
+      background-size: 100% 10px, 100% 5px, 100% 2px;
+      background-position: left bottom;
+      background-repeat: no-repeat;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s;
+    }
+  }
+
+  // Stato attivato dal JS
+  .about-subtitle.is-visible {
+    .fx-weight {
+      font-weight: 700;
+    }
+
+    .fx-measure::after {
+      transform: scaleX(1);
+    }
   }
 
   p {
-    color: #222;
-    
+    color: $about-ink;
+    text-align: start;
+    padding-bottom: 16px;
   }
 
-  .about-img {
-    width: 100%;
-    max-width: 420px;
-   
-  }
   .about-cta {
-  background-color: #3626a7;   // colore principale del pulsante
-  color: #fff;                  // colore del testo
-  font-weight: 500;
-  padding: 0.75rem 2rem;
-  border-radius: 0;
-  
-  transition: all 0.3s ease;
-
-  &:hover {
-    background-color:#222;  
+    background-color: $about-blue;
     color: #fff;
-    border-color: #fff;
-    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $about-ink;
+      color: #fff;
+      border-color: #fff;
+      text-decoration: none;
+    }
   }
 }
 
+@media (max-width: 767.98px) {
+  .about {
+    padding: 32px 0 64px;
+
+    .about-subtitle {
+      text-wrap: balance; // se una riga va a capo, resta equilibrata
+    }
+
+    .fx-measure {
+      --tick: 40px; // la parola è più stretta, tacche più fitte
+    }
+  }
 }
-@media (max-width: 768px) {
-  .about .row {
-    display: flex;
-    flex-direction: column;   // immagine sopra, testo sotto
-    align-items: center;      // centra orizzontalmente
-    margin:0.5rem;
+
+// Accessibilità: niente movimento per chi lo ha ridotto
+@media (prefers-reduced-motion: reduce) {
+  .about .fx-weight,
+  .about .fx-measure::after {
+    transition: none;
+  }
+}
+
+// Senza JS mostra direttamente lo stato finale
+@media (scripting: none) {
+  .about .fx-weight {
+    font-weight: 700;
   }
 
-  .about .row p {
-    text-align: center;       // centra il testo sotto l'immagine
+  .about .fx-measure::after {
+    transform: scaleX(1);
+  }
+}
+.about .row .about-content {
+  align-items: flex-start;
+  text-align: left;
+
+  .about-title,
+  .about-subtitle,
+  p {
+    align-self: stretch; // occupano tutta la colonna
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
   }
 
-  .about .row .about-img {
-    margin-bottom: 1.5rem;   // distanza tra immagine e testo
+  .about-cta {
+    align-self: flex-start;
   }
 }
