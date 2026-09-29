@@ -1,50 +1,85 @@
-/* ============================================
-   CTA — scope globale, condivisa tra sezioni
-   ============================================ */
-.project-cta,
+// ============================================
+// Variabili
+// ============================================
+$primary: #3626a7;
+$ink:     #222;
+$border:  #e5e5e5;
+
+$bp-tablet: 768px;
+$bp-mobile: 480px;
+
+
+// ============================================
+// CTA — scope globale, condivisa tra le pagine
+// Si applica direttamente all'<a>: padding, sfondo e hover
+// coincidono con l'area cliccabile.
+// ============================================
 .btn-cta {
-  background-color: #3626a7;
-  color: #fff;
-  font-weight: 500;
+  display: inline-block;
   padding: 0.75rem 2rem;
+  font-weight: 500;
+  color: #fff;
   white-space: nowrap;
-  transition: background-color 0.3s ease, color 0.3s ease;
   text-decoration: none;
+  background-color: $primary;
+  border-radius: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background-color: #222;
     color: #fff;
     text-decoration: none;
+    background-color: $ink;
     transform: none;
   }
 }
 
-/* CTA finale più grande */
+// CTA finale più grande
 .btn-cta.btn-lg {
   padding: 1rem 3rem;
   font-size: 1.25rem;
-  border-radius: 0;
   font-weight: 500;
 }
 
 
-/* ============================================
-   SEZIONE: Portfolio Projects
-   ============================================ */
+// ============================================
+// SEZIONE: Featured Projects
+//
+// Il .container è una griglia a 4 colonne "auto" (titolo | meta |
+// year | CTA) distribuite con space-between: la prima colonna è a
+// filo col bordo sinistro, la CTA a filo col bordo destro, e lo
+// spazio libero è diviso in parti uguali tra le colonne.
+// Ogni .project-row è una subgrid: eredita le stesse colonne,
+// quindi meta, year e CTA restano allineati tra i progetti.
+// .project-info è "trasparente" (contents): h3 e p diventano
+// figli diretti della riga.
+// ============================================
 .portfolio-projects {
-  background-color: white;
-  color: black;
+  padding: 3rem 0;
+  color: #000;
+  background-color: #fff;
 
-  .portfolio-projects-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
+  > .container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+    column-gap: 20px; // spazio minimo tra le colonne
   }
 
-  /* Singola fascia progetto */
+  .portfolio-projects-title {
+    grid-column: 1 / -1;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: left;
+  }
+
   .project-row {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    align-items: center;
     padding: 1.75rem 0;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid $border;
 
     &:last-of-type {
       border-bottom: none;
@@ -52,33 +87,55 @@
   }
 
   .project-info {
-    display: flex;
-    flex-direction: column;
+    display: contents;
   }
 
   .project-title {
-    font-size: 2rem;
-    font-weight: 700;
     margin: 0;
+    font-size: 22px;
+    font-weight: 700;
   }
 
   .project-meta {
-    font-size: 16px;
+    justify-self: start; // il badge non si stira a tutta la cella
     margin: 0;
-    color: #222;
-    margin-top: 0.25rem;
-    background: #fff;
-    border: 1px solid #222;
     padding: 6px 12px;
+    font-size: 12px;
+    color: $ink;
+    background: #fff;
+    border: 1px solid $ink;
     border-radius: 8px;
-    width: fit-content;
+  }
+
+  // Year: label piccola sopra, anno grande sotto
+  .project-year {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    line-height: 1.1;
+  }
+
+  .project-year-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #6b6b6b;
+  }
+
+  .project-year-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .btn-cta {
+    justify-self: end;
   }
 }
 
 
-/* ============================================
-   SEZIONE: Portfolio Scroll
-   ============================================ */
+// ============================================
+// SEZIONE: Portfolio Scroll
+// ============================================
 .portfolio-scroll {
   overflow: hidden;
 }
@@ -86,14 +143,15 @@
 .portfolio-scroll-wrapper {
   display: flex;
   gap: 0;
-  will-change: transform;
   width: max-content;
+  will-change: transform;
+
+  &.reverse-scroll {
+    margin-left: -250px; // regola in base a quanto vuoi compensare
+  }
 }
 
-.portfolio-scroll-wrapper.reverse-scroll {
-  margin-left: -250px; // regola il valore in base a quanto vuoi compensare
-}
-
+// Override globale di Bootstrap: colpisce ogni .mb-3 del sito
 .mb-3 {
   margin-bottom: 2rem !important;
 }
@@ -104,116 +162,86 @@
   max-width: 420px;
   aspect-ratio: 3 / 2;
   overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
-.portfolio-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
-
-/* ============================================
-   RESPONSIVE — Portfolio Item sizing
-   ============================================ */
-
-/* Tablet */
-@media (max-width: 768px) {
+// ============================================
+// RESPONSIVE — Portfolio Item
+// ============================================
+@media (max-width: $bp-tablet) {
   .portfolio-item {
     width: 240px;
   }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
+@media (max-width: $bp-mobile) {
   .portfolio-item {
     width: 180px;
   }
 }
 
 
-/* ============================================
-   RESPONSIVE — Portfolio Projects (768px)
-   ============================================ */
-@media (max-width: 768px) {
-  /* Titolo sezione */
-  .portfolio-projects .portfolio-projects-title {
-    font-size: 3rem;
-    text-align: center;
-    margin-top: 32px;
-  }  
+// ============================================
+// RESPONSIVE — Featured Projects (<= 768px)
+// Griglia e subgrid spente: la riga diventa uno stack centrato.
+// ============================================
+@media (max-width: $bp-tablet) {
+  .portfolio-projects {
+    padding-top: 0;
 
-  /* Righe progetto */
-  .portfolio-projects .project-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    flex-wrap: wrap;
-    padding: 1rem 0;
-    margin: 1.2rem;
-  }
+    > .container {
+      display: block;
+    }
 
-  .portfolio-projects .project-title {
-    font-size: 1.7rem;
-    font-weight: 400;
-    margin: 0;
-    text-align: center;
-    
-  }
+    .portfolio-projects-title {
+      margin-top: 32px;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      font-size: 3rem;
+      text-align: center;
+    }
 
-  .portfolio-projects .project-info {
-    flex: 1;
-    margin-bottom: 0.5rem;
-  }
-  
+    .project-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin: 1.2rem;
+      padding: 1rem 0;
+    }
 
-  .portfolio-projects .text-center {
-    text-align: left !important;
-    padding: 0 16px;
-  }
+    // Su mobile torna un contenitore reale
+    .project-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-  .portfolio-projects .btn-cta {
-    display: inline-block;
-  }
-}
+    .project-title {
+      font-size: 1.7rem;
+      font-weight: 400;
+      text-align: center;
+    }
 
+    .project-meta {
+      text-align: center;
+    }
 
-/* ============================================
-   RESPONSIVE — Project row layout override (768px)
-   ============================================ */
-@media (max-width: 768px) {
-  .project-row {
-    flex-direction: column;
-    align-items: center !important;
-  }
-  .portfolio-projects .portfolio-projects-title {
-    text-align: center;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  .portfolio-projects .project-meta {
-    text-align: center;
-  }
+    .project-year {
+      align-items: center;
+      text-align: center;
+    }
 
-  .project-cta {
-    align-self: center;
-    margin-top: 0.5rem;
-    margin-right: 0 !important;
+    .btn-cta {
+      margin-top: 0.5rem;
+    }
   }
-
-  .portfolio-projects .text-center {
-    text-align: right !important;
-    padding: 0 16px;
-  }
-  
-  .portfolio-scroll {
-    overflow: hidden;
-  }
-  .py-5 {
-    padding-top: 0 !important;
-    
-  }
-
 }
