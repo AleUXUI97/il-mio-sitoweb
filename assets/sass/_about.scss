@@ -132,6 +132,14 @@ $about-blue: #3626a7;
     .fx-measure {
       --tick: 40px; // la parola è più stretta, tacche più fitte
     }
+    .about-cta {
+      display: flex;
+      width: 100%;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.25rem;
+    }
   }
 }
 
@@ -164,10 +172,27 @@ $about-blue: #3626a7;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 32px;
     text-align: left;
   }
 
   .about-cta {
     align-self: flex-start;
   }
+  
 }
+@media (max-width: 767.98px) {
+  .project-cta {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.25rem;
+    text-align: center;
+  }
+  
+}
+    
