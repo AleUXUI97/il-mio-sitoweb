@@ -1,231 +1,126 @@
-/* =========================
-   CONTACT SECTION
-========================= */
+// ==========================
+// _contacts.scss: HOME, sezione "Contact Me" (CTA a destra)
+// Il form della pagina /contacts/ vive in _contact-page.scss
+// ==========================
 .contact-section {
   background-color: #fff;
   padding: 3rem 0;
-}
 
-.contact-section .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* centra verticalmente la CTA */
-  gap: 0;
-  flex-wrap: wrap;
-}
-
-.contact-left {
-  max-width: 600px;
-}
-
-.contact-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  padding-left: 0;
-  line-height: 1.2;
-}
-
-.contact-description {
-  font-size: 1.1rem;
-  color: #222;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.contact-right {
-  display: flex;
-  justify-content: flex-end;
-  flex-shrink: 0;
-}
-/* =========================
-   CONTACT CTA
-========================= */
-.contact-section .btn-cta {
-  background-color: #3626a7;
-  color: #fff;
-  font-weight: 500;
-  padding: 0.75rem 2rem;
-  border-radius: 0; 
-  white-space: nowrap;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-
-  &:hover {
-    background-color: #222;
-    color: #fff;
-    text-decoration: none;
-  }
-}
-
-.contact-section .btn-cta.btn-lg {
-  padding: 1rem 3rem;
-  font-size: 1.25rem;
-} 
-@media (max-width: 480px) {
-
-  .contact-title {
-    margin-bottom: 1rem;
-  }
-  #contact-me > div > div.contact-left > p {
-    margin-bottom: 0;
-    padding-left: 16px;
-  }
- #contact-me > div > div.contact-left > h2 {
-  padding-left: 16px;
- }
-  
-  #contact-me > div {
-    padding-left: 0;
-    padding-right: 16px;
-  }
-}
-/* =========================
-   CONTACT FORM SECTION (MODIFICATA)
-========================= */
-
-.contact-form-section {
-  background-color: #fff;
- 
-  min-height: 100vh;
- 
-  padding: 6rem 2rem 3rem;
-  box-sizing: border-box;
-      
-}
-
-
-.contact-form-inner {
-  display: flex;
-  align-items: flex-start;  /* allinea in alto, o center se preferisci centrato */
-  gap: 4rem;
-  flex-wrap: wrap;          /* su mobile si impila */
-}
-
-.contact-form-text {
-  flex: 1;                  /* occupa lo spazio rimanente */
-  min-width: 280px;
-  
-}
-
-.contact-form-wrapper {
-  flex: 0 0 500px;          /* larghezza fissa del form */
-  max-width: 100%;          /* non esce dal viewport su schermi stretti */
-}
-
-
-/* Titolo e descrizione rimangono uguali */
-.contact-form-section .contact-title {
-  color: #3626a7;
-  font-size: 4rem;
-  font-weight: 700;
-  padding-top: 3rem;  
-  text-align: left;
-}
-
-.contact-form-section .contact-description {
-  margin-bottom: 2rem;
-  text-align: left;
-}
-
-.contact-form label {
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  color: #222;
-  padding-top: 12px;
-  
-  
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 3px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: 'DM Sans', sans-serif;
-  transition: border-color 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #3626a7;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-/* CTA BUTTON */
-.contact-form .btn-cta {
-  background-color: #3626a7;
-  color: #fff;
-  font-weight: 700;
-  padding: 0.75rem 2rem;
-  border-radius: 0;
-  
-  white-space: nowrap;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-  text-align: center;
-}
-
-.contact-form .btn-cta:hover {
-  background-color: #222;
-  color: #fff;
-}
-@media (max-width: 768px) {
-
-  .contact-form {
-    padding: 0;    
-    
-  }
-
-  #contact-form > div > div > div.contact-form-text > h1 {
-    padding: 0.5rem;
-  }
-
-  #contact-form > div {
-    padding: 0;
-  }
-
-  #contact-form > div > div > div.contact-form-text > p {
-    padding: 0.5rem;
-    margin-bottom: -1rem;
-   
-  }
-  
-
-
-  .contact-form-inner {
-    flex-direction: column;
+  // Questa regola è quella che mette la CTA a destra di titolo e testo
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;   // la CTA non può mai finire sotto: si impila solo nel media query sotto
     gap: 2rem;
   }
 
-  .contact-form-text {
+  .contact-left {
+    max-width: 600px;
+  }
+
+  .contact-right {
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+
+  .contact-title {
+    margin-bottom: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .contact-description {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #222;
+  }
+
+  .btn-cta {
+    padding: 0.75rem 2rem;
+    background-color: #3626a7;
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: #222;
+      color: #fff;
+    }
+
+    &.btn-lg {
+      padding: 1rem 3rem;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// Sotto i 768px: titolo, testo e CTA in colonna, allineati a sinistra
+@media (max-width: 768px) {
+  .contact-section {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-title {
+      margin-bottom: 1rem;
+    }
+
+    .contact-description {
+      margin-bottom: 0;
+    }
+
+    .contact-right {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section .btn-cta.btn-lg {
+    display: block;
     width: 100%;
-    text-align: left; /* ← forza allineamento sinistra */
-    
+    text-align: center;
+  }
+}
+
+// ==========================
+// RETE DI SICUREZZA (desktop): l'ID #contact-me batte qualunque regola residua
+// con specificità più bassa (es. vecchio blocco tablet con .contact-right { width: 100% }).
+// Quando la causa è individuata si può rimuovere.
+// ==========================
+@media (min-width: 769px) {
+  #contact-me.contact-section .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .contact-form-section .contact-title {
+  #contact-me .contact-left {
+    flex: 1 1 auto;
+    max-width: 600px;
+    margin: 0;
     text-align: left;
-    padding-top: 0;
   }
 
-  .contact-form-section .contact-description {
+  #contact-me .contact-right {
+    flex: 0 0 auto;
+    width: auto;
+    margin: 0;
+    justify-content: flex-end;
     text-align: left;
-  }
-
-  .contact-form-wrapper {
-    width: 100%;
-    flex: none; /* ← rimuove il flex: 0 0 500px che potrebbe creare problemi */    
   }
 }

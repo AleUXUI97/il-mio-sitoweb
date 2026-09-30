@@ -1,0 +1,266 @@
+// ==========================
+// CONTACT PAGE (card tinta)
+// Classi dedicate (.contact-intro, .contact-card, .form-*): nessuna collisione
+// con la CTA della home (.contact-section, .contact-title, .contact-description)
+// ==========================
+
+body.contacts-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-wrapper {
+  flex: 1;
+}
+
+.contact-page {
+  --brand: #3626a7;
+  --tint: #f6f5ff;
+  --tint-line: #dcd8f7;
+  --field-line: #6b6b6b;   // contrasto >= 3:1 (WCAG 1.4.11)
+  --danger: #b3261e;
+  --success: #1e6b3a;
+
+  padding: 6rem 2rem 4rem;   // 6rem = spazio per la navbar
+
+  // reset dei padding globali su h1 e p
+  h1,
+  p {
+    padding: 0;
+  }
+
+  :is(a, button, input, select, textarea):focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+  }
+}
+
+// ---------- Layout ----------
+.contact-layout {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ---------- Colonna sinistra ----------
+.contact-intro {
+  &__title {
+    margin: 0 0 1rem;
+    color: var(--brand);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+  }
+
+  &__text {
+    max-width: 34ch;
+    margin: 0 0 2.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+// Un'unica card grigia (come .lastproj-info della home) che raggruppa i tre canali
+.contact-channels {
+  list-style: none;
+  margin: 0;
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  padding-left: 0;
+  
+  transition: background 0.3s ease;
+
+  
+  li {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #222;
+
+    & + li {
+      padding-top: 1.5rem;
+      border-top: 1px solid #bdbdbd;
+    }
+  }
+
+  &__label {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #222;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+  }
+
+  // come .lastproj-link
+  a {
+    color: var(--brand);
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 1.5rem;
+  }
+}
+
+// bottone "Copy": stesso stile dei link
+.link-btn {
+  margin-left: 0.75rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ---------- Card + form ----------
+.contact-card {
+  background: var(--tint);
+  border: 1px solid var(--tint-line);
+  padding: clamp(1.25rem, 3.5vw, 2rem);
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.5rem;
+
+  label {
+    padding: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #222;
+  }
+
+  :is(input, select, textarea) {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.625rem 0.875rem;
+    background-color: #fff;
+    border: 2px solid var(--field-line);
+    border-radius: 0;   // stessa grammatica del bottone
+    font: inherit;
+    font-size: 0.95rem;
+    color: #222;
+
+    &:focus-visible {
+      border-color: var(--brand);
+    }
+  }
+
+  textarea {
+    min-height: 7rem;
+    resize: vertical;
+  }
+
+  select {
+    appearance: none;
+    padding-right: 2.75rem;   // spazio per il chevron
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23222' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.25rem center;
+    background-size: 0.75rem;
+    cursor: pointer;
+  }
+}
+
+.form-field :is(input, textarea):user-invalid {
+  border-color: var(--danger);
+}
+
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-note {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.form-field label .opt {
+  margin-left: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #555;
+}
+
+.contact-page .btn-cta {
+  justify-self: start;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--brand);
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover:not(:disabled) {
+    background: #222;
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: progress;
+  }
+
+  @media (max-width: 600px) {
+    justify-self: stretch;
+  }
+}
+
+.form-feedback {
+  margin: 0;
+  min-height: 1.5em;   // evita lo shift del layout quando appare il messaggio
+  font-weight: 500;
+
+  &.is-success { color: var(--success); }
+  &.is-error   { color: var(--danger); }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

@@ -3,41 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js');</script>
+
   <!-- Favicon -->
-<link rel="icon" href="/favicon.ico" sizes="any">  
-<link rel="icon" type="image/svg+xml" href="../assets/img/simboloalternativo.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/simbolo32x32alternativo.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo-16x16-alternativo@2x.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/logoalternativo180.png">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/simboloalternativo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/simbolo32x32alternativo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logo-16x16-alternativo@2x.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/logoalternativo180.png">
 
-  <title>Alessandro Toscano • Contacts</title>
-<meta property="og:title" content="Alessandro Toscano • Contacts">
-<meta property="og:description" content="Contacts">
-<meta property="og:image" content="">
-<meta property="og:url" content="https://aleuxui97.github.io/il-mio-sitoweb/">
-<meta property="og:type" content="website">
+  <title>Contacts • Alessandro Toscano, UX/UI Designer</title>
+  <meta name="description" content="Get in touch with Alessandro Toscano, junior UX/UI designer based in Milan. Open to junior roles, freelance projects and collaborations.">
 
-  <!-- Bootstrap CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+  <meta property="og:title" content="Contacts • Alessandro Toscano, UX/UI Designer">
+  <meta property="og:description" content="Open to junior UX/UI roles, freelance projects and collaborations. Write to me.">
+  <meta property="og:image" content="https://aleuxui97.github.io/il-mio-sitoweb/assets/img/og-cover.png">
+  <meta property="og:url" content="https://aleuxui97.github.io/il-mio-sitoweb/contacts/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Main CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../dist/css/main.css" />
-
-  <style>
-    /* Assicura che il feedback sia sempre visibile */
-    #form-feedback {
-      display: block !important;
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    #form-feedback .alert {
-      display: block !important;
-    }
-  </style>
 </head>
 <body class="contacts-page">
 
@@ -48,215 +34,233 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="../index.html">
-            <img src="../assets/img/logotipoalternativo.svg" alt="Alessandro UX/UI Designer logo" height="32" />
+            <img src="../assets/img/logotipoalternativo.svg" alt="Alessandro Toscano, UX/UI Designer" height="32" />
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-4">             
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-4">
               <li class="nav-item"><a class="nav-link" href="../about-me/">About</a></li>
               <li class="nav-item"><a class="nav-link" href="../portfolio/">Portfolio</a></li>
-              <li class="nav-item"><a class="nav-link active" href="index.html">Contacts</a></li>
+              <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Contacts</a></li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
 
-   <section id="contact-form" class="contact-form-section reveal">
-  <div class="container">
-    
-    <div class="contact-form-inner">
-      
-      <!-- COLONNA SINISTRA: testo -->
-      <div class="contact-form-text">
-        <h1 class="contact-title reveal">Shall we talk?</h1>
-        <p class="contact-description">
-          Fill out the form below<br>to get in touch about work, projects, or collaborations.
-        </p>
+    <main class="contact-page">
+      <div class="contact-layout">
+
+        <!-- COLONNA SINISTRA -->
+        <div class="contact-intro reveal">
+          <h1 class="contact-intro__title">Shall we talk?</h1>
+          <p class="contact-intro__text">
+            Tell me about a role, a project or an idea. I usually reply within two working days.
+          </p>
+
+          <ul class="contact-channels">
+            <li>
+              <span class="contact-channels__label">EMAIL</span>
+              <span>
+                <a href="mailto:alessandro.toscano97@icloud.com">alessandro.toscano97@icloud.com</a>
+                <button type="button" class="link-btn" id="copyEmail" hidden>Copy</button>
+                <span class="visually-hidden" role="status" id="copyStatus"></span>
+              </span>
+            </li>
+            <li>
+              <span class="contact-channels__label">AVAILABILITY</span>
+              <span>Open to junior UX/UI roles, based in Milan, remote friendly</span>
+            </li>
+            <li>
+              <span class="contact-channels__label">ELSEWHERE</span>
+              <span class="contact-channels__links">
+                <a href="https://www.linkedin.com/in/alessandro-toscano-b27797244/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.behance.net/alessandrotoscano" target="_blank" rel="noopener">Behance</a>
+                <a href="https://github.com/AleUXUI97" target="_blank" rel="noopener">GitHub</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLONNA DESTRA: card con form -->
+        <div class="contact-card reveal">
+          <form id="contactForm" class="contact-form">
+            <div class="form-field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="from_name" autocomplete="name" required>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="from_email" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone <span class="opt">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+
+            <div class="form-field">
+              <label for="reason">What is it about?</label>
+              <select id="reason" name="reason" required>
+                <option>Job opportunity</option>
+                <option>Freelance project</option>
+                <option>Collaboration</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required placeholder="A few lines on the role, project or idea"></textarea>
+            </div>
+
+            <!-- Honeypot anti-spam -->
+            <div class="hp" aria-hidden="true">
+              <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <p class="form-note">I'll only use your details to reply to you.</p>
+
+            <button type="submit" class="btn-cta">Send message</button>
+
+            <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
       </div>
+    </main>
 
-      <!-- COLONNA DESTRA: form -->
-      <div class="contact-form-wrapper">
-        <form id="contactForm" class="contact-form">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="from_name" placeholder="Your Name" required />
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="from_email" placeholder="Your Email" required />
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
-
-          <button type="submit" class="btn-cta btn-lg mt-3">Send Message</button>
-
-          <div id="form-feedback"></div>
-        </form>
-      </div>
-
-    </div>
   </div>
-</section>
-  </div> <!-- /contacts-wrapper -->
-<footer class="footer">
-  <div class="footer-container">
-    
-   <!-- Colonna sinistra -->
-<div class="footer-left">
-  <h3 class="footer-name">Alessandro Toscano</h3>
-  <p class="footer-bottom">Copyright © 2026. All Rights Reserved.</p>
-</div>
 
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3 class="footer-name">Alessandro Toscano</h3>
+        <p class="footer-bottom">Copyright © 2026. All Rights Reserved.</p>
+      </div>
 
-    <!-- Colonna centrale -->
-    <div class="footer-center">
-      <h5>Links:</h5>
-      <ul class="footer-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about-me/">About</a></li>
-        <li><a href="../portfolio/">Portfolio</a></li>
-        <li><a href="index.html">Contacts</a></li>
-      </ul>
-    </div>
+      <div class="footer-center">
+        <h5>Links:</h5>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about-me/">About</a></li>
+          <li><a href="../portfolio/">Portfolio</a></li>
+          <li><a href="index.html">Contacts</a></li>
+        </ul>
+      </div>
 
-    <!-- Colonna destra -->
-    <div class="footer-right">
-      <a href="mailto:alessandro.toscano97@icloud.com" class="contact-email">alessandro.toscano97@icloud.com</a>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/alessandro-toscano-b27797244/" target="_blank" class="footer-social-icon">
-          <img src="../assets/img/linkedin-svgrepo-com (3).svg" alt="LinkedIn">
-        </a>
-        <a href="https://www.behance.net/alessantoscano6" target="_blank" class="footer-social-icon">
-          <img src="../assets/img/behance-rounded-svgrepo-com (1).svg" alt="Behance">
-        </a>
-        <a href="https://github.com/AleUXUI97" target="_blank" class="footer-social-icon">
-          <img src="../assets/img/github-142-svgrepo-com (3).svg" alt="GitHub">
-        </a>
+      <div class="footer-right">
+        <a href="mailto:alessandro.toscano97@icloud.com" class="contact-email">alessandro.toscano97@icloud.com</a>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/alessandro-toscano-b27797244/" target="_blank" rel="noopener" class="footer-social-icon">
+            <img src="../assets/img/linkedin-svgrepo-com (3).svg" alt="LinkedIn">
+          </a>
+          <a href="https://www.behance.net/alessantoscano6" target="_blank" rel="noopener" class="footer-social-icon">
+            <img src="../assets/img/behance-rounded-svgrepo-com (1).svg" alt="Behance">
+          </a>
+          <a href="https://github.com/AleUXUI97" target="_blank" rel="noopener" class="footer-social-icon">
+            <img src="../assets/img/github-142-svgrepo-com (3).svg" alt="GitHub">
+          </a>
+        </div>
       </div>
     </div>
+  </footer>
 
-  </div>
-</footer>
-<!-- BACK TO TOP -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
-  
-  <button id="backToTop" aria-label="Back to top">↑</button>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 200) {
-        backToTopBtn.classList.add('is-visible');
-      } else {
-        backToTopBtn.classList.remove('is-visible');
-      }
-    });
-
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-
-    // Inizializzazione EmailJS
-    emailjs.init('eQzyWfdk8JpP1GrHV'); // Public Key
+    // ---------- Form (EmailJS) ----------
+    const MAIL = 'alessandro.toscano97@icloud.com';
+    if (window.emailjs) emailjs.init('eQzyWfdk8JpP1GrHV'); // public key: limita i domini consentiti dalla dashboard EmailJS
 
     const form = document.getElementById('contactForm');
     const feedback = document.getElementById('form-feedback');
+    const submitBtn = form.querySelector('button[type="submit"]');
 
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-
-      console.log('Invio form iniziato...');
-
-      emailjs.sendForm('service_kwzpq9n', 'template_2jqd9b9', this)
-        .then(() => {
-          console.log('Email inviata con successo');
-          feedback.innerHTML = '<div class="alert alert-success alert-dismissible fade show" role="alert">Message sent successfully!</div>';                   
-          setTimeout(() => { form.reset(); }, 500);
-         
-          setTimeout(() => { feedback.innerHTML = ''; }, 5000);
-        })
-        .catch((err) => {
-          console.error('Errore EmailJS:', err);
-          feedback.innerHTML = '<div class="alert alert-danger alert-dismissible fade show" role="alert">Oops... something went wrong. Please try again later.</div>';
-          setTimeout(() => { feedback.innerHTML = ''; }, 5000);
-        });
-    });
-  </script>
-  <script>
-window.addEventListener("load", () => {
-  document.body.classList.add("page-loaded");
-});
-window.addEventListener("load", () => {
-
-  const elements = document.querySelectorAll(".hero-content > *");
-
-  elements.forEach((el, index) => {
-
-    setTimeout(() => {
-      el.classList.add("visible");
-    }, index * 200);
-
-  });
-
-});
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-
-  const windowHeight = window.innerHeight;
-
-  reveals.forEach(el => {
-
-    const elementTop = el.getBoundingClientRect().top;
-
-    if (elementTop < windowHeight - 100) {
-      el.classList.add("active");
+    function setFeedback(type, html) {
+      feedback.className = 'form-feedback' + (type ? ' is-' + type : '');
+      feedback.innerHTML = html;
     }
 
-  });
+    // Il messaggio resta finché l'utente non interagisce di nuovo con il form
+    form.addEventListener('input', () => { if (feedback.innerHTML) setFeedback('', ''); });
 
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-document.addEventListener("DOMContentLoaded", () => {
-
-  const links = document.querySelectorAll("a[href]");
-
-  links.forEach(link => {
-
-    link.addEventListener("click", function(e) {
-
-      const url = this.getAttribute("href");
-
-      if (
-        url.startsWith("#") ||
-        this.target === "_blank" ||
-        url.startsWith("mailto")
-      ) {
-        return;
-      }
-
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (form.elements.website.value) return; // honeypot compilato: è un bot
 
-      document.body.classList.remove("page-loaded");
-      document.body.classList.add("page-leave");
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      setFeedback('', '');
 
-      setTimeout(() => {
-        window.location.href = url;
-      }, 400);
-
+      try {
+        await emailjs.sendForm('service_kwzpq9n', 'template_2jqd9b9', form);
+        setFeedback('success', 'Message sent. I\'ll reply within two working days.');
+        form.reset();
+      } catch (err) {
+        console.error('EmailJS error:', err);
+        setFeedback('error', 'Message not sent. Try again, or write to <a href="mailto:' + MAIL + '">' + MAIL + '</a>.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message';
+      }
     });
 
-  });
+    // ---------- Copy email ----------
+    const copyBtn = document.getElementById('copyEmail');
+    const copyStatus = document.getElementById('copyStatus');
+    if (copyBtn && navigator.clipboard) {
+      copyBtn.hidden = false;
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(MAIL);
+          copyBtn.textContent = 'Copied';
+          copyStatus.textContent = 'Email address copied';
+        } catch {
+          copyBtn.textContent = 'Copy failed';
+        }
+        setTimeout(() => { copyBtn.textContent = 'Copy'; copyStatus.textContent = ''; }, 2000);
+      });
+    }
 
-});
-</script>
+    // ---------- Page load, reveal, transizioni ----------
+    window.addEventListener('load', () => document.body.classList.add('page-loaded'));
 
+    // Tasto Back: la pagina può tornare dalla bfcache con page-leave ancora attivo
+    window.addEventListener('pageshow', (e) => {
+      if (e.persisted) {
+        document.body.classList.remove('page-leave');
+        document.body.classList.add('page-loaded');
+      }
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      const vh = window.innerHeight;
+      reveals.forEach((el) => {
+        if (el.getBoundingClientRect().top < vh - 100) el.classList.add('active');
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
+    window.addEventListener('load', revealOnScroll);
+
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+      // Lascia stare: modificatori (nuova scheda), link esterni, ancore, mailto, _blank, download
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      if (link.target === '_blank' || link.hasAttribute('download')) return;
+      if (link.origin !== location.origin) return;
+      if (link.getAttribute('href').startsWith('#')) return;
+
+      e.preventDefault();
+      document.body.classList.remove('page-loaded');
+      document.body.classList.add('page-leave');
+      setTimeout(() => { window.location.href = link.href; }, 400);
+    });
+  </script>
 </body>
 </html>
