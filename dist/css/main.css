@@ -705,8 +705,8 @@
   padding: 6px 12px;
   font-size: 12px;
   color: #222;
-  background: #fff;
-  border: 1px solid #222;
+  background-color: #f6f5ff;
+  border: 1px solid #dcd8f7;
   border-radius: 8px;
 }
 .portfolio-projects .project-year {
@@ -1347,7 +1347,8 @@ body.contacts-page {
 }
 
 .value-card {
-  background-color: #f2f2f2;
+  background-color: #f6f5ff;
+  border: 1px solid #dcd8f7;
   padding: 40px 32px;
   min-height: 280px;
   display: flex;
@@ -1478,7 +1479,8 @@ body.contacts-page {
 .lastproj-info {
   position: relative;
   overflow: hidden;
-  background: #f2f2f2;
+  background: #f6f5ff;
+  border: 1px solid #dcd8f7;
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -1491,7 +1493,8 @@ body.contacts-page {
 
 .lastproj-info:hover,
 .lastproj-info:focus-within {
-  background: #ebebeb;
+  background: #f6f5ff;
+  border: 1px solid #dcd8f7;
 }
 
 .lastproj-content {
@@ -1857,8 +1860,8 @@ body.contacts-page {
   padding: 6px 12px;
   font-size: 12px;
   color: #222;
-  background-color: #fff;
-  border: 1px solid #222;
+  background-color: #f6f5ff;
+  border: 1px solid #dcd8f7;
   border-radius: 8px;
 }
 
