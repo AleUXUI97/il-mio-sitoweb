@@ -313,6 +313,7 @@ $bp-desktop: 1200px;  // >= desktop largo (sticky preview + layout a tutta altez
 @media (max-width: $bp-tablet) {
   .page-title {
     text-align: center;
+    font-size: 2.5rem;
     margin-left: 0;
   }
 

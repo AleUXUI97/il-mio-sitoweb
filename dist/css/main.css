@@ -1937,6 +1937,7 @@ body.contacts-page {
 @media (max-width: 992px) {
   .page-title {
     text-align: center;
+    font-size: 2.5rem;
     margin-left: 0;
   }
   .projects-image {
