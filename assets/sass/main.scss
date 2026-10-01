@@ -233,7 +233,7 @@ body > main > section.home > div > p.h3 {
   right: 2rem;
   z-index: 999;
 
-  width: 48px;   /* dimensione cerchio */
+  width: 48px;
   height: 48px;
   border-radius: 50%;
 
@@ -241,10 +241,11 @@ body > main > section.home > div > p.h3 {
   color: #fff;
   border: none;
 
-  font-size: 1.2rem; /* freccia più proporzionata */
+  font-family: var(--bs-font-sans-serif); // o il valore letto sul portfolio
+  font-size: 1.2rem;
   font-weight: 700;
-  line-height: 1;    /* riduce l’asta verticale */
-  
+  line-height: 1;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,7 +257,6 @@ body > main > section.home > div > p.h3 {
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
 /* classe visibile */
 #backToTop.is-visible {
   opacity: 1;

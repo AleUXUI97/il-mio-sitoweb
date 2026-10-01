@@ -48,10 +48,19 @@
   text-align: left;
   padding-left: 3.4rem;
 }
-
-#dynamic-text {
-  transition: opacity 0.5s ease-in-out;
+#dynamic-text::after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: .85em;
+  margin-left: 4px;
+  background: currentColor;
+  vertical-align: baseline;
+  animation: blink 1s steps(1) infinite;
 }
+
+@keyframes blink { 50% { opacity: 0; } }
+
 
 .highlight {
   color: #3626a7;
@@ -399,7 +408,7 @@
   .hero-text h1 {
     font-family: "Hanken Grotesk", sans-serif;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.75rem;
     padding-left: 0;
   }
 
