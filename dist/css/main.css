@@ -289,6 +289,9 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 2px solid #3626a7;
+    text-align: end;
+    font-weight: 500;
+    font-size: 1.5rem;
   }
 }
 /* =========================
